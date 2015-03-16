@@ -1,0 +1,55 @@
+#experience {
+	background: transparent url('../_images/back-vert.gif') repeat-y;
+}
+#experience h3 {
+	background: transparent url('../_images/back-horiz.gif') repeat-x;
+}
+#experience .seal {
+	background: transparent url('../_images/back-horiz.gif') repeat-x left bottom;
+}
+.aqua #experience {
+	background: transparent url('../_images/back-vert-aqua.gif') repeat-y;
+}
+.aqua #experience h3 {
+	background: transparent url('../_images/back-horiz-aqua.gif') repeat-x;
+}
+.aqua #experience .seal {
+	background: transparent url('../_images/back-horiz-aqua.gif') repeat-x left bottom;
+}
+.orange #experience {
+	background: transparent url('../_images/back-vert-orange.gif') repeat-y;
+}
+.orange #experience h3 {
+	background: transparent url('../_images/back-horiz-orange.gif') repeat-x;
+}
+.orange #experience .seal {
+	background: transparent url('../_images/back-horiz-orange.gif') repeat-x left bottom;
+}
+.pink #experience {
+	background: transparent url('../_images/back-vert-pink.gif') repeat-y;
+}
+.pink #experience h3 {
+	background: transparent url('../_images/back-horiz-pink.gif') repeat-x;
+}
+.pink #experience .seal {
+	background: transparent url('../_images/back-horiz-pink.gif') repeat-x left bottom;
+}
+a:link { color: #000000; text-decoration: underline; }
+a:active { color: #000000; text-decoration: underline; }
+a:visited { color: #000000; text-decoration: underline; }
+a:hover { background-color: #000000; color: #FFFFFF; }
+.aqua span.company { color: #339999;  }
+.aqua a:link { color: #339999; text-decoration: underline; }
+.aqua a:active { color: #339999; text-decoration: underline; }
+.aqua a:visited { color: #339999; text-decoration: underline; }
+.aqua a:hover { background-color: #000000; color: #FFFFFF; }
+.orange span.company { color: #FF6600; }
+.orange a:link { color: #FF6600; text-decoration: underline; }
+.orange a:active { color: #FF6600; text-decoration: underline; }
+.orange a:visited { color: #FF6600; text-decoration: underline; }
+.orange a:hover { background-color: #000000; color: #FFFFFF; }
+.pink span.company { color: #FF0066;  }
+.pink a:link { color: #FF0066; text-decoration: underline; }
+.pink a:active { color: #FF0066; text-decoration: underline; }
+.pink a:visited { color: #FF0066; text-decoration: underline; }
+.pink a:hover { background-color: #000000; color: #FFFFFF; }

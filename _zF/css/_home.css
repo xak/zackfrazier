@@ -1,0 +1,108 @@
+body {
+	padding: 0;
+	margin: 0;
+	background-color: white;
+	font-size: 12px;
+	font-family: lucida grande, verdana, tahoma, sans-serif;
+	color: black;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#header {
+	width: 100%;
+	background-color: #ccc;
+	border-bottom: dashed white 6px;
+}
+	#header .logo {
+		margin-left: 10px;
+	}
+#body {
+	width: 960px;
+	margin: 0 auto;
+}
+#highlights {
+	width: 540px;
+	float: left;
+}
+	#highlights img {
+		padding: 0 0 5px 5px;	
+	}
+#experience {
+	margin-top: 15px;
+	width: 380px;
+	float: right;	
+}
+h1 {
+	text-align: right;
+	padding-right: 20px;
+	margin-top:20px;
+
+}
+h2 {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+h2, #highlights p { }
+#highlights p {
+	line-height: 1.6;
+	font-size: 13px;	
+}
+#highlights p img {
+	float: right;
+	width: 230px;
+	height: 177px;
+	padding-left: 20px;
+}
+#experience {
+	font-size: 11px;
+}
+#experience h3 {
+	padding-top: 20px;
+	padding-bottom: 5px;
+	margin: 0;
+	text-align: right;
+	padding-right: 24px;
+}
+	#experience .slot_ {
+		width: 320px;
+		margin: 15px auto;
+	}
+	#experience .sep {
+		text-align: right;
+		padding-right: 30px;
+		font-size: 150%;
+	}	
+	#experience .dates,
+	#experience .title {
+		margin-left: 10px;
+	}	
+	#experience .dates {
+		float: right;
+	}	
+	
+.contact-header {
+	color: #ccc;
+}
+	.positions li {
+		margin-top: 5px;
+	}	
+	#experience .seal {
+		margin-top: -45px;
+		text-align: right;
+	}
+		.seal img {
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
+#links { clear: both; 
+	padding-top: 20px;
+	padding-bottom: 30px;
+	width: 960px;
+	margin: 0 auto;
+	text-align: right;
+}
+#links li { float: right; margin-right: 29px; } 
+#links li a { color: #999; font-size: 11px;} 

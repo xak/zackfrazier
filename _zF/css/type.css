@@ -1,0 +1,25 @@
+@font-face {
+  font-family: '99-Special';
+  src: url('../fonts/99-Special.eot');
+  src: local('☺'),
+         url('../fonts/99-Special.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Typeka-Mix';
+  src: url('../fonts/Typeka-Mix.eot');
+  src: local('☺'),
+         url('../fonts/Typeka-Mix.ttf') format('truetype');
+}
+body { 
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size: 13px;
+	color: black;
+}
+a:hover, a:active { outline: none; }
+a, a:active, a:visited { color:black; }
+a:hover { color: black; }
+a:link { -webkit-tap-highlight-color: white; } 
+
+::-moz-selection{ background: white; color: gray; text-shadow: none; }
+::selection { background:white; color:gray; text-shadow: none; } 
+
