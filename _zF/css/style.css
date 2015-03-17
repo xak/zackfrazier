@@ -11,13 +11,12 @@ a:link { -webkit-tap-highlight-color: white; }
 ::selection { background:white; color:gray; text-shadow: none; } 
 
 /* zF. */
-body { max-width: 750px;/*  min-height: 600px; */ }
+body { max-width: 750px; }
 header, article, footer { padding: 50px; }
 /* header */
 header { padding-top: 25px; padding-bottom: 0; }
-header h1 { font-size: 20px; font-weight: bold; margin-bottom: 25px; text-align: right; /* position: fixed; right: 50px; */ line-height: 0; }
-header h2 { /* padding-top: 40px;  */font-size: 50px; color: black; margin: 25px 0; }
-
+header h1 { font-size: 20px; font-weight: bold; margin-bottom: 25px; text-align: right; line-height: 0; }
+header h2 { font-size: 50px; color: black; margin: 25px 0; }
 /* content */
 article { padding-top: 0; padding-bottom: 0; }
 article section { display: inline-block; }
@@ -42,7 +41,6 @@ article nav a:before { content: ''; vertical-align: middle; display: inline-bloc
 	.twitter:before { background-image: url(../img/icon-twitter@2x.png); }
 	.instagram:before { background-image: url(../img/icon-instagram@2x.png); }
 }
-
 /* footer */
 footer { padding-top: 0; }
 footer .copyright { display: none; }
