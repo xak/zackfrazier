@@ -1,7 +1,7 @@
 User-agent: *
 
-Disallow: /_backup/
-Disallow: /backup_/
+Disallow: /backup_*/
 
 Disallow: /_zF/
-Disallow: /_i/
+Disallow: /examples/
+Disallow: /c/
