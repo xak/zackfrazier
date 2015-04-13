@@ -4,12 +4,6 @@
   src: local('☺'),
          url('../fonts/99-Special.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'Typeka-Mix';
-  src: url('../fonts/Typeka-Mix.eot');
-  src: local('☺'),
-         url('../fonts/Typeka-Mix.ttf') format('truetype');
-}
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; } 
 body { margin: 0; padding: 0; }
