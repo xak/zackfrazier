@@ -49,5 +49,5 @@ gulp.task('js', function() {
 gulp.task('default', ['public', 'html', 'img', 'css', 'js'], function () {
   gulp.watch('./src/*.html',['html']);
   gulp.watch('./src/js/*.js',['js']);
-  gulp.watch('./src/css/*.css'['css']);
+  gulp.watch('./src/css/*.css',['css']);
 });
