@@ -17,6 +17,12 @@ Then
 
 ## 2015-04-13
 
+Adds more capabilities
+
+* Implements BrowserSync (live reload)
+	* Run `gulp` to serve `/dist` at http://localhost:3000 (browser will auto-launch)
+* Implements static server capabilties
+
 Implements basic gulp watch and build flow
 
 * Static file copy and concatenation only
@@ -24,9 +30,10 @@ Implements basic gulp watch and build flow
   * Root files copied — from `/public`
   * HTML copied — from `/src`
   * Images copied — from `/src/img`
-  * CSS — myth, concat — from `/src/css`
+  * CSS — myth, concat, minifycss — from `/src/css`
   * JS — jshint, concat, uglify — from `/src/js`
 * Test by viewing `/dist` folder
   * HTML, CSS and JS are watched for changes
   * Restart gulp task to copy images or run `gulp img`
 * Deploy `/dist` files manually to webserver
+

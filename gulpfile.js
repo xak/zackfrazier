@@ -60,6 +60,7 @@ gulp.task('watch', function() {
   gulp.watch('./src/*.html', ['html-watch']);
   gulp.watch('./src/js/*.js', ['js-watch']);
   gulp.watch('./src/css/*.css', ['css-watch']);
+ console.log('now watching html, css, and js.')
 });
 
 
@@ -93,7 +94,7 @@ gulp.task('build', ['public', 'img', 'html', 'css', 'js'], function () {
 
 // Default Task
 gulp.task('default', ['public', 'img', 'html', 'css', 'js', 'browsersync', 'watch'], function () {
- console.log('now watching html, css, and js.')
+
 });
 /*
 gulp.task('default', ['public', 'img', 'html', 'css', 'js', 'server', 'watch'], function () {
