@@ -5,6 +5,8 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var myth = require('gulp-myth');
 var imagemin = require('gulp-imagemin');
+var connect = require('connect');
+var serve = require('serve-static');
 
 // Copy Static Public Files
 gulp.task('public', function() {
@@ -50,8 +52,20 @@ gulp.task('watch', function() {
   gulp.watch('./src/css/*.css',['css']);
 });
 
+
+// Static Server
+gulp.task('server', function() {
+  return connect().use(serve(__dirname))
+    .listen(8899)
+    .on('listening', function() {
+      console.log('Server Running: View at http://localhost:8899');
+      });
+});
+
+
+
 // Default Task
-gulp.task('default', ['public', 'img', 'html', 'css', 'js', 'watch'], function () {
+gulp.task('default', ['public', 'img', 'html', 'css', 'js', 'server', 'watch'], function () {
  console.log('zackfrazier build is complete.')
  console.log('now watching html, css, and js.')
 });
