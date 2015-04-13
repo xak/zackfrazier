@@ -7,6 +7,7 @@ var myth = require('gulp-myth');
 var imagemin = require('gulp-imagemin');
 var connect = require('connect');
 var serve = require('serve-static');
+var browsersync = require('browser-sync');
 
 // Copy Static Public Files
 gulp.task('public', function() {
@@ -47,9 +48,9 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./src/*.html',['html']);
-  gulp.watch('./src/js/*.js',['js']);
-  gulp.watch('./src/css/*.css',['css']);
+  gulp.watch('./src/*.html', gulp.series('html', browsersync.reload));
+  gulp.watch('./src/js/*.js', gulp.series('css', browsersync.reload));
+  gulp.watch('./src/css/*.css', gulp.series('css', browsersync.reload));
 });
 
 
@@ -62,10 +63,25 @@ gulp.task('server', function() {
       });
 });
 
+// Browser Sync
+gulp.task('browsersync', function(cb) {
+    return browsersync({
+        server: {
+            baseDir:'./src'
+        }
+    }, cb);
+});
+
 
 
 // Default Task
+gulp.task('default', ['public', 'img', 'html', 'css', 'js', 'browsersync', 'watch'], function () {
+ console.log('zackfrazier build is complete.')
+ console.log('now watching html, css, and js.')
+});
+/*
 gulp.task('default', ['public', 'img', 'html', 'css', 'js', 'server', 'watch'], function () {
  console.log('zackfrazier build is complete.')
  console.log('now watching html, css, and js.')
 });
+*/
