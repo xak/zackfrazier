@@ -9,6 +9,8 @@ var connect = require('connect');
 var serve = require('serve-static');
 var browsersync = require('browser-sync');
 var minifycss = require('gulp-minify-css');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
 
 var reload      = browsersync.reload;
 
@@ -55,6 +57,14 @@ gulp.task('js', function() {
         .pipe(gulp.dest('./dist/js/'));
 });
 gulp.task('js-watch', ['js'], browsersync.reload);
+gulp.task('browserify', function() {
+	return browserify('./src/js/app.js')
+		.bundle()
+		.pipe(source('bundle.js'))
+		.pipe(gulp.dest('./dist/js/'))
+});
+
+
 
 gulp.task('watch', function() {
   gulp.watch('./src/*.html', ['html-watch']);
