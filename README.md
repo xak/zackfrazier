@@ -9,6 +9,9 @@ The goal is to build a simple app that is auto-deployed when changes are made to
 Run
 > npm install
 
+First time?
+> npm install --global gulp
+
 Then
 > gulp
 
@@ -18,12 +21,12 @@ Implements basic gulp watch and build flow
 
 * Static file copy and concatenation only
 * Production files are built into `/dist`
-  * Root files are copied (like favicon.ico in `/public`)
-  * CSS files are concatenated
-  * JS files are concatenated
-  * HTML files are copied
-  * Images are copied
+  * Root files copied — from `/public`
+  * HTML copied — from `/src`
+  * Images copied — from `/src/img`
+  * CSS — myth, concat — from `/src/css`
+  * JS — jshint, concat, uglify — from `/src/js`
 * Test by viewing `/dist` folder
   * HTML, CSS and JS are watched for changes
-  * Restart gulp task to copy images
-* Deploy `/dist` file manually to webserver
+  * Restart gulp task to copy images or run `gulp img`
+* Deploy `/dist` files manually to webserver
