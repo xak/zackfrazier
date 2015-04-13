@@ -4,80 +4,269 @@
   src: local('☺'),
          url('../fonts/99-Special.ttf') format('truetype');
 }
-html { box-sizing: border-box; }
-*, *:before, *:after { box-sizing: inherit; } 
-body { margin: 0; padding: 0; }
-ul { padding-left: 0; list-style: none; }
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
 
 /*
 @import url(base.css);
 */
 
 /* Myth Variables */
-:root {
-    /* Colors */
-    --red: #F05D5D;
-    --green: #59C946;
-    --blue: #6F7AF1;
-    --white: #FFFFFF;
-    --grey: #EEEEEE;
-    --black: #000000;
-}
-body { background:var(--grey); }
 
-body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: black; }
-a:hover, a:active { outline: none; }
-a { text-decoration: none; }
-a, a:active { color: black; }
-a:hover { color: black; text-decoration: underline; }
-a:link { -webkit-tap-highlight-color: rbga(0,0,0,0.2); } 
-::-moz-selection { background: white; color: gray; text-shadow: none; }
-::selection { background:white; color:gray; text-shadow: none; } 
+:root {
+  /* Colors */
+}
+
+body {
+  background: #EEEEEE;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  color: black;
+}
+
+a:hover,
+a:active {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+a:active {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+a:link {
+  -webkit-tap-highlight-color: rbga(0,0,0,0.2);
+}
+
+::-moz-selection {
+  background: white;
+  color: gray;
+  text-shadow: none;
+}
+
+::selection {
+  background: white;
+  color: gray;
+  text-shadow: none;
+}
 
 /* zF. */
-body { max-width: 750px; }
-header, article, footer { padding: 50px; }
-@media screen and (max-width: 480px) {
-	header, article, footer { padding-right: 25px; padding-left: 25px; }
+
+body {
+  max-width: 750px;
 }
+
+header,
+article,
+footer {
+  padding: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  header,
+  article,
+  footer {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
 /* header */
-header { padding-top: 25px; padding-bottom: 0; }
-header h1 { font-size: 20px; font-weight: bold; margin-bottom: 25px; text-align: right; line-height: 0; }
-header h2 { font-size: 50px; color: black; margin: 25px 0; }
-@media screen and (max-width: 480px) {
-	header h2 { font-size: 40px; }
+
+header {
+  padding-top: 25px;
+  padding-bottom: 0;
 }
+
+header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: right;
+  line-height: 0;
+}
+
+header h2 {
+  font-size: 50px;
+  color: black;
+  margin: 25px 0;
+}
+
+@media screen and (max-width: 480px) {
+  header h2 {
+    font-size: 40px;
+  }
+}
+
 /* content */
-article { padding-top: 0; padding-bottom: 0; }
-article section { display: inline-block; }
-article section:first-child { margin-right: 50px; }
+
+article {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+article section {
+  display: inline-block;
+}
+
+article section:first-child {
+  margin-right: 50px;
+}
+
 @media screen and (max-width: 480px) {
-	article section:first-child { margin-right: 0; }
+  article section:first-child {
+    margin-right: 0;
+  }
 }
-article section ul { line-height: 1.6; }
-article section ul li { padding-left: 0; margin-left: 0; }
-article section ul li:before { position: relative; left: -20px; margin-right: -18px; content: '—'; padding-right: 5px; }
-article nav { margin-top: 30px; }
-article nav li { min-width: 130px; display: inline-block; margin-right: 25px; margin-bottom: 10px; }
-article nav a { display: inline-block; }
-article nav a:before { content: ''; vertical-align: middle; display: inline-block; margin-right: 5px; width: 25px; height: 25px; background-repeat: no-repeat; background-size: contain; }
-.pdf:before { background-image: url(../img/icon-pdf.png); }
-.linkedin:before { background-image: url(../img/icon-linkedin.png); }
-.facebook:before { background-image: url(../img/icon-facebook.png); }
-.github:before { background-image: url(../img/icon-github.png); }
-.twitter:before { background-image: url(../img/icon-twitter.png); }
-.instagram:before { background-image: url(../img/icon-instagram.png); }
+
+article section ul {
+  line-height: 1.6;
+}
+
+article section ul li {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+article section ul li:before {
+  position: relative;
+  left: -20px;
+  margin-right: -18px;
+  content: '—';
+  padding-right: 5px;
+}
+
+article nav {
+  margin-top: 30px;
+}
+
+article nav li {
+  min-width: 130px;
+  display: inline-block;
+  margin-right: 25px;
+  margin-bottom: 10px;
+}
+
+article nav a {
+  display: inline-block;
+}
+
+article nav a:before {
+  content: '';
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pdf:before {
+  background-image: url(../img/icon-pdf.png);
+}
+
+.linkedin:before {
+  background-image: url(../img/icon-linkedin.png);
+}
+
+.facebook:before {
+  background-image: url(../img/icon-facebook.png);
+}
+
+.github:before {
+  background-image: url(../img/icon-github.png);
+}
+
+.twitter:before {
+  background-image: url(../img/icon-twitter.png);
+}
+
+.instagram:before {
+  background-image: url(../img/icon-instagram.png);
+}
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-	.pdf:before { background-image: url(../img/icon-pdf@2x.png); }
-	.linkedin:before { background-image: url(../img/icon-linkedin@2x.png); }
-	.facebook:before { background-image: url(../img/icon-facebook@2x.png); }
-	.github:before { background-image: url(../img/icon-github@2x.png); }
-	.twitter:before { background-image: url(../img/icon-twitter@2x.png); }
-	.instagram:before { background-image: url(../img/icon-instagram@2x.png); }
+  .pdf:before {
+    background-image: url(../img/icon-pdf@2x.png);
+  }
+
+  .linkedin:before {
+    background-image: url(../img/icon-linkedin@2x.png);
+  }
+
+  .facebook:before {
+    background-image: url(../img/icon-facebook@2x.png);
+  }
+
+  .github:before {
+    background-image: url(../img/icon-github@2x.png);
+  }
+
+  .twitter:before {
+    background-image: url(../img/icon-twitter@2x.png);
+  }
+
+  .instagram:before {
+    background-image: url(../img/icon-instagram@2x.png);
+  }
 }
+
 /* footer */
-footer { padding-top: 0; padding-bottom: 15px; }
-footer .copyright { display: none; }
-#sg { text-align: right; }
-#sg strong { position: absolute; left: -999px; }
-#sg:before { content: 'g'; /* position: fixed; bottom: 20px; right: 50px; */ font-family: '99-Special'; font-size: 80px; color: black; line-height: 1; }
+
+footer {
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+
+footer .copyright {
+  display: none;
+}
+
+#sg {
+  text-align: right;
+}
+
+#sg strong {
+  position: absolute;
+  left: -999px;
+}
+
+#sg:before {
+  content: 'g';
+  /* position: fixed; bottom: 20px; right: 50px; */
+  font-family: '99-Special';
+  font-size: 80px;
+  color: black;
+  line-height: 1;
+}

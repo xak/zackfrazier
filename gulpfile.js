@@ -2,14 +2,9 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-
-
-// gulp.task(name, function() {
-//   return gulp.src(path)
-//     .pipe(plugin)
-//     .pipe(plugin)
-//     .pipe(gulp.dest(path));
-// });
+var jshint = require('gulp-jshint');
+var myth = require('gulp-myth');
+var imagemin = require('gulp-imagemin');
 
 // Copy Static Public Files
 gulp.task('public', function() {
@@ -26,6 +21,7 @@ gulp.task('html', function() {
 // Process Images
 gulp.task('img', function() {
   gulp.src('./src/img/**/*')
+  	.pipe(imagemin())
     .pipe(gulp.dest('./dist/img'));
 });
 
@@ -34,20 +30,28 @@ gulp.task('img', function() {
 gulp.task('css', function() {
     return gulp.src('src/css/*.css')
         .pipe(concat('zackfrazier.css'))
+        .pipe(myth())
         .pipe(gulp.dest('./dist/css/'));
 });
 
 // Process Scripts
 gulp.task('js', function() {
     return gulp.src('src/js/*.js')
+    		.pipe(jshint())
+    		.pipe(jshint.reporter('default'))
         .pipe(concat('zackfrazier.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js/'));
 });
 
-// Default Task
-gulp.task('default', ['public', 'html', 'img', 'css', 'js'], function () {
+gulp.task('watch', function() {
   gulp.watch('./src/*.html',['html']);
   gulp.watch('./src/js/*.js',['js']);
   gulp.watch('./src/css/*.css',['css']);
+});
+
+// Default Task
+gulp.task('default', ['public', 'img', 'html', 'css', 'js', 'watch'], function () {
+ console.log('zackfrazier build is complete.')
+ console.log('now watching html, css, and js.')
 });
