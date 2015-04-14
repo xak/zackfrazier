@@ -14,12 +14,18 @@ var minifycss = require('gulp-minify-css');
 //var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var del = require('del');
+var mainBowerFiles = require('main-bower-files');
  
 var reload      = browsersync.reload;
 
 var paths = {
 	styles: 	['src/css/style.css'],
   scripts: 	['src/js/main.js', 'src/js/**/*.js', '!src/js/zackfrazier.js'],
+  bower: {
+  	bowerDirectory: 'src/bower_components',
+    bowerrc: '.bowerrc',
+    bowerJson: 'bower.json'
+  },
   images: 	['src/img/**/*']
 };
 
@@ -64,6 +70,12 @@ gulp.task('css', function(cb) {
         .pipe(minifycss())
         .pipe(gulp.dest('dist/css/'));
 });
+gulp.task('vendor', function() {
+    return gulp.src(mainBowerFiles({ paths: paths.bower }))
+    		.pipe(concat('vendor.css'))
+  	    .pipe(minifycss())
+			  .pipe(gulp.dest('dist/css/'));
+});
 /*
 gulp.task('sass', function () {
     gulp.src('./src/css/*.scss')
@@ -82,6 +94,8 @@ gulp.task('js-dev', function() {
         .pipe(concat('zackfrazier.js'))
         .pipe(gulp.dest('src/js/'));
 });
+
+
 gulp.task('js', function() {
     return gulp.src(paths.scripts)
     		.pipe(plumber())
@@ -130,7 +144,7 @@ gulp.task('browsersync', function(cb) {
 
 // Build Task
 
-gulp.task('build', ['public', 'img', 'html', 'js', 'css'], function (cb) {
+gulp.task('build', ['public', 'vendor', 'img', 'html', 'js', 'css'], function (cb) {
   console.log('zackfrazier build is complete.')
 });
 

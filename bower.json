@@ -1,0 +1,20 @@
+{
+  "name": "zackfrazier",
+  "version": "1.0.0",
+  "homepage": "https://github.com/xak/zackfrazier",
+  "authors": [
+    "zack Frazier <zack@zackfrazier.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.6.0"
+  }
+}
