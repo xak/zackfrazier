@@ -4,27 +4,26 @@ Sometimes it's hard to find the exact information you need online esp. when you 
 
 This site is my attempt to implement a workflow from scratch, one step at a time, to better understand what I need and what I don't need.
 
-The goal is to build a simple app that is auto-deployed when changes are made to ``master``.
-
-Run
-> npm install
+The goal is to build a simple app that is auto-deployed when changes are made to `master`.
 
 First time?
 > npm install --global gulp
 
+Run
+> npm install
+
 Then
+> gulp build
+
+Lastly
 > gulp
+_Still figuring out how to sequence tasks_
 
 ## 2015-04-13
 
-Adds more capabilities
+After only one day of wrangling, I have a basic static website publishing workflow. It doens't do much yet, but it's a start.
 
-* Implements BrowserSync (live reload)
-	* Run `gulp` to serve `/dist` at http://localhost:3000 (browser will auto-launch)
-* Implements static server capabilties
-
-Implements basic gulp watch and build flow
-
+###Implements basic gulp watch and build flow
 * Static file copy and concatenation only
 * Production files are built into `/dist`
   * Root files copied — from `/public`
@@ -37,3 +36,14 @@ Implements basic gulp watch and build flow
   * Restart gulp task to copy images or run `gulp img`
 * Deploy `/dist` files manually to webserver
 
+###Adds more capabilities
+* Implements BrowserSync (live reload)
+  * Run `gulp` to serve `/dist` at http://localhost:3000 (browser will auto-launch)
+* Implements static server capabilties
+
+###Improves stuff
+* Optimized CSS and JS gulp tasks
+* Added more tasks
+  * Experimented with `*-dev` tasks (unused for now)
+  * Added `browserify` but have no use for it now
+	* Couldn't get SASS to work exactly right
