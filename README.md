@@ -12,12 +12,11 @@ First time?
 Run
 > npm install
 
-Then
+Then (... still figuring out how to sequence tasks)
 > gulp build
 
 Lastly
 > gulp
-_Still figuring out how to sequence tasks_
 
 ## 2015-04-13
 
