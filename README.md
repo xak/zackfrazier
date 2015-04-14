@@ -18,6 +18,32 @@ Then (... still figuring out how to sequence tasks)
 Lastly
 > gulp
 
+```
+       \
+        \
+         \\
+          \\
+           >\/7
+      _.-(6'  \
+      (=___._/` \
+           )  \ |
+          /   / |
+         /    > /
+        j    < _\
+    _.-' :      ``.
+    \ r=._\        `.
+   <`\\_  \         .`-.
+    \ r-7  `-. ._  ' .  `\
+     \`,      `-.`7  7)   )
+      \/         \|  \'  / `-._
+                 ||    .'
+                  \\  (
+                  >\  >
+               ,.-' >.'
+              <.'_.''
+                <'
+```
+
 ## 2015-04-13
 
 After only one day of wrangling, I have a basic static website publishing workflow. It doens't do much yet, but it's a start.
@@ -45,4 +71,4 @@ After only one day of wrangling, I have a basic static website publishing workfl
 * Added more tasks
   * Experimented with `*-dev` tasks (unused for now)
   * Added `browserify` but have no use for it now
-	* Couldn't get SASS to work exactly right
+  * Couldn't get SASS to work exactly right
