@@ -4,8 +4,6 @@ Sometimes it's hard to find the exact information you need online esp. when you 
 
 This site is my attempt to implement a workflow from scratch, one step at a time, to better understand what I need and what I don't need.
 
-The goal is to build a simple app that is auto-deployed when changes are made to `master`.
-
 First time?
 > npm install --global gulp
 
@@ -15,11 +13,9 @@ Update modules
 Update packages
 > bower install
 
-Then _... still figuring out how to sequence tasks_
-> gulp build
-
-Lastly, run
+Then
 > gulp
+
 
 ```
        \
@@ -46,6 +42,19 @@ Lastly, run
               <.'_.''
                 <'
 ```
+
+## 2015-04-14
+
+Basically went over what I did yesterday and improved the tasks.
+
+### Improvements
+* Added environment flag option
+  * Run `gulp build --environment production` to enable compression
+* Improved browserSync
+  * Proxies express
+* Added tasks sequencer
+  * `/dist` directory is fully cleaned on build
+  * Assets tasks are done in order
 
 ## 2015-04-13
 
