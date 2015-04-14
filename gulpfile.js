@@ -1,3 +1,5 @@
+var version = '1.0.0';
+
 // load node modules/plugins
 var gulp = require('gulp');
 var del = require('del');
@@ -15,28 +17,30 @@ var server;
 var options = minimist(process.argv);
 var environment = options.environment || 'development';
 
+var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/';
+
 gulp.task('clean', function (done) {
-	del(['dist'], done);
+	del([distTarget], done);
 });
 
 // process static files
 gulp.task('public', function() {
 	return gulp.src('public/**/*')
-		.pipe(gulp.dest('dist/'));
+		.pipe(gulp.dest(distTarget));
 });
 
 // process images
 gulp.task('images', function() {
 	gulp.src('src/img/**/*')
 		.pipe($.imagemin())
-		.pipe(gulp.dest('dist/img'))
+		.pipe(gulp.dest(distTarget + 'img'))
 		.pipe(reload());
 });
 
 // process html
 gulp.task('html', function() {
 	return gulp.src('src/**/*.html')
-		.pipe(gulp.dest('dist/'))
+		.pipe(gulp.dest(distTarget))
 		.pipe(reload());
 });
 
@@ -51,7 +55,7 @@ gulp.task('styles', function() {
 		.pipe(environment === 'development' ? $.sourcemaps.write() : $.util.noop())
 		.pipe($.concat('zackfrazier.css'))
 		.pipe(environment === 'production' ? $.minifyCss() : $.util.noop())
-		.pipe(gulp.dest('dist/css/'))
+		.pipe(gulp.dest(distTarget + 'css/'))
 		.pipe(reload());
 });
 
@@ -65,7 +69,7 @@ gulp.task('vendor', function() {
 	return gulp.src(mainBowerFiles({ paths: bowerPaths }))
 		.pipe($.concat('vendor.css'))
 		.pipe($.minifyCss())
-		.pipe(gulp.dest('dist/css/'));
+		.pipe(gulp.dest(distTarget + 'css/'));
 });
 
 //process scripts
@@ -77,7 +81,7 @@ gulp.task('scripts', function() {
     .pipe(source('zackfrazier.js'))
 		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
 		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest(distTarget + 'js'))
     .pipe(reload());
 });
 
@@ -90,7 +94,7 @@ gulp.task('watch', function() {
 
 gulp.task('server', function() {
   server = express();
-  server.use(express.static('dist'));
+  server.use(express.static(distTarget));
   server.listen(8000);
   browserSync({ proxy: 'localhost:8000' });
 });
@@ -98,17 +102,18 @@ gulp.task('server', function() {
 gulp.task('build', function (done) {
   runSequence('clean', 'html', 'public', 'images', 'html', 'styles', 'scripts', function () {
   	done();
-  	console.log('zackfrazier ' + environment + ' build is complete.')
+  	console.log('zackfrazier ' + environment + ' v' + version + ' build is complete.')
   });
 });
 
 gulp.task('default', function (done) {
   runSequence('build', 'watch', 'server', function () {
   	done();
-  	console.log('zackfrazier is running.')
+  	console.log('zackfrazier v' + version + ' is running.')
   });
 });
 
+ 
 
 function reload() {
   if (server) {
