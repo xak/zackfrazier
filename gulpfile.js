@@ -1,154 +1,123 @@
-// Load Node Modules/Plugins
+// load node modules/plugins
 var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var jshint = require('gulp-jshint');
-var myth = require('gulp-myth');
-var imagemin = require('gulp-imagemin');
-var connect = require('connect');
-var serve = require('serve-static');
-var browsersync = require('browser-sync');
-var minifycss = require('gulp-minify-css');
-//var browserify = require('browserify');
-//var source = require('vinyl-source-stream');
-//var sass = require('gulp-sass');
-var plumber = require('gulp-plumber');
 var del = require('del');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var path = require('path');
+var express = require('express');
 var mainBowerFiles = require('main-bower-files');
- 
-var reload      = browsersync.reload;
+var browserSync = require('browser-sync');
+var minimist = require('minimist');
+var runSequence = require('run-sequence');
 
-var paths = {
-	styles: 	['src/css/style.css'],
-  scripts: 	['src/js/main.js', 'src/js/**/*.js', '!src/js/zackfrazier.js'],
-  bower: {
-  	bowerDirectory: 'src/bower_components',
-    bowerrc: '.bowerrc',
-    bowerJson: 'bower.json'
-  },
-  images: 	['src/img/**/*']
-};
+var $ = require('gulp-load-plugins')();
+var server;
+var options = minimist(process.argv);
+var environment = options.environment || 'development';
 
-gulp.task('clean', function (cb) {
-     del(['dist'], cb);
+gulp.task('clean', function (done) {
+	del(['dist'], done);
 });
 
-
-// Copy Static Public Files
+// process static files
 gulp.task('public', function() {
-    return gulp.src('public/**/*')
-        .pipe(gulp.dest('dist/'));
+	return gulp.src('public/**/*')
+		.pipe(gulp.dest('dist/'));
 });
 
-// Process HTML
+// process images
+gulp.task('images', function() {
+	gulp.src('src/img/**/*')
+		.pipe($.imagemin())
+		.pipe(gulp.dest('dist/img'))
+		.pipe(reload());
+});
+
+// process html
 gulp.task('html', function() {
-    return gulp.src('src/**/*.html')
-        .pipe(gulp.dest('dist/'));
-});
-gulp.task('html-watch', ['html'], browsersync.reload);
-
-// Process Images
-gulp.task('img', function() {
-  gulp.src('src/img/**/*')
-  	.pipe(imagemin())
-    .pipe(gulp.dest('dist/img'));
+	return gulp.src('src/**/*.html')
+		.pipe(gulp.dest('dist/'))
+		.pipe(reload());
 });
 
-// Process Styles
-gulp.task('css-dev', function() {
-    return gulp.src(paths.styles)
-		    .pipe(plumber())
-        .pipe(concat('zackfrazier.css'))
-        .pipe(myth())
-        .pipe(gulp.dest('src/css/'));
+//process styles
+gulp.task('styles', function() {
+	return gulp.src('src/css/app.less')
+		.pipe($.plumber())
+		.pipe(environment === 'development' ? $.sourcemaps.init() : $.util.noop())
+		.pipe($.less({
+			paths: [ path.join(__dirname, 'src/css/includes') ]
+		})).on('error', handleError)
+		.pipe(environment === 'development' ? $.sourcemaps.write() : $.util.noop())
+		.pipe($.concat('zackfrazier.css'))
+		.pipe(environment === 'production' ? $.minifyCss() : $.util.noop())
+		.pipe(gulp.dest('dist/css/'))
+		.pipe(reload());
 });
-gulp.task('css', function(cb) {
-    return gulp.src(paths.styles)
-        .pipe(plumber())
-        .pipe(concat('zackfrazier.css'))
-        .pipe(myth())
-        .pipe(minifycss())
-        .pipe(gulp.dest('dist/css/'));
-});
+
+//process vendor styles
+var bowerPaths = {
+	bowerDirectory: 'src/bower_components',
+	bowerrc: '.bowerrc',
+	bowerJson: 'bower.json'
+};
 gulp.task('vendor', function() {
-    return gulp.src(mainBowerFiles({ paths: paths.bower }))
-    		.pipe(concat('vendor.css'))
-  	    .pipe(minifycss())
-			  .pipe(gulp.dest('dist/css/'));
-});
-/*
-gulp.task('sass', function () {
-    gulp.src('./src/css/*.scss')
-        .pipe(sass({ includePaths : ['./src/css/'], outputStyle : 'compressed' }))
-        .pipe(gulp.dest('./src/css'));
-});
-*/
-gulp.task('css-watch', ['css'], browsersync.reload);
-
-
-
-// Process Scripts
-gulp.task('js-dev', function() {
-    return gulp.src(paths.scripts)
-        .pipe(plumber())
-        .pipe(concat('zackfrazier.js'))
-        .pipe(gulp.dest('src/js/'));
+	return gulp.src(mainBowerFiles({ paths: bowerPaths }))
+		.pipe($.concat('vendor.css'))
+		.pipe($.minifyCss())
+		.pipe(gulp.dest('dist/css/'));
 });
 
-
-gulp.task('js', function() {
-    return gulp.src(paths.scripts)
-    		.pipe(plumber())
-    		.pipe(jshint())
-    		.pipe(jshint.reporter('default'))
-        .pipe(concat('zackfrazier.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js/'));
+//process scripts
+gulp.task('scripts', function() {
+  return browserify('./src/js/app.js', {
+  	debug: environment === 'development'	
+  })
+    .bundle().on('error', handleError)
+    .pipe(source('zackfrazier.js'))
+		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
+		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
+    .pipe(gulp.dest('dist/js'))
+    .pipe(reload());
 });
-gulp.task('js-watch', ['js'], browsersync.reload);
-/*
-gulp.task('browserify', function() {
-	return browserify('./src/js/app.js')
-		.bundle()
-		.pipe(source('bundle.js'))
-		.pipe(gulp.dest('./src/js/'))
-});
-*/
 
 gulp.task('watch', function() {
-  gulp.watch('src/*.html', ['html-watch']);
-  gulp.watch('src/js/*.js', ['js-watch']);
-  gulp.watch('src/css/*.css', ['css-watch']);
-	console.log('now watching html, css, and js.')
+  gulp.watch('src/**/*.html', ['html']);
+  gulp.watch('src/img/**/*', ['images']);
+  gulp.watch('src/js/**/*.js', ['scripts']);
+  gulp.watch('src/css/**/*.less', ['styles']);
 });
 
-
-// Static Server
 gulp.task('server', function() {
-  return connect().use(serve(__dirname))
-    .listen(8899)
-    .on('listening', function() {
-      console.log('Server Running: View at http://localhost:8899');
-      });
+  server = express();
+  server.use(express.static('dist'));
+  server.listen(8000);
+  browserSync({ proxy: 'localhost:8000' });
 });
 
-// Browser Sync
-gulp.task('browsersync', function(cb) {
-    return browsersync({
-        server: {
-            baseDir:'dist'
-        }
-    }, cb);
+gulp.task('build', function (done) {
+  runSequence('clean', 'html', 'public', 'images', 'html', 'styles', 'scripts', function () {
+  	done();
+  	console.log('zackfrazier ' + environment + ' build is complete.')
+  });
+});
+
+gulp.task('default', function (done) {
+  runSequence('build', 'watch', 'server', function () {
+  	done();
+  	console.log('zackfrazier is running.')
+  });
 });
 
 
-// Build Task
+function reload() {
+  if (server) {
+    return browserSync.reload({ stream: true });
+  }
+  return $.util.noop();
+}
+function handleError(err) {
+  console.log(err.toString());
+  this.emit('end');
+}
 
-gulp.task('build', ['public', 'vendor', 'img', 'html', 'js', 'css'], function (cb) {
-  console.log('zackfrazier build is complete.')
-});
-
-// Default Task
-gulp.task('default', ['browsersync', 'watch'], function () {
-  console.log('zackfrazier is running.')
-});

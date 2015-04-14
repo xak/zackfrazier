@@ -1,1 +1,1 @@
-console.log('Hey man! Thanks for stopping by. Really appreciate it!');
+console.log('Hey man, thanks for stopping by. Really appreciate it!');
