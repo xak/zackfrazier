@@ -9,13 +9,16 @@ The goal is to build a simple app that is auto-deployed when changes are made to
 First time?
 > npm install --global gulp
 
-Run
+Update modules
 > npm install
 
-Then (... still figuring out how to sequence tasks)
+Update packages
+> bower install
+
+Then _... still figuring out how to sequence tasks_
 > gulp build
 
-Lastly
+Lastly, run
 > gulp
 
 ```
