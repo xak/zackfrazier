@@ -1,4 +1,4 @@
-var version = '1.0.1-react';
+var version = '1.0.1';
 
 // load node modules/plugins
 var gulp = require('gulp');
