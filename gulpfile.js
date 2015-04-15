@@ -72,11 +72,6 @@ gulp.task('vendorcss', function() {
 		.pipe($.minifyCss())
 		.pipe(gulp.dest(distTarget + 'css/'));
 });
-gulp.task('vendorjs', function() {
-	return gulp.src(bowerPaths.bowerDirectory + '/react/react-with-addons.min.js')
-		.pipe($.concat('vendor.js'))
-		.pipe(gulp.dest(distTarget + 'js/'));
-});
 
 //process scripts
 gulp.task('scripts', function(){
@@ -114,7 +109,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('build', function (done) {
-  runSequence('clean', 'html', 'public', 'images', 'vendorcss',  'styles', 'scripts', 'html', function () {
+  runSequence('clean', 'public', 'images', 'styles', 'scripts', 'html', function () {
   	done();
   	console.log('zackfrazier ' + environment + ' v' + version + ' build is complete.')
   });
