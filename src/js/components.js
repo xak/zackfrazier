@@ -12,3 +12,5 @@ var SatisfactionGuarantee = React.createClass({
 });
 
 React.render(<SatisfactionGuarantee/>, document.getElementById('badge'));
+
+console.log('Follow the dev of this site at https://github.com/xak/zackfrazier');

@@ -74,14 +74,20 @@ gulp.task('vendorcss', function() {
 });
 
 //process scripts
-gulp.task('reactify', function(){
-  var b = browserify();
+gulp.task('scripts', function(){
+  var b = browserify({
+  	debug: environment === 'development'	
+  });
   b.transform(reactify); // use the reactify transform
-  b.add('./src/js/view.js');
-  return b.bundle()
+  b.add('./src/js/app.js');
+  return b.bundle().on('error', handleError)
     .pipe(source('app.js'))
-    .pipe(gulp.dest(distTarget + 'js'));
+		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
+		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
+    .pipe(gulp.dest(distTarget + 'js'))
+    .pipe(reload());
 });
+/*
 gulp.task('scripts', ['reactify'], function() {
   return browserify('./src/js/app.js', {
   	debug: environment === 'development'	
@@ -93,6 +99,7 @@ gulp.task('scripts', ['reactify'], function() {
     .pipe(gulp.dest(distTarget + 'js'))
     .pipe(reload());
 });
+*/
 gulp.task('vendorjs', function() {
 	return gulp.src(bowerPaths.bowerDirectory + '/react/react-with-addons.min.js')
 		.pipe($.concat('vendor.js'))
