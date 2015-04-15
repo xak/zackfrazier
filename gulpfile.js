@@ -46,7 +46,7 @@ gulp.task('html', function() {
 });
 
 //process styles
-gulp.task('styles', function() {
+gulp.task('styles', ['vendorcss'], function() {
 	return gulp.src('src/css/app.less')
 		.pipe($.plumber())
 		.pipe(environment === 'development' ? $.sourcemaps.init() : $.util.noop())
@@ -67,10 +67,15 @@ var bowerPaths = {
 	bowerJson: 'bower.json'
 };
 gulp.task('vendorcss', function() {
-	return gulp.src(mainBowerFiles({ paths: bowerPaths }))
+	return gulp.src(bowerPaths.bowerDirectory + '/pure/grids.css')
 		.pipe($.concat('vendor.css'))
 		.pipe($.minifyCss())
 		.pipe(gulp.dest(distTarget + 'css/'));
+});
+gulp.task('vendorjs', function() {
+	return gulp.src(bowerPaths.bowerDirectory + '/react/react-with-addons.min.js')
+		.pipe($.concat('vendor.js'))
+		.pipe(gulp.dest(distTarget + 'js/'));
 });
 
 //process scripts
@@ -81,25 +86,12 @@ gulp.task('scripts', function(){
   b.transform(reactify); // use the reactify transform
   b.add('./src/js/app.js');
   return b.bundle().on('error', handleError)
-    .pipe(source('app.js'))
-		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
-		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
-    .pipe(gulp.dest(distTarget + 'js'))
-    .pipe(reload());
-});
-/*
-gulp.task('scripts', ['reactify'], function() {
-  return browserify('./src/js/app.js', {
-  	debug: environment === 'development'	
-  })
-    .bundle().on('error', handleError)
     .pipe(source('zackfrazier.js'))
 		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
 		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
     .pipe(gulp.dest(distTarget + 'js'))
     .pipe(reload());
 });
-*/
 gulp.task('vendorjs', function() {
 	return gulp.src(bowerPaths.bowerDirectory + '/react/react-with-addons.min.js')
 		.pipe($.concat('vendor.js'))
@@ -122,7 +114,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('build', function (done) {
-  runSequence('clean', 'html', 'public', 'images', 'vendorjs', 'vendorcss',  'styles', 'scripts', 'html', function () {
+  runSequence('clean', 'html', 'public', 'images', 'vendorcss',  'styles', 'scripts', 'html', function () {
   	done();
   	console.log('zackfrazier ' + environment + ' v' + version + ' build is complete.')
   });
