@@ -1,4 +1,4 @@
-var version = '1.0.0';
+var version = '1.0.1-react';
 
 // load node modules/plugins
 var gulp = require('gulp');
@@ -11,6 +11,7 @@ var mainBowerFiles = require('main-bower-files');
 var browserSync = require('browser-sync');
 var minimist = require('minimist');
 var runSequence = require('run-sequence');
+var reactify = require('reactify');
 
 var $ = require('gulp-load-plugins')();
 var server;
@@ -43,6 +44,25 @@ gulp.task('html', function() {
 		.pipe(gulp.dest(distTarget))
 		.pipe(reload());
 });
+gulp.task('jsx', function () {
+    return gulp.src('src/jsx/*.jsx')
+			.pipe($.react())
+			.pipe(gulp.dest(distTarget + 'views'));
+});
+
+
+gulp.task('reactify', function(){
+  var b = browserify();
+  b.transform(reactify); // use the reactify transform
+  b.add('./src/js/view.js');
+  return b.bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest(distTarget + 'js'));
+});
+
+
+
+
 
 //process styles
 gulp.task('styles', function() {
@@ -65,7 +85,7 @@ var bowerPaths = {
 	bowerrc: '.bowerrc',
 	bowerJson: 'bower.json'
 };
-gulp.task('vendor', function() {
+gulp.task('vendorcss', function() {
 	return gulp.src(mainBowerFiles({ paths: bowerPaths }))
 		.pipe($.concat('vendor.css'))
 		.pipe($.minifyCss())
@@ -73,6 +93,7 @@ gulp.task('vendor', function() {
 });
 
 //process scripts
+/*
 gulp.task('scripts', function() {
   return browserify('./src/js/app.js', {
   	debug: environment === 'development'	
@@ -84,9 +105,31 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(distTarget + 'js'))
     .pipe(reload());
 });
+*/
+gulp.task('scripts', ['reactify'], function() {
+  return browserify('./src/js/app.js', {
+  	debug: environment === 'development'	
+  })
+    .bundle().on('error', handleError)
+    .pipe(source('zackfrazier.js'))
+		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
+		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
+    .pipe(gulp.dest(distTarget + 'js'))
+    .pipe(reload());
+});
+
+
+
+gulp.task('vendorjs', function() {
+	return gulp.src(bowerPaths.bowerDirectory + '/react/react-with-addons.min.js')
+		.pipe($.concat('vendor.js'))
+		.pipe(gulp.dest(distTarget + 'js/'));
+});
+
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.html', ['html']);
+  gulp.watch('src/**/*.jsx', ['jsx']);
   gulp.watch('src/img/**/*', ['images']);
   gulp.watch('src/js/**/*.js', ['scripts']);
   gulp.watch('src/css/**/*.less', ['styles']);
@@ -100,7 +143,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('build', function (done) {
-  runSequence('clean', 'html', 'public', 'images', 'html', 'styles', 'scripts', function () {
+  runSequence('clean', 'html', 'public', 'images', 'vendorjs', 'vendorcss',  'styles', 'scripts', 'html', function () {
   	done();
   	console.log('zackfrazier ' + environment + ' v' + version + ' build is complete.')
   });
