@@ -43,9 +43,40 @@ Then
                 <'
 ```
 
+## 2015-04-15
+
+Deployment. Success!
+
+#### SFTP
+* Run `gulp deploy --environment production`
+  * Runs a new build of production
+  * SSHs all files to zackfrazier.com web server
+	* `gulp deploy` without the flag simply runs `gulp build'
+* Requires an `.ftppass` json file in root (see gulp-sftp)
+  * Add this file to `.gitignore`
+
+```
+{
+  "keyMain": {
+    "user": "WebHostSshUsername",
+    "pass": "WebHostSshPassword"
+  },
+  "keyShort": "WebHostSshUsername:WebHostSshPassword"
+}
+````
+
+#### More
+* Updates CSS to be more LESSy
+  * Updated color palette
+* Added another GA bucket to split dev and production
+* Turn on your heartlight!
+
+
+
+
 ## 2015-04-14
 
-The "Satifaction Guarantee" icon is a React component.
+The "Satifaction Guarantee" icon is now a React component.
 
 #### React.js
 * Hooks up `browserify` with `react`

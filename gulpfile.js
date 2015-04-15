@@ -122,6 +122,16 @@ gulp.task('default', function (done) {
   });
 });
 
+gulp.task('deploy', ['build'], function () {
+	var opts = {
+		host: 'zackfrazier.com',
+		auth: 'keyMain',
+		remotePath: 'zackfrazier.com/'
+	}
+	return gulp.src(['dist/' + version +'/**/*'])
+		.pipe(environment === 'production' ? $.sftp(opts) : $.util.noop());
+});
+ 
  
 
 function reload() {
