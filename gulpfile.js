@@ -44,25 +44,6 @@ gulp.task('html', function() {
 		.pipe(gulp.dest(distTarget))
 		.pipe(reload());
 });
-gulp.task('jsx', function () {
-    return gulp.src('src/jsx/*.jsx')
-			.pipe($.react())
-			.pipe(gulp.dest(distTarget + 'views'));
-});
-
-
-gulp.task('reactify', function(){
-  var b = browserify();
-  b.transform(reactify); // use the reactify transform
-  b.add('./src/js/view.js');
-  return b.bundle()
-    .pipe(source('app.js'))
-    .pipe(gulp.dest(distTarget + 'js'));
-});
-
-
-
-
 
 //process styles
 gulp.task('styles', function() {
@@ -93,19 +74,14 @@ gulp.task('vendorcss', function() {
 });
 
 //process scripts
-/*
-gulp.task('scripts', function() {
-  return browserify('./src/js/app.js', {
-  	debug: environment === 'development'	
-  })
-    .bundle().on('error', handleError)
-    .pipe(source('zackfrazier.js'))
-		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
-		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
-    .pipe(gulp.dest(distTarget + 'js'))
-    .pipe(reload());
+gulp.task('reactify', function(){
+  var b = browserify();
+  b.transform(reactify); // use the reactify transform
+  b.add('./src/js/view.js');
+  return b.bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest(distTarget + 'js'));
 });
-*/
 gulp.task('scripts', ['reactify'], function() {
   return browserify('./src/js/app.js', {
   	debug: environment === 'development'	
@@ -117,9 +93,6 @@ gulp.task('scripts', ['reactify'], function() {
     .pipe(gulp.dest(distTarget + 'js'))
     .pipe(reload());
 });
-
-
-
 gulp.task('vendorjs', function() {
 	return gulp.src(bowerPaths.bowerDirectory + '/react/react-with-addons.min.js')
 		.pipe($.concat('vendor.js'))
@@ -129,7 +102,6 @@ gulp.task('vendorjs', function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.html', ['html']);
-  gulp.watch('src/**/*.jsx', ['jsx']);
   gulp.watch('src/img/**/*', ['images']);
   gulp.watch('src/js/**/*.js', ['scripts']);
   gulp.watch('src/css/**/*.less', ['styles']);

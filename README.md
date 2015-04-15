@@ -45,9 +45,18 @@ Then
 
 ## 2015-04-14
 
+The "Satifaction Guarantee" icon is a React component.
+
+#### React.js
+* Hooks up `browserify` with `react`
+* Adds `bower` components
+* New tasks for React and JSX
+  * `gulp reactify` transforms JSX to JS
+  * `gulp scripts` runs `reactify` first
+
 Basically went over what I did yesterday and improved the tasks.
 
-### Improvements
+#### Improvements
 * Added environment flag option
   * Run `gulp build --environment production` to enable compression
 * Improved browserSync
@@ -60,7 +69,7 @@ Basically went over what I did yesterday and improved the tasks.
 
 After only one day of wrangling, I have a basic static website publishing workflow. It doens't do much yet, but it's a start.
 
-###Implements basic gulp watch and build flow
+####Implements basic gulp watch and build flow
 * Static file copy and concatenation only
 * Production files are built into `/dist`
   * Root files copied — from `/public`
@@ -73,12 +82,12 @@ After only one day of wrangling, I have a basic static website publishing workfl
   * Restart gulp task to copy images or run `gulp img`
 * Deploy `/dist` files manually to webserver
 
-###Adds more capabilities
+####Adds more capabilities
 * Implements BrowserSync (live reload)
   * Run `gulp` to serve `/dist` at http://localhost:3000 (browser will auto-launch)
 * Implements static server capabilties
 
-###Improves stuff
+####Improves stuff
 * Optimized CSS and JS gulp tasks
 * Added more tasks
   * Experimented with `*-dev` tasks (unused for now)
