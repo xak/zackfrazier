@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "_default": {
+      "link": "zackfrazier"
+    },
+    "zackfrazier": {
+      "applicationId": "Ufa4Z1LS0KbzMNZlweb8jVWofxPO26tAmpqkRGt1",
+      "masterKey": "zkASsPkln5c45WfWyKs44sjhhHhm3yD5RWHgpvsI"
+    }
+  }
+}

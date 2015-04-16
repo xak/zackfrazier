@@ -1,4 +1,4 @@
-var version = '1.0.1';
+var version = '1.0.2';
 
 // load node modules/plugins
 var gulp = require('gulp');
@@ -78,7 +78,7 @@ gulp.task('vendorcss', function() {
 });
 
 //process scripts
-gulp.task('scripts', function(){
+gulp.task('scripts', ['vendorjs'], function(){
   var b = browserify({
   	debug: environment === 'development'	
   });
@@ -92,7 +92,10 @@ gulp.task('scripts', function(){
     .pipe(reload());
 });
 gulp.task('vendorjs', function() {
-	return gulp.src(bowerPaths.bowerDirectory + '/react/react-with-addons.min.js')
+	return gulp.src([ 
+		//bowerPaths.bowerDirectory + '/react/react-with-addons.min.js', 
+		bowerPaths.bowerDirectory + '/parse/parse.min.js'
+	])
 		.pipe($.concat('vendor.js'))
 		.pipe(gulp.dest(distTarget + 'js/'));
 });
