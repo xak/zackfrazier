@@ -14,3 +14,4 @@ node_modules
 src/bower_components
 dist/dev
 .ftppass
+goog*.html
