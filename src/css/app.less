@@ -11,10 +11,10 @@
 @pink: #ff3399;
 @lightblue: #66cccc;
 
-@bkgd-body: @pink;
-@text-default: @black;
+@bkgd-body: @blue;
+@text-default: @white;
 
-//nav li a:before { -webkit-filter: invert(100%); filter: invert(100%); }
+nav li a:before { filter: invert(100%); }
 
 body { background: @bkgd-body; }
 
@@ -90,20 +90,12 @@ article {
 				background-repeat: no-repeat; 
 				background-size: contain;
 			}
-			&.pdf:before { background-image: url(../img/icon-pdf.png); }
-			&.linkedin:before { background-image: url(../img/icon-linkedin.png); }
-			&.facebook:before { background-image: url(../img/icon-facebook.png); }
-			&.github:before { background-image: url(../img/icon-github.png); }
-			&.twitter:before { background-image: url(../img/icon-twitter.png); }
-			&.instagram:before { background-image: url(../img/icon-instagram.png); }
-			@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-				&.pdf:before { background-image: url(../img/icon-pdf@2x.png); }
-				&.linkedin:before { background-image: url(../img/icon-linkedin@2x.png); }
-				&.facebook:before { background-image: url(../img/icon-facebook@2x.png); }
-				&.github:before { background-image: url(../img/icon-github@2x.png); }
-				&.twitter:before { background-image: url(../img/icon-twitter@2x.png); }
-				&.instagram:before { background-image: url(../img/icon-instagram@2x.png); }
-			}
+			&.pdf:before { background-image: url(../img/icon-pdf.svg); }
+			&.linkedin:before { background-image: url(../img/icon-linkedin.svg); }
+			&.facebook:before { background-image: url(../img/icon-facebook.svg); }
+			&.github:before { background-image: url(../img/icon-github.svg); }
+			&.twitter:before { background-image: url(../img/icon-twitter.svg); }
+			&.instagram:before { background-image: url(../img/icon-instagram.svg); }
 		}
 	}
 }
