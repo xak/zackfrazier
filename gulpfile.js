@@ -55,6 +55,10 @@ gulp.task('styles', ['vendorcss'], function() {
 		})).on('error', handleError)
 		.pipe(environment === 'development' ? $.sourcemaps.write() : $.util.noop())
 		.pipe($.concat('zackfrazier.css'))
+		.pipe($.autoprefixer({
+				browsers: ['last 2 versions'],
+				cascade: false
+		}))
 		.pipe(environment === 'production' ? $.minifyCss() : $.util.noop())
 		.pipe(gulp.dest(distTarget + 'css/'))
 		.pipe(reload());

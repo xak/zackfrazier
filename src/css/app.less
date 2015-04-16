@@ -11,7 +11,7 @@
 @pink: #ff3399;
 @lightblue: #66cccc;
 
-@bkgd-body: @lightblue;
+@bkgd-body: @pink;
 @text-default: @black;
 
 //nav li a:before { -webkit-filter: invert(100%); filter: invert(100%); }
@@ -115,18 +115,36 @@ footer {
 	}
 }
 
+
 /* details */
-#badge { text-align: right; }
-#sg {
-	strong { 
-		position: absolute; left: -999px; 
-	}
-	&:before { 
-		content: 'g'; 
-		/* position: fixed; bottom: 20px; right: 50px; */ 
-		font-family: '99-Special'; 
-		font-size: 80px; 
-		color: @text-default; 
-		line-height: 1; 
-	}
+#badge { 
+  text-align: right; 
+  height: 75px;
+  position: relative;
 }
+
+#sg {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  bottom: 0;
+  font-family: '99-Special'; 
+  strong {
+    display: none;
+  }
+}
+@keyframes fontsize {
+  0% { font-size: 6000px; }
+  100% { font-size: 90px; }
+}
+.ready {
+  #sg {
+    font-size: 90px; 
+    opacity: 1;
+    animation-name: fontsize;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+}
+

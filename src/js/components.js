@@ -5,6 +5,7 @@ var SatisfactionGuarantee = React.createClass({
   render: function() {
     return (
 			<div id="sg">
+			  <span role="presentation" aria-hidden="true">g</span>
 				<strong>Satisfaction Guarantee</strong>
 			</div>
     );
