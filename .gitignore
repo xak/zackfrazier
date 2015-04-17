@@ -15,3 +15,4 @@ src/bower_components
 dist/dev
 .ftppass
 goog*.html
+*.txt

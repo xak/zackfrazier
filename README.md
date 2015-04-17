@@ -43,6 +43,19 @@ Then
                 <'
 ```
 
+## 2015-04-16
+
+Upped the version number, cuz ...
+
+#### Parse
+* Introduces Parse for song lyrics
+  * Created a simple object to hold the verses
+  * Deployed cloud code to randomize verses (loads a React component)
+* Must install parse cloud tools
+	* `curl -s https://www.parse.com/downloads/cloud_code/installer.sh | sudo /bin/bash`
+	* Inside `cloud\` dir run `parse deploy` to push cloud code
+
+
 ## 2015-04-15
 
 Deployment. Success!
