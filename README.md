@@ -45,6 +45,10 @@ Then
 
 ## 2015-04-16
 
+Made React stuff better
+
+## 2015-04-16
+
 Upped the version number, cuz ...
 
 #### Parse

@@ -76,23 +76,27 @@ setTimeout(function() {
 },1000);
 
 var lyric = React.render(<Lyric />, document.getElementById('banner'));
-Parse.Cloud.run('lyric', { }, {
-  success: function(data) { 
+var updateLyric = function () {
+	lyric.setState({ 'visible': false });
+	Parse.Cloud.run('lyric', { }, {
+		success: function(data) { 
+			lyric.update({
+				'link': data.spotifyURI,
+				'title': data.song,
+				'verse': data.verse,
+				'artist': data.artist
+			})
+		},
+		error: function(error) {
+			//console.log('nope');
+		}
+	});
+}
 
-    setTimeout(function() {
-      lyric.update({
-        'link': data.spotifyURI,
-        'title': data.song,
-        'verse': data.verse,
-        'artist': data.artist
-      })
-    },2500);
+setTimeout(function() {
+	updateLyric();
+},2500);
 
 
 
-  },
-  error: function(error) {
-    //console.log('nope');
-  }
-});
 
