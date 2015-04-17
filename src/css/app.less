@@ -8,14 +8,15 @@
 @purple: #440044;
 @grey: #9c9c9c;
 @black: #000000;
+@brown: #220000;
 
 @pink: #ff3399;
 @lightblue: #66cccc;
 
-@bkgd-body: @purple;
-@text-default: @white;
+@bkgd-body: @pink;
+@text-default: @black;
 
-nav li a:before { filter: invert(100%); }
+//nav li a:before, .spotify { filter: invert(100%); }
 
 body { background: @bkgd-body; }
 
@@ -107,7 +108,35 @@ footer {
 		display: none; 
 	}
 }
+#lyric {
+  position: relative;
+  padding-left: 30px;
+  .spotify {
+    position: absolute;
+    left: 0;
+    content: '';
+    vertical-align: middle; 
+    width: 25px; 
+    height: 25px; 
+    background-repeat: no-repeat; 
+    background-size: contain;
+    top: -5px; 
+    background-image: url(../img/icon-spotify.svg); 
+  }
+  .verse {
+  
+  }
+  .artist {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+  }
+  &:before {
 
+  }
+
+
+}
 
 /* details */
 #badge { 
