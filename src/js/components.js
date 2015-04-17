@@ -12,11 +12,24 @@ var SatisfactionGuarantee = React.createClass({
   }
 });
 
+
+var SpotifyLink = React.createClass({
+  render: function() {
+    return (
+      <a className="spotify" href={this.props.url}>
+        {this.props.title}
+      </a>
+    )
+  }
+});
+
+
 var Lyric = React.createClass({
+
   render: function() {
     return (
       <div id="lyric">
-        <div className="spotify" aria-hidden="true" role="presentation"/>
+        <SpotifyLink url={ this.props.data.spotifyURI } title={ this.props.data.song } />
         <p>
           <span className="verse">
             { this.props.data.verse }
@@ -29,36 +42,6 @@ var Lyric = React.createClass({
     );
   }
 });
-
-
-/*
-var Lyric = React.createClass({
-  render: function() {
-    return (
-			<a id="lyric" href={this.props.spotify}>
-        <span class="verse">
-          "{ this.props.verse }"
-        </span>
-        <br/> 
-        — 
-        <span class="artist">
-          { this.props.artist }
-        </span>        
-			</a>
-    );
-  }
-});
-
-var Link = React.createClass({
-  render: function() {
-    return (
-      <a href={ this.props.url }>
-
-      </a>
-    )
-  }
-});
-*/
 
 React.render(<SatisfactionGuarantee/>, document.getElementById('badge'));
 

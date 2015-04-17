@@ -9,14 +9,17 @@
 @grey: #9c9c9c;
 @black: #000000;
 @brown: #220000;
+@redorange: #ff0044;
+@orange: #ff6600;
+@olive: #555500;
 
 @pink: #ff3399;
 @lightblue: #66cccc;
 
-@bkgd-body: @pink;
-@text-default: @black;
+@bkgd-body: @redorange;
+@text-default: @white;
 
-//nav li a:before, .spotify { filter: invert(100%); }
+nav li a:before, .spotify { filter: invert(100%); }
 
 body { background: @bkgd-body; }
 
@@ -110,29 +113,58 @@ footer {
 }
 #lyric {
   position: relative;
-  padding-left: 30px;
+  padding-left: 39px;
   .spotify {
     position: absolute;
     left: 0;
     content: '';
     vertical-align: middle; 
-    width: 25px; 
-    height: 25px; 
+    width: 28px; 
+    height: 28px; 
     background-repeat: no-repeat; 
     background-size: contain;
     top: -5px; 
     background-image: url(../img/icon-spotify.svg); 
+    text-indent: 100%;
+    line-height: 25px;
+    overflow: hidden;
   }
-  .verse {
+  p {
+    //padding-left: 10px;    
+    .verse {
+      line-height: 1.1;
+    }
+    .artist {
+      display: block;
+      margin-top: 5px;
+      font-size: 11px;
+/* 
+      margin-left: -4px;
+      &:before {
+        content: '-';
+        position: relative;
+        left: -3px;
+      }
+ */
+    }
+  }
   
-  }
-  .artist {
-    display: block;
-    margin-top: 5px;
-    font-size: 11px;
-  }
-  &:before {
-
+  
+  .verse {
+    &:before, &:after {
+      display: inline;
+      font-size: 1.2em;
+    }
+    &:before {
+      content: '“';
+      margin-right: 1px;
+      margin-left: -8px;
+    }
+    &:after {
+      content: '”';
+      text-align: right;
+    }
+    
   }
 
 
