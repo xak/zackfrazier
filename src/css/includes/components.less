@@ -1,0 +1,104 @@
+
+#lyric {
+	visibility: hidden;
+	&.show {
+		visibility: visible;
+		animation-name: fadeInUp;
+		animation-duration: 0.15s;
+		animation-timing-function: ease-in-out;
+	}
+}
+
+#lyric {
+  position: relative;
+  padding-left: 39px;
+  .spotify {
+    position: absolute;
+    left: 0;
+    content: '';
+    vertical-align: middle; 
+    width: 28px; 
+    height: 28px; 
+    background-repeat: no-repeat; 
+    background-size: contain;
+    top: -5px; 
+    background-image: url(../img/icon-spotify.svg); 
+    text-indent: 100%;
+    line-height: 25px;
+    overflow: hidden;
+  }
+  p {
+    .verse {
+      line-height: 1.1;
+    }
+    .artist {
+      display: block;
+      margin-top: 5px;
+      font-size: 11px;
+/* 
+      margin-left: -4px;
+      &:before {
+        content: '-';
+        position: relative;
+        left: -3px;
+      }
+ */
+    }
+  }
+  .verse {
+    &:before, &:after {
+      display: inline;
+      font-size: 1.2em;
+    }
+    &:before {
+      content: '“';
+      margin-right: 1px;
+      margin-left: -8px;
+    }
+    &:after {
+      content: '”';
+      text-align: right;
+    }
+  }
+}
+
+
+/* details */
+#badge { 
+  text-align: right; 
+  height: 75px;
+  position: relative;
+
+	@media screen and (max-width: 568px) {
+		width: 110px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+#sg {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  bottom: 0;
+  font-family: '99-Special'; 
+  strong {
+    display: none;
+  }
+}
+@keyframes fontsize {
+  0% { font-size: 6000px; }
+  100% { font-size: 90px; }
+}
+
+#sg.show {
+  font-size: 90px; 
+  opacity: 1;
+  animation-name: fontsize;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+

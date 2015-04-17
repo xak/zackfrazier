@@ -1,0 +1,95 @@
+
+body { background: @bkgd-body; }
+
+body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: @text-default; }
+a:hover, a:active { outline: none; }
+a { text-decoration: none; }
+a, a:active { color: @text-default; }
+a:hover { color: @text-default; text-decoration: underline; }
+a:link { -webkit-tap-highlight-color: rbga(0,0,0,0.2); } 
+::-moz-selection { background: white; color: gray; text-shadow: none; }
+::selection { background:white; color:gray; text-shadow: none; } 
+
+/* zF. */
+/* header */
+header { 
+	padding-top: 25px; 
+	padding-bottom: 0; 
+
+	h1 {
+		font-size: 20px; font-weight: bold; margin-bottom: 25px; text-align: right; line-height: 0;
+		@media screen and (max-width: 568px) {
+			padding-bottom: 50px;
+		}	
+	}
+	h2 {
+		font-size: 50px; margin: 25px 0; 
+		@media screen and (max-width: 480px) {
+			font-size: 40px;
+		}
+	}
+}
+/* content */
+main { 
+	padding-top: 0; 
+	padding-bottom: 0;
+	section {
+		display: inline-block;
+		&:first-child {
+			margin-right: 50px; 
+			@media screen and (max-width: 480px) {
+				margin-right: 0;
+			}	
+		}
+		ul {
+			line-height: 1.6;
+			li {
+				padding-left: 0;
+				margin-left: 0;
+				&:before {
+					position: relative; left: -20px; margin-right: -18px; content: '—'; padding-right: 5px;
+				}
+			}
+		}
+	}
+	nav {
+		margin-top: 30px;
+		@media screen and (max-width: 568px) {
+			margin-bottom: 30px;	
+		}
+		li {
+			list-style: none;
+			min-width: 130px; 
+			display: inline-block; 
+			margin-right: 25px; 
+			margin-bottom: 10px;
+		}
+		a {
+			display: inline-block;
+			/* icons */
+			&:before {
+				content: '';
+				vertical-align: middle; 
+				display: inline-block; 
+				margin-right: 5px; 
+				width: 25px; 
+				height: 25px; 
+				background-repeat: no-repeat; 
+				background-size: contain;
+			}
+			&.pdf:before { background-image: url(../img/icon-pdf.svg); }
+			&.linkedin:before { background-image: url(../img/icon-linkedin.svg); }
+			&.facebook:before { background-image: url(../img/icon-facebook.svg); }
+			&.github:before { background-image: url(../img/icon-github.svg); }
+			&.twitter:before { background-image: url(../img/icon-twitter.svg); }
+			&.instagram:before { background-image: url(../img/icon-instagram.svg); }
+		}
+	}
+}
+/* footer */
+footer {
+	padding-top: 0; padding-bottom: 15px;
+	.copyright { 
+		display: none; 
+	}
+}

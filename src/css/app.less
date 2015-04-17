@@ -1,5 +1,3 @@
-@import 'base';
-
 /* Colors */
 @red: #ff0044;
 @green: #009933;
@@ -11,195 +9,28 @@
 @brown: #220000;
 @redorange: #ff0044;
 @orange: #ff6600;
+@yellow: #ffff33;
 @olive: #555500;
 
 @pink: #ff3399;
 @lightblue: #66cccc;
 
-@bkgd-body: @pink;
+//config
+@bkgd-body: @red;
 @text-default: @black;
 
-//nav li a:before, .spotify { filter: invert(100%); }
+@scrim-default: @bkgd-body;
 
-body { background: @bkgd-body; }
-
-body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: @text-default; }
-a:hover, a:active { outline: none; }
-a { text-decoration: none; }
-a, a:active { color: @text-default; }
-a:hover { color: @text-default; text-decoration: underline; }
-a:link { -webkit-tap-highlight-color: rbga(0,0,0,0.2); } 
-::-moz-selection { background: white; color: gray; text-shadow: none; }
-::selection { background:white; color:gray; text-shadow: none; } 
-
-/* zF. */
-body { max-width: 750px; }
-header, article, footer { padding: 50px; }
-@media screen and (max-width: 480px) {
-	header, article, footer { padding-right: 25px; padding-left: 25px; }
-}
-/* header */
-header { padding-top: 25px; padding-bottom: 0; 
-	h1 {
-		font-size: 20px; font-weight: bold; margin-bottom: 25px; text-align: right; line-height: 0;
-	}
-	h2 {
-		font-size: 50px; margin: 25px 0; 
-		@media screen and (max-width: 480px) {
-			font-size: 40px;
-		}
-	}
-}
-/* content */
-article { 
-	padding-top: 0; 
-	padding-bottom: 0;
-	section {
-		display: inline-block;
-		&:first-child {
-			margin-right: 50px; 
-			@media screen and (max-width: 480px) {
-				margin-right: 0;
-			}	
-		}
-		ul {
-			line-height: 1.6;
-			li {
-				padding-left: 0;
-				margin-left: 0;
-				&:before {
-					position: relative; left: -20px; margin-right: -18px; content: '—'; padding-right: 5px;
-				}
-			}
-		}
-	}
-	nav {
-		margin-top: 30px;
-		li {
-			list-style: none;
-			min-width: 130px; 
-			display: inline-block; 
-			margin-right: 25px; 
-			margin-bottom: 10px;
-		}
-		a {
-			display: inline-block;
-			/* icons */
-			&:before {
-				content: '';
-				vertical-align: middle; 
-				display: inline-block; 
-				margin-right: 5px; 
-				width: 25px; 
-				height: 25px; 
-				background-repeat: no-repeat; 
-				background-size: contain;
-			}
-			&.pdf:before { background-image: url(../img/icon-pdf.svg); }
-			&.linkedin:before { background-image: url(../img/icon-linkedin.svg); }
-			&.facebook:before { background-image: url(../img/icon-facebook.svg); }
-			&.github:before { background-image: url(../img/icon-github.svg); }
-			&.twitter:before { background-image: url(../img/icon-twitter.svg); }
-			&.instagram:before { background-image: url(../img/icon-instagram.svg); }
-		}
-	}
-}
-/* footer */
-footer {
-	padding-top: 0; padding-bottom: 15px;
-	.copyright { 
-		display: none; 
-	}
-}
-#lyric {
-  transition: all 0.25s ease-in;
-  position: relative;
-  top: 100px;
-  opacity: 0;
-  &.show {
-    top: 0;
-    opacity: 1;
-  }
-  padding-left: 39px;
-  .spotify {
-    position: absolute;
-    left: 0;
-    content: '';
-    vertical-align: middle; 
-    width: 28px; 
-    height: 28px; 
-    background-repeat: no-repeat; 
-    background-size: contain;
-    top: -5px; 
-    background-image: url(../img/icon-spotify.svg); 
-    text-indent: 100%;
-    line-height: 25px;
-    overflow: hidden;
-  }
-  p {
-    //padding-left: 10px;    
-    .verse {
-      line-height: 1.1;
-    }
-    .artist {
-      display: block;
-      margin-top: 5px;
-      font-size: 11px;
-/* 
-      margin-left: -4px;
-      &:before {
-        content: '-';
-        position: relative;
-        left: -3px;
-      }
- */
-    }
-  }
-  .verse {
-    &:before, &:after {
-      display: inline;
-      font-size: 1.2em;
-    }
-    &:before {
-      content: '“';
-      margin-right: 1px;
-      margin-left: -8px;
-    }
-    &:after {
-      content: '”';
-      text-align: right;
-    }
-  }
+@keyframes scrimfade {
+  0% { background: @scrim-default; }
+  25% { background: @pink; }
+  50% { background: @redorange; }
+  75% { background: @orange; }
+  100% { background: @scrim-default; }
 }
 
-/* details */
-#badge { 
-  text-align: right; 
-  height: 75px;
-  position: relative;
-}
-
-#sg {
-  display: block;
-  position: absolute;
-  opacity: 0;
-  right: 0;
-  bottom: 0;
-  font-family: '99-Special'; 
-  strong {
-    display: none;
-  }
-}
-@keyframes fontsize {
-  0% { font-size: 6000px; }
-  100% { font-size: 90px; }
-}
-
-#sg.show {
-  font-size: 90px; 
-  opacity: 1;
-  animation-name: fontsize;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-}
+@import 'base';
+@import 'ui';
+@import 'view';
+@import 'components';
 

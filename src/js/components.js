@@ -73,7 +73,7 @@ console.log('Oh, hey! Thanks for stopping by. Really appreciate it!');
 var sg = React.render(<SatisfactionGuarantee/>, document.getElementById('badge'));
 setTimeout(function() {
   sg.setState({ 'visible' : true });
-},1000);
+},0);
 
 var lyric = React.render(<Lyric />, document.getElementById('banner'));
 var updateLyric = function () {
@@ -95,7 +95,7 @@ var updateLyric = function () {
 
 setTimeout(function() {
 	updateLyric();
-},2500);
+},3000);
 
 
 

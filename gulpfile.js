@@ -71,7 +71,7 @@ var bowerPaths = {
 	bowerJson: 'bower.json'
 };
 gulp.task('vendorcss', function() {
-	return gulp.src(bowerPaths.bowerDirectory + '/pure/grids.css')
+	return gulp.src(bowerPaths.bowerDirectory + '/animatecss/animate.min.css')
 		.pipe($.concat('vendor.css'))
 		.pipe($.minifyCss())
 		.pipe(gulp.dest(distTarget + 'css/'));
