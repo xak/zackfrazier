@@ -16,10 +16,10 @@
 @pink: #ff3399;
 @lightblue: #66cccc;
 
-@bkgd-body: @redorange;
-@text-default: @white;
+@bkgd-body: @pink;
+@text-default: @black;
 
-nav li a:before, .spotify { filter: invert(100%); }
+//nav li a:before, .spotify { filter: invert(100%); }
 
 body { background: @bkgd-body; }
 
@@ -112,7 +112,14 @@ footer {
 	}
 }
 #lyric {
+  transition: all 1s ease-in;
   position: relative;
+  top: 500px;
+  opacity: 0;
+  &.show {
+    top: 0;
+    opacity: 1;
+  }
   padding-left: 39px;
   .spotify {
     position: absolute;
@@ -148,8 +155,6 @@ footer {
  */
     }
   }
-  
-  
   .verse {
     &:before, &:after {
       display: inline;
@@ -164,10 +169,7 @@ footer {
       content: '”';
       text-align: right;
     }
-    
   }
-
-
 }
 
 /* details */
@@ -192,13 +194,12 @@ footer {
   0% { font-size: 6000px; }
   100% { font-size: 90px; }
 }
-.ready {
-  #sg {
-    font-size: 90px; 
-    opacity: 1;
-    animation-name: fontsize;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-  }
+
+#sg.show {
+  font-size: 90px; 
+  opacity: 1;
+  animation-name: fontsize;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
 }
 
