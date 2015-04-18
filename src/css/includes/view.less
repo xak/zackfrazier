@@ -5,38 +5,45 @@
 		padding: 0 25px;		
 	}
 }
-
+header, main, footer {
+//	outline: solid 2px blue;
+}
 
 /* header */
 header { 
-	padding-top: 10px; 
-	//padding-bottom: 10px; 
-	h1 {
+	padding-top: 25px; 
+	//padding-bottom: 0;
+	 
+	address {
+		display: block;
 		font-size: 20px; 
-		margin-bottom: 5px; 
-		text-align: right; 
+		margin-bottom: 15px; 
+		text-align: right;
+		font-style: normal;
+		font-weight: bold;
 	}
-	h2 {
+	h1 {
 		font-size: @largeFontSize; 
 		line-height: 50px;
+		margin-bottom: 20px;
 		@media screen and (max-width: 480px) {
 			font-size: @h1FontSize;
 			line-height: 45px;
-		}
-		& + p {
-			font-size: @h4FontSize;
-			line-height: 30px;
 		}
 	}
 }
 /* content */
 main { 
-
+	.lead {
+		font-size: @h4FontSize;
+		line-height: 30px;
+		margin-bottom: 25px;
+	}
 	section {
 		display: inline-block;
 		width: 290px;
 	
-		&:first-child {
+		&#experience-section {
 			margin-right: 50px; 
 			@media screen and (max-width: 568px) {
 				margin-right: 0;
@@ -66,7 +73,7 @@ main {
 			min-width: 130px; 
 			display: inline-block; 
 			margin-right: 25px; 
-			margin-bottom: 0;
+			margin-bottom: 10px;
 		}
 		a {
 			display: inline-block;
@@ -93,7 +100,7 @@ main {
 }
 /* footer */
 footer {
-	//padding-top: 0; 
+	padding-top: 10px; 
 	padding-bottom: 15px;
 	.copyright { 
 		display: none; 
@@ -113,14 +120,16 @@ footer {
 		width: 110px;
 		position: absolute;
 		top: 15px;
-		left: 15px;
+		right: 40px;
 	}
 }
 
 
+
 @media screen and (max-width: 600px), (max-height: 760px) {
-	header h1 {
-		min-height: 90px;
+	header address {
+		min-height: 65px;
+		text-align: left;
 	}
 	#banner {
 		padding-top: 25px;

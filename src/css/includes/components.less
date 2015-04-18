@@ -9,15 +9,18 @@
 		animation-fill-mode: both;
 	}
 }
-#experience-section, #skills-section {
+.lead, #experience-section, #skills-section {
 	visibility: hidden;
 }
 .ready {
-	#experience-section, #skills-section {
+	.lead, #experience-section, #skills-section {
 		visibility: visible;
 		animation-name: fadeInLeft;
 		animation-duration: 0.2s;
 		animation-fill-mode: both;
+	}
+	.lead {
+		animation-delay: 0.15s;		
 	}
 	#skills-section {
 		animation-delay: 0.1s;		
@@ -84,8 +87,9 @@
     overflow: hidden;
   }
   p {
+     line-height: 1.1;
     .verse {
-      line-height: 1.1;
+
     }
     .artist {
       display: block;
