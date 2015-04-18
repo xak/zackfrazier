@@ -1,0 +1,61 @@
+@fontFamilyStack: 'Helvetica Neue',Arial,sans-serif;
+
+@font-face {
+  font-family: '99-Special';
+  src: url('../fonts/99-Special.eot');
+  src: local('☺'),
+         url('../fonts/99-Special.ttf') format('truetype');
+}
+
+@baseFontSize: 15px;
+//@baseLineHeight: 25px / 15px;
+
+@largeFontSize: 48px;
+@smallFontSize: 12.5px;
+@h1FontSize: 40px;
+@h2FontSize: 30px;
+@h3FontSize: 22.5px;
+@h4FontSize: 20px;
+@h5FontSize: 15px;
+@h6FontSize: 15px;
+
+body {
+	color: @defaultTextColor;
+	font-size: @baseFontSize;
+	font-family: @fontFamilyStack;
+}
+h1,h2,h3,h4,h5,h6,p {
+	margin: 0;
+	line-height: 1;
+}
+p {
+	font-size: @baseFontSize;
+	line-height: 20px;
+	margin: 0 0 20px;
+}
+h1 {
+	font-size: @h1FontSize;
+	line-height: 45px;
+	margin: 0 0 15px;
+}
+h2 {
+	font-size: @h2FontSize;
+	line-height: 35px;
+	margin: 0 0 10px;
+}
+h3 {
+	font-size: @h3FontSize;
+	line-height: 25px;
+	margin: 0 0 10px;
+}
+h4,h5,h6 {
+	font-size: @h4FontSize;
+	line-height: 20px;
+	margin: 0 0 10px;
+}
+a, a:active { color: @defaultTextColor; }
+a:hover { color: @defaultTextColor; }
+
+
+
+

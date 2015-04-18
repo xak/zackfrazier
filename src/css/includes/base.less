@@ -1,10 +1,11 @@
-@font-face {
-  font-family: '99-Special';
-  src: url('../fonts/99-Special.eot');
-  src: local('☺'),
-         url('../fonts/99-Special.ttf') format('truetype');
-}
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; } 
 body { margin: 0; padding: 0; }
 ul { padding-left: 0; list-style: none; }
+
+a:hover, a:active { outline: none; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:link { -webkit-tap-highlight-color: rbga(0,0,0,0.2); } 
+::-moz-selection { background: white; color: gray; text-shadow: none; }
+::selection { background:white; color:gray; text-shadow: none; } 

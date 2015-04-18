@@ -1,12 +1,15 @@
 /* Colors */
 @red: #ff0044;
+@lightgreen: #11b848;
 @green: #009933;
 @blue: #0066cc;
 @white: #FFFFFF;
 @purple: #440044;
+@lightgrey: #cbcbcb;
 @grey: #9c9c9c;
 @black: #000000;
-@brown: #220000;
+@brown: #aa8833;
+@darkbrown: #220000;
 @redorange: #ff0044;
 @orange: #ff6600;
 @yellow: #ffff33;
@@ -16,19 +19,10 @@
 @lightblue: #66cccc;
 
 //config
-@bkgd-body: @red;
-@text-default: @black;
+@bodyBkgdColor: @white;
+@defaultTextColor: @black;
 
-@scrim-default: @bkgd-body;
-
-@keyframes scrimfade {
-  0% { background: @scrim-default; }
-  25% { background: @pink; }
-  50% { background: @redorange; }
-  75% { background: @orange; }
-  100% { background: @scrim-default; }
-}
-
+@import 'type';
 @import 'base';
 @import 'ui';
 @import 'view';

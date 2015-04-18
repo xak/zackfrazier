@@ -1,48 +1,49 @@
 
-body { background: @bkgd-body; }
+#view {
+	padding: 0 50px;
+	@media screen and (max-width: 568px) {
+		padding: 0 25px;		
+	}
+}
 
-body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: @text-default; }
-a:hover, a:active { outline: none; }
-a { text-decoration: none; }
-a, a:active { color: @text-default; }
-a:hover { color: @text-default; text-decoration: underline; }
-a:link { -webkit-tap-highlight-color: rbga(0,0,0,0.2); } 
-::-moz-selection { background: white; color: gray; text-shadow: none; }
-::selection { background:white; color:gray; text-shadow: none; } 
 
-/* zF. */
 /* header */
 header { 
-	padding-top: 25px; 
-	padding-bottom: 0; 
-
+	padding-top: 10px; 
+	//padding-bottom: 10px; 
 	h1 {
-		font-size: 20px; font-weight: bold; margin-bottom: 25px; text-align: right; line-height: 0;
-		@media screen and (max-width: 568px) {
-			padding-bottom: 50px;
-		}	
+		font-size: 20px; 
+		margin-bottom: 5px; 
+		text-align: right; 
 	}
 	h2 {
-		font-size: 50px; margin: 25px 0; 
+		font-size: @largeFontSize; 
+		line-height: 50px;
 		@media screen and (max-width: 480px) {
-			font-size: 40px;
+			font-size: @h1FontSize;
+			line-height: 45px;
+		}
+		& + p {
+			font-size: @h4FontSize;
+			line-height: 30px;
 		}
 	}
 }
 /* content */
 main { 
-	padding-top: 0; 
-	padding-bottom: 0;
+
 	section {
 		display: inline-block;
+		width: 290px;
+	
 		&:first-child {
 			margin-right: 50px; 
-			@media screen and (max-width: 480px) {
+			@media screen and (max-width: 568px) {
 				margin-right: 0;
 			}	
 		}
 		ul {
-			line-height: 1.6;
+			line-height: 25px;
 			li {
 				padding-left: 0;
 				margin-left: 0;
@@ -53,16 +54,19 @@ main {
 		}
 	}
 	nav {
-		margin-top: 30px;
+		//margin-top: 30px;
 		@media screen and (max-width: 568px) {
 			margin-bottom: 30px;	
+		}
+		ul {
+			margin-bottom: 0;
 		}
 		li {
 			list-style: none;
 			min-width: 130px; 
 			display: inline-block; 
 			margin-right: 25px; 
-			margin-bottom: 10px;
+			margin-bottom: 0;
 		}
 		a {
 			display: inline-block;
@@ -85,11 +89,43 @@ main {
 			&.instagram:before { background-image: url(../img/icon-instagram.svg); }
 		}
 	}
+	
 }
 /* footer */
 footer {
-	padding-top: 0; padding-bottom: 15px;
+	//padding-top: 0; 
+	padding-bottom: 15px;
 	.copyright { 
 		display: none; 
 	}
 }
+
+
+#badge { 
+	transition: all;
+  text-align: right; 
+  height: 90px;
+  position: relative;
+  margin: 0;
+
+
+	@media screen and (max-width: 600px), (max-height: 760px) {
+		width: 110px;
+		position: absolute;
+		top: 15px;
+		left: 15px;
+	}
+}
+
+
+@media screen and (max-width: 600px), (max-height: 760px) {
+	header h1 {
+		min-height: 90px;
+	}
+	#banner {
+		padding-top: 25px;
+	}
+	
+}
+
+

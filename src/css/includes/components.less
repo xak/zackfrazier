@@ -1,3 +1,59 @@
+#headline {
+	visibility: hidden;
+}
+.ready {
+	#headline {
+		visibility: visible;
+		animation-name: fadeInLeft;
+		animation-duration: 0.25s;
+		animation-fill-mode: both;
+	}
+}
+#experience-section, #skills-section {
+	visibility: hidden;
+}
+.ready {
+	#experience-section, #skills-section {
+		visibility: visible;
+		animation-name: fadeInLeft;
+		animation-duration: 0.2s;
+		animation-fill-mode: both;
+	}
+	#skills-section {
+		animation-delay: 0.1s;		
+	}
+	#experience-section {
+		animation-delay: 0.2s;
+	}	
+}
+#nav {
+	li {
+		visibility: hidden;
+	}
+}
+.ready {
+	#nav {
+		li {
+			visibility: visible;
+			animation-name: fadeInLeft;
+			animation-duration: 0.2s;
+			animation-fill-mode: both;
+		}
+		li:nth-child(3) {
+			animation-delay: 0.15s;		
+		}
+		li:nth-child(2) {
+			animation-delay: 0.2s;
+		}
+		li:nth-child(1) {
+			animation-delay: 0.25s;		
+		}
+	}
+}
+
+
+
+
 
 #lyric {
 	visibility: hidden;
@@ -64,41 +120,33 @@
 
 
 /* details */
-#badge { 
-  text-align: right; 
-  height: 75px;
-  position: relative;
-
-	@media screen and (max-width: 568px) {
-		width: 110px;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-}
-
 #sg {
   display: block;
   position: absolute;
   opacity: 0;
   right: 0;
-  bottom: 0;
   font-family: '99-Special'; 
+  line-height: 75px;
   strong {
     display: none;
   }
 }
 @keyframes fontsize {
-  0% { font-size: 6000px; }
-  100% { font-size: 90px; }
+  0% { font-size: 20000px;  }
+  100% {  }
 }
-
+@keyframes sgscale {
+  0% { font-size: 20000px; transform: rotate(0deg); }
+//  20% { font-size: 90px; transform: rotate(45deg);  }
+//  90% { font-size: 90px; transform: rotate(45deg);  }
+  100% { font-size: 100px; transform: rotate(0deg);  }
+}
 #sg.show {
-  font-size: 90px; 
   opacity: 1;
-  animation-name: fontsize;
+ 	animation-name: sgscale;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
 }
 
 

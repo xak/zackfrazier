@@ -1,4 +1,12 @@
 
+@scrimBkgdColor: @lightblue;
+
+body { 
+	background: @bodyBkgdColor; 
+	background-image: url(/img/5-grid.png);
+	margin: 0;
+	padding: 0;
+}
 html, body {
 	height: 100%
 }
@@ -17,82 +25,77 @@ html, body {
 		width: 100%;
 	}
 	#view {
-		position: relative;
 		z-index: 1000;
+		position: relative;
+		max-width: 750px;
 	}
 }
 
-
-
-header, main, footer { padding: 50px; }
-@media screen and (max-width: 568px) {
-	header, main, footer { padding-right: 25px; padding-left: 25px; }
+@keyframes scrimfade {
+  0% { background: @scrimBkgdColor; }
+  10% { background: @lightgreen; }
+  25% { background: @yellow; }
+  40% { background: @pink; }
+  60% { background: @red; }
+  75% { background: @yellow; }
+  90% { background: @lightgreen; }
+  100% { background: @scrimBkgdColor; }
+}
+/*
+@keyframes scrimfade {
+  0% { background: @scrimBkgdColor; }
+  10% { background: @lightblue; }
+  20% { background: @yellow; }
+  30% { background: @green; }
+  40% { background: @olive; }
+  50% { background: @darkbrown; }
+  60% { background: @orange; }
+  70% { background: @pink; }
+  80% { background: @brown; }
+  90% { background: @blue; }
+  100% { background: @scrimBkgdColor; }
+}
+*/
+/*
+@keyframes textfade {
+  0% { filter: invert(0%) }
+  50% { filter: invert(100%) }
+  100% { filter: invert(0%) }
+}
+*/
+@keyframes textfade {
+  0% { filter: invert(0%) }
+  10% { filter: invert(0%) }
+  20% {filter: invert(0%) }
+  35% { filter: invert(100%) }
+  40% { filter: invert(100%)}
+  
+//  50% { filter: invert(0%); }
+  // 60% { filter: invert(50%) }
+  70% { filter: invert(100%) }
+  //80% { filter: invert(0%) }
+  90% { filter: invert(0%) }
+  100% { filter: invert(0%) }
 }
 
-#view { max-width: 750px; }
-#scrim {
-	background: @scrim-default;
 
-  animation-name: scrimfade;
-  animation-duration: 30s;
+#scrim {
+	//background: @scrimBkgdColor;
+	opacity: 0;
+}
+#scrim.ready {
+	opacity: 1;
+	transition: opacity 0.2s ease-in;
+	animation-name: scrimfade;
+  animation-duration: 60s;
 	animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 	animation-fill-mode: both;
 }
-
-
-
-#headline {
-	visibility: hidden;
-}
-.ready {
-	#headline {
-		visibility: visible;
-		animation-name: fadeInLeft;
-		animation-duration: 0.25s;
-		animation-fill-mode: both;
-	}
-}
-#experience-section, #skills-section {
-	visibility: hidden;
-}
-.ready {
-	#experience-section, #skills-section {
-		visibility: visible;
-		animation-name: fadeInLeft;
-		animation-duration: 0.2s;
-		animation-fill-mode: both;
-	}
-	#skills-section {
-		animation-delay: 0.1s;		
-	}
-	#experience-section {
-		animation-delay: 0.2s;
-	}	
-}
-
-
-#nav {
-	li {
-		visibility: hidden;
-	}
-}
-.ready {
-	#nav {
-		li {
-			visibility: visible;
-			animation-name: fadeInLeft;
-			animation-duration: 0.2s;
-			animation-fill-mode: both;
-		}
-		li:nth-child(3) {
-			animation-delay: 0.15s;		
-		}
-		li:nth-child(2) {
-			animation-delay: 0.2s;
-		}
-		li:nth-child(1) {
-			animation-delay: 0.25s;		
-		}
-	}
+#view.ready {
+//	animation-name: textfade;
+	animation-duration: 30s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-fill-mode: both;
 }
