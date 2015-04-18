@@ -43,6 +43,20 @@ Then
                 <'
 ```
 
+## 2015-04-18
+
+Incremental improvements
+
+* Updated site copy
+* Improves background color animations
+  * Adds more colors
+  * Experimented with text inversion with darker backgrounds (more to do) 
+* Work on responsive
+  * Uses width and height media query for best placement of Satisfaction badge
+  * Better spacing and vertical rhythmn
+* Upped version to 1.0.3 with addition of cachebusting
+
+
 ## 2015-04-16
 
 Made React stuff better
