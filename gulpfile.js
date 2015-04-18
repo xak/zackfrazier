@@ -22,7 +22,7 @@ var config = require('./config/' + environment + '.json');
 var cachebust = new $.cachebust();
 
 var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/';
-console.log(distTarget)
+
 gulp.task('clean', function (done) {
 	del([distTarget], done);
 });
