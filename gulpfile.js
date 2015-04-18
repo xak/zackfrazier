@@ -1,4 +1,4 @@
-var version = '1.0.2';
+var version = '1.0.3';
 
 // load node modules/plugins
 var gulp = require('gulp');
@@ -18,6 +18,8 @@ var server;
 var options = minimist(process.argv);
 var environment = options.environment || 'development';
 
+var cachebust = new $.cachebust();
+
 var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/';
 
 gulp.task('clean', function (done) {
@@ -34,6 +36,7 @@ gulp.task('public', function() {
 gulp.task('images', function() {
 	gulp.src('src/img/**/*')
 		.pipe($.imagemin())
+		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
 		.pipe(gulp.dest(distTarget + 'img'))
 		.pipe(reload());
 });
@@ -41,6 +44,7 @@ gulp.task('images', function() {
 // process html
 gulp.task('html', function() {
 	return gulp.src('src/**/*.html')
+		.pipe(environment === 'production' ? cachebust.references() : $.util.noop())	
 		.pipe(gulp.dest(distTarget))
 		.pipe(reload());
 });
@@ -55,10 +59,11 @@ gulp.task('styles', ['vendorcss'], function() {
 		})).on('error', handleError)
 		.pipe(environment === 'development' ? $.sourcemaps.write() : $.util.noop())
 		.pipe($.concat('zackfrazier.css'))
+		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
 		.pipe($.autoprefixer({
 				browsers: ['last 2 versions'],
 				cascade: false
-		}))
+		}))		
 		.pipe(environment === 'production' ? $.minifyCss() : $.util.noop())
 		.pipe(gulp.dest(distTarget + 'css/'))
 		.pipe(reload());
@@ -73,6 +78,7 @@ var bowerPaths = {
 gulp.task('vendorcss', function() {
 	return gulp.src(bowerPaths.bowerDirectory + '/animatecss/animate.min.css')
 		.pipe($.concat('vendor.css'))
+		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
 		.pipe($.minifyCss())
 		.pipe(gulp.dest(distTarget + 'css/'));
 });
@@ -88,6 +94,7 @@ gulp.task('scripts', ['vendorjs'], function(){
     .pipe(source('zackfrazier.js'))
 		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
 		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
+		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
     .pipe(gulp.dest(distTarget + 'js'))
     .pipe(reload());
 });
@@ -97,6 +104,7 @@ gulp.task('vendorjs', function() {
 		bowerPaths.bowerDirectory + '/parse/parse.min.js'
 	])
 		.pipe($.concat('vendor.js'))
+		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
 		.pipe(gulp.dest(distTarget + 'js/'));
 });
 
