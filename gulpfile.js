@@ -16,12 +16,13 @@ var reactify = require('reactify');
 var $ = require('gulp-load-plugins')();
 var server;
 var options = minimist(process.argv);
-var environment = options.environment || 'development';
 
+var environment = options.environment || 'development';
+var config = require('./config/' + environment + '.json');
 var cachebust = new $.cachebust();
 
 var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/';
-
+console.log(distTarget)
 gulp.task('clean', function (done) {
 	del([distTarget], done);
 });
@@ -53,18 +54,18 @@ gulp.task('html', function() {
 gulp.task('styles', ['vendorcss'], function() {
 	return gulp.src('src/css/app.less')
 		.pipe($.plumber())
-		.pipe(environment === 'development' ? $.sourcemaps.init() : $.util.noop())
+		.pipe(config.minify ? $.sourcemaps.init() : $.util.noop())
 		.pipe($.less({
 			paths: [ path.join(__dirname, 'src/css/includes') ]
 		})).on('error', handleError)
-		.pipe(environment === 'development' ? $.sourcemaps.write() : $.util.noop())
+		.pipe(config.minify ? $.sourcemaps.write() : $.util.noop())
 		.pipe($.concat('zackfrazier.css'))
-		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
+		.pipe(config.minify ? cachebust.resources() : $.util.noop())
 		.pipe($.autoprefixer({
 				browsers: ['last 2 versions'],
 				cascade: false
 		}))		
-		.pipe(environment === 'production' ? $.minifyCss() : $.util.noop())
+		.pipe(config.minify ? $.minifyCss() : $.util.noop())
 		.pipe(gulp.dest(distTarget + 'css/'))
 		.pipe(reload());
 });
@@ -78,7 +79,7 @@ var bowerPaths = {
 gulp.task('vendorcss', function() {
 	return gulp.src(bowerPaths.bowerDirectory + '/animatecss/animate.min.css')
 		.pipe($.concat('vendor.css'))
-		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
+		.pipe(config.minify ? cachebust.resources() : $.util.noop())
 		.pipe($.minifyCss())
 		.pipe(gulp.dest(distTarget + 'css/'));
 });
@@ -86,15 +87,15 @@ gulp.task('vendorcss', function() {
 //process scripts
 gulp.task('scripts', ['vendorjs'], function(){
   var b = browserify({
-  	debug: environment === 'development'	
+  	debug: config.minify	
   });
   b.transform(reactify); // use the reactify transform
   b.add('./src/js/app.js');
   return b.bundle().on('error', handleError)
     .pipe(source('zackfrazier.js'))
-		.pipe(environment === 'production' ? $.buffer() : $.util.noop())
-		.pipe(environment === 'production' ? $.uglify() : $.util.noop())
-		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
+		.pipe(config.minify ? $.buffer() : $.util.noop())
+		.pipe(config.minify ? $.uglify() : $.util.noop())
+		.pipe(config.minify ? cachebust.resources() : $.util.noop())
     .pipe(gulp.dest(distTarget + 'js'))
     .pipe(reload());
 });
@@ -104,7 +105,7 @@ gulp.task('vendorjs', function() {
 		bowerPaths.bowerDirectory + '/parse/parse.min.js'
 	])
 		.pipe($.concat('vendor.js'))
-		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
+		.pipe(config.minify ? cachebust.resources() : $.util.noop())
 		.pipe(gulp.dest(distTarget + 'js/'));
 });
 
