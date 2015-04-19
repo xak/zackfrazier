@@ -22,3 +22,22 @@ Parse.Cloud.define("lyric", function(request, response) {
     }
   });
 });
+
+
+Parse.Cloud.define("gifs", function(request, response) {
+  var query = new Parse.Query("Gifs");
+	//query.equalTo('featured', true)
+	query.exists('filePath')
+  query.find({
+    success: function(results) {
+    	var total = results.length;
+    	function rand() {
+    		return Math.floor((Math.random() * total));
+    	}  
+      response.success(results[rand()].attributes);
+    },
+    error: function() {
+      response.error("lookup failed");
+    }
+  });
+});
