@@ -89,7 +89,7 @@
   p {
      line-height: 1.1;
     .verse {
-
+      font-size: 13px;
     }
     .artist {
       display: block;
@@ -136,19 +136,19 @@
   }
 }
 @keyframes fontsize {
-  0% { font-size: 20000px;  }
+  0% { font-size: 10000px;  }
   100% {  }
 }
 @keyframes sgscale {
-  0% { font-size: 20000px; transform: rotate(0deg); }
-//  20% { font-size: 90px; transform: rotate(45deg);  }
-//  90% { font-size: 90px; transform: rotate(45deg);  }
-  100% { font-size: 100px; transform: rotate(0deg);  }
+  0% { font-size: 20000px; transform: rotate(0deg); margin-top: -10000px; }
+  25% { font-size: 100px; transform: rotate(15deg); margin-top: 0;  }
+  90% { font-size: 100px; transform: rotate(15deg); }
+  100% { font-size: 100px; transform: rotate(0deg); margin-top: 0;  }
 }
 #sg.show {
   opacity: 1;
  	animation-name: sgscale;
-  animation-duration: 1s;
+  animation-duration: 4s;
   animation-timing-function: ease-in-out;
 	animation-fill-mode: both;
 }

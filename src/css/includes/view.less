@@ -6,14 +6,12 @@
 	}
 }
 header, main, footer {
-//	outline: solid 2px blue;
+	//outline: solid 2px blue;
 }
 
 /* header */
 header { 
-	padding-top: 25px; 
-	//padding-bottom: 0;
-	 
+	padding-top: 20px; 
 	address {
 		display: block;
 		font-size: 20px; 
@@ -25,7 +23,7 @@ header {
 	h1 {
 		font-size: @largeFontSize; 
 		line-height: 50px;
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 		@media screen and (max-width: 480px) {
 			font-size: @h1FontSize;
 			line-height: 45px;
@@ -41,6 +39,8 @@ main {
 	}
 	section {
 		display: inline-block;
+		vertical-align: top;
+
 		width: 290px;
 	
 		&#experience-section {
@@ -100,8 +100,14 @@ main {
 }
 /* footer */
 footer {
-	padding-top: 10px; 
+//	padding-top: 10px; 
+
+  margin-top: -20px;
 	padding-bottom: 15px;
+	@media screen and (max-width: 640px) {
+    margin-top: 0;
+
+  }
 	.copyright { 
 		display: none; 
 	}
@@ -109,14 +115,11 @@ footer {
 
 
 #badge { 
-	transition: all;
   text-align: right; 
-  height: 90px;
+  height: 85px;
   position: relative;
   margin: 0;
-
-
-	@media screen and (max-width: 600px), (max-height: 760px) {
+	@media screen and (max-width: 640px), (max-height: 760px) {
 		width: 110px;
 		position: absolute;
 		top: 15px;
@@ -126,7 +129,7 @@ footer {
 
 
 
-@media screen and (max-width: 600px), (max-height: 760px) {
+@media screen and (max-width: 640px), (max-height: 760px) {
 	header address {
 		min-height: 65px;
 		text-align: left;
