@@ -1,4 +1,4 @@
-var version = '1.0.3';
+var version = '1.0.4';
 
 // load node modules/plugins
 var gulp = require('gulp');
@@ -59,12 +59,13 @@ gulp.task('styles', ['vendorcss'], function() {
 			paths: [ path.join(__dirname, 'src/css/includes') ]
 		})).on('error', handleError)
 		.pipe(config.minify ? $.sourcemaps.write() : $.util.noop())
+		.pipe(config.minify ? cachebust.references() : $.util.noop())
 		.pipe($.concat('zackfrazier.css'))
 		.pipe(config.minify ? cachebust.resources() : $.util.noop())
 		.pipe($.autoprefixer({
 				browsers: ['last 2 versions'],
 				cascade: false
-		}))		
+		}))
 		.pipe(config.minify ? $.minifyCss() : $.util.noop())
 		.pipe(gulp.dest(distTarget + 'css/'))
 		.pipe(reload());

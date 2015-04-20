@@ -2,6 +2,43 @@
 var React = require('react');
 var classnames = require('classnames');
 
+var SatisfactionGuarantee = React.createClass({
+  getDefaultProps:function(){
+      return {
+          backgroundUrl: ''
+      }
+  },
+  getInitialState:function(){
+      return {
+          visible: false,
+          mask: true
+      }
+  },
+  handleClick:function(){
+    toggleAnim();
+    this.toggleMask();
+  },
+  toggleMask:function(){
+    this.setState({ 'mask': !this.state.mask })
+  },
+  render: function() {
+    var classes = classnames({
+      'visible': this.state.visible,
+      'nomask': !this.state.mask
+    });
+    var styles = {
+      //backgroundColor: 'transparent',
+      backgroundImage: 'url(' + this.props.backgroundUrl + ')'
+    };
+    return (
+			<div id="sg" className={classes} style={styles} onClick={this.handleClick}>
+			  <div role="presentation" aria-hidden="true" />
+				<strong>Satisfaction Guarantee</strong>
+			</div>
+    );
+  }
+});
+
 var Scrim = React.createClass({
   getDefaultProps:function(){
     return {
@@ -81,13 +118,21 @@ var AnimControl = React.createClass({
   }
 });
 
+var sg = React.render(<SatisfactionGuarantee/>, document.getElementById('badge'));
+setTimeout(function() {
+  //sg.setState({ 'visible' : true });
+},0);
 
 var scrim = React.render(<Scrim />, document.getElementById('scrim'));
 var controls;
 Parse.Cloud.run('gifs', { }, {
   success: function(data) { 
     scrim.setProps({ 'animUrl': data.filePath })
-    controls = React.render(<AnimControl imageSrc={data.filePath} />, document.getElementById('scrimcontrols'));
+    setTimeout(function () {
+      sg.setProps({ 'backgroundUrl': data.filePath })
+      sg.setState({ 'visible' : true });
+    },3000)
+  //  controls = React.render(<AnimControl imageSrc={data.filePath} />, document.getElementById('scrimcontrols'));
   },
   error: function(error) { 
   }
@@ -95,8 +140,11 @@ Parse.Cloud.run('gifs', { }, {
 
 setTimeout(function () {
 	scrim.setState({ 'visible': true })
-},1500)
+},1000)
 
 function toggleAnim() {
   scrim.toggleAnim()
 }
+
+
+
