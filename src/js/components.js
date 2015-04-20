@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react');
 var classnames = require('classnames');
-
+React.initializeTouchEvents(true);
 
 var SpotifyLink = React.createClass({
   render: function() {

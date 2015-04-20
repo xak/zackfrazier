@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react');
+React.initializeTouchEvents(true)
+
 var classnames = require('classnames');
 
 var SatisfactionGuarantee = React.createClass({
@@ -31,7 +33,7 @@ var SatisfactionGuarantee = React.createClass({
       backgroundImage: 'url(' + this.props.backgroundUrl + ')'
     };
     return (
-			<div id="sg" className={classes} style={styles} onClick={this.handleClick}>
+			<div id="sg" className={classes} style={styles} onClick={this.handleClick} onTouchEnd={this.handleClick}>
 			  <div role="presentation" aria-hidden="true" />
 				<strong>Satisfaction Guarantee</strong>
 			</div>

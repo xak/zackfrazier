@@ -59,8 +59,8 @@ gulp.task('styles', ['vendorcss'], function() {
 			paths: [ path.join(__dirname, 'src/css/includes') ]
 		})).on('error', handleError)
 		.pipe(config.minify ? $.sourcemaps.write() : $.util.noop())
-		.pipe(config.minify ? cachebust.references() : $.util.noop())
 		.pipe($.concat('zackfrazier.css'))
+		.pipe(config.minify ? cachebust.references() : $.util.noop())
 		.pipe(config.minify ? cachebust.resources() : $.util.noop())
 		.pipe($.autoprefixer({
 				browsers: ['last 2 versions'],
