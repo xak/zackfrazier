@@ -9,7 +9,7 @@ var SatisfactionGuarantee = React.createClass({
   },
   render: function() {
     return (
-			<div id="sg" className={this.state.visible ? 'show' : ''}>
+			<div id="sg" className={this.state.visible ? 'show' : ''} onClick={this.handleClick}>
 			  <span role="presentation" aria-hidden="true">g</span>
 				<strong>Satisfaction Guarantee</strong>
 			</div>
