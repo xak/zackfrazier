@@ -44,7 +44,8 @@ var SatisfactionGuarantee = React.createClass({
 var Scrim = React.createClass({
   getDefaultProps:function(){
     return {
-      animUrl: 'http://38.media.tumblr.com/7f6c38418dadcc2851d17c859bbbdab5/tumblr_inline_nbk7zkS5FX1raprkq.gif'
+      animUrl: 'http://38.media.tumblr.com/7f6c38418dadcc2851d17c859bbbdab5/tumblr_inline_nbk7zkS5FX1raprkq.gif',
+      nextAnimUrl: ''
     }
   },
   getInitialState:function(){
@@ -54,7 +55,10 @@ var Scrim = React.createClass({
     }
   },
   toggleAnim:function(){
-    scrim.setState({ 'showAnim': !this.state.showAnim })
+		if (!this.state.showAnim && this.props.nextAnimUrl) {
+  		this.setProps({ 'animUrl': this.props.nextAnimUrl });
+		}		
+    this.setState({ 'showAnim': !this.state.showAnim })
   },
   render: function() {
     return (
@@ -101,6 +105,9 @@ var AnimControl = React.createClass({
       imageSrc: 'http://38.media.tumblr.com/7f6c38418dadcc2851d17c859bbbdab5/tumblr_inline_nbk7zkS5FX1raprkq.gif'
     }
   },
+  loadAnim: function() {
+  
+  },
   handleClick:function () {
     toggleAnim();
   },
@@ -145,7 +152,16 @@ setTimeout(function () {
 },1000)
 
 function toggleAnim() {
-  scrim.toggleAnim()
+  scrim.toggleAnim();
+	Parse.Cloud.run('gifs', { }, {
+		success: function(data) { 
+			sg.setProps({ 'backgroundUrl': data.filePath })
+			scrim.setProps({ 'nextAnimUrl':  data.filePath })
+		},
+		error: function(error) { 
+		}
+	});  
+  
 }
 
 
