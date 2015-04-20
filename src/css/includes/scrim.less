@@ -1,0 +1,101 @@
+@scrimBkgdColor: @lightblue;
+
+@keyframes scrimfade {
+  0% { background-color: @scrimBkgdColor; }
+  10% { background-color: @lightgreen; }
+  25% { background-color: @yellow; }
+  40% { background-color: @pink; }
+  60% { background-color: @red; }
+  75% { background-color: @yellow; }
+  90% { background-color: @lightgreen; }
+  100% { background-color: @scrimBkgdColor; }
+}
+
+#scrim {
+  background-color: transparent;
+  opacity: 1;	
+  .panel {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%; 
+    background-color: transparent;
+    opacity: 0;	
+  }
+}
+#color {
+  &.visible {
+    opacity: 1;	
+    transition: opacity 0.2s ease-in;
+    animation-name: scrimfade;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+  }
+}
+.panel.gifs {
+  opacity: 0.3 !important;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat:no-repeat
+
+}
+
+
+
+
+
+
+@keyframes scrimfade-classic {
+  0% { background-color: @scrimBkgdColor; }
+  25% { background-color: @pink; }
+  50% { background-color: @redorange; }
+  75% { background-color: @orange; }
+  100% { background-color: @scrimBkgdColor; }
+}
+
+/*
+@keyframes scrimfade {
+  0% { background-color: @scrimBkgdColor; }
+  10% { background-color: @lightblue; }
+  20% { background-color: @yellow; }
+  30% { background-color: @green; }
+  40% { background-color: @olive; }
+  50% { background-color: @darkbrown; }
+  60% { background-color: @orange; }
+  70% { background-color: @pink; }
+  80% { background-color: @brown; }
+  90% { background-color: @blue; }
+  100% { background-color: @scrimBkgdColor; }
+}
+*/
+/*
+@keyframes textfade {
+  0% { filter: invert(0%) }
+  50% { filter: invert(100%) }
+  100% { filter: invert(0%) }
+}
+*/
+@keyframes textfade {
+  0% { filter: invert(0%) }
+  10% { filter: invert(0%) }
+  20% {filter: invert(0%) }
+  35% { filter: invert(100%) }
+  40% { filter: invert(100%)}
+  
+//  50% { filter: invert(0%); }
+  // 60% { filter: invert(50%) }
+  70% { filter: invert(100%) }
+  //80% { filter: invert(0%) }
+  90% { filter: invert(0%) }
+  100% { filter: invert(0%) }
+}
+
+#view.ready {
+//	animation-name: textfade;
+	animation-duration: 30s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+}
