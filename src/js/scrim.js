@@ -26,6 +26,7 @@ var SatisfactionGuarantee = React.createClass({
   render: function() {
     var classes = classnames({
       'visible': this.state.visible,
+      'fadeInLeft': this.state.visible,
       'nomask': !this.state.mask
     });
     var styles = {
