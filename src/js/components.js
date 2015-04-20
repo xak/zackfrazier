@@ -1,21 +1,8 @@
 /** @jsx React.DOM */
 var React = require('react');
+var classnames = require('classnames');
 
-var SatisfactionGuarantee = React.createClass({
-  getInitialState:function(){
-      return {
-          visible: false
-      }
-  },
-  render: function() {
-    return (
-			<div id="sg" className={this.state.visible ? 'show' : ''}>
-			  <span role="presentation" aria-hidden="true">g</span>
-				<strong>Satisfaction Guarantee</strong>
-			</div>
-    );
-  }
-});
+
 var SpotifyLink = React.createClass({
   render: function() {
     return (
@@ -70,10 +57,6 @@ var Lyric = React.createClass({
 
 console.log('Oh, hey! Thanks for stopping by. Really appreciate it!');
 
-var sg = React.render(<SatisfactionGuarantee/>, document.getElementById('badge'));
-setTimeout(function() {
-  sg.setState({ 'visible' : true });
-},0);
 
 var lyric = React.render(<Lyric />, document.getElementById('banner'));
 var updateLyric = function () {
@@ -95,7 +78,7 @@ var updateLyric = function () {
 
 setTimeout(function() {
 	updateLyric();
-},3000);
+},2500);
 
 
 

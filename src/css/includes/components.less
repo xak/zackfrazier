@@ -81,7 +81,7 @@
     background-repeat: no-repeat; 
     background-size: contain;
     top: -5px; 
-    background-image: url(../img/icon-spotify.svg); 
+    background-image: url("/img/icon-spotify.svg"); 
     text-indent: 100%;
     line-height: 25px;
     overflow: hidden;
@@ -124,13 +124,28 @@
 
 
 /* details */
+@url: url("/img/badge-satisfaction-guarantee.svg");
+#sg {
+  mask: @url  top left / cover;
+  width: 105px;
+  height: 75px;  
+  background-color: black;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  &.nomask {
+    background-image: none !important;
+  }
+}
 #sg {
   display: block;
   position: absolute;
   opacity: 0;
   right: 0;
+/* 
   font-family: '99-Special'; 
   line-height: 75px;
+ */
   strong {
     display: none;
   }
@@ -141,11 +156,14 @@
 }
 
 @keyframes sgscale {
+  0% { right: -2500px;  }
+  100% {   }
+}
+/*
+@keyframes sgscale {
   0% { font-size: 20000px; transform: rotate(0deg); margin-top: -10000px; }
   100% { font-size: 100px; transform: rotate(0deg); margin-top: 0;  }
 }
-/*
-
 @keyframes sgscale {
   0% { font-size: 20000px; transform: rotate(0deg); margin-top: -10000px; }
   25% { font-size: 100px; transform: rotate(15deg); margin-top: 0;  }
@@ -153,7 +171,7 @@
   100% { font-size: 100px; transform: rotate(0deg); margin-top: 0;  }
 }
 */
-#sg.show {
+#sg.visible {
   opacity: 1;
  	animation-name: sgscale;
   animation-duration: 4s;
