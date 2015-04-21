@@ -24,7 +24,9 @@ var cachebust = new $.cachebust();
 var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/';
 
 gulp.task('clean', function (done) {
-	del([distTarget], done);
+	if (environment !== 'production') {
+		del([distTarget], done);
+	}
 });
 
 // process static files
