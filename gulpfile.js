@@ -114,6 +114,16 @@ gulp.task('vendorjs', function() {
 		.pipe(gulp.dest(distTarget + 'js/'));
 });
 
+/*
+gulp.task('modernizr', function() {
+	return gulp.src('src/css/**/*.less')
+		.pipe($.modernizr())
+		//.pipe(config.minify ? cachebust.resources() : $.util.noop())
+		.pipe($.minifyCss())
+		.pipe(gulp.dest(distTarget + 'js/'));
+});
+*/
+
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.html', ['html']);

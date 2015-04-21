@@ -125,17 +125,42 @@
 /* details */
 @url: url("/img/badge-satisfaction-guarantee.svg");
 #sg {
-  mask: @url  top left / cover;
+
   width: 105px;
   height: 75px;  
   background-color: black;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  &.nomask {
-    background-image: none !important;
+
+}
+.cssmask {
+  #sg {
+    mask: @url  top left / cover;
+    &.nomask {
+      background-image: none !important;
+    }
   }
 }
+.no-cssmask {
+  #sg {
+    border-radius: 50% 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    div {
+      position: relative;
+      left: -115px;
+      top: -15px;
+      width: 100px;
+      height: 75px;
+      display: inline-block;
+      background: url(../img/badge-satisfaction-guarantee.svg) no-repeat;    
+    }
+  }
+
+}
+
 #sg {
   display: block;
   position: absolute;

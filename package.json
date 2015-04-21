@@ -17,6 +17,7 @@
     "gulp-less": "^3.0.2",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-css": "^1.0.0",
+    "gulp-modernizr": "^1.0.0-alpha",
     "gulp-plumber": "^1.0.0",
     "gulp-react": "^3.0.1",
     "gulp-sftp": "^0.1.4",
