@@ -24,7 +24,7 @@ Parse.Cloud.define("lyric", function(request, response) {
 });
 
 
-Parse.Cloud.define("gifs", function(request, response) {
+Parse.Cloud.define("gif", function(request, response) {
   var query = new Parse.Query("AnimatedGifs");
 	query.exists('filePath')
   query.find({
@@ -34,6 +34,19 @@ Parse.Cloud.define("gifs", function(request, response) {
     		return Math.floor((Math.random() * total));
     	}  
       response.success(results[rand()].attributes);
+    },
+    error: function() {
+      response.error("lookup failed");
+    }
+  });
+});
+
+Parse.Cloud.define("gifs", function(request, response) {
+  var query = new Parse.Query("AnimatedGifs");
+	query.exists('filePath')
+  query.find({
+    success: function(results) {
+      response.success(results);
     },
     error: function() {
       response.error("lookup failed");
