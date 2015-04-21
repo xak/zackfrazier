@@ -135,7 +135,7 @@ setTimeout(function() {
 
 var scrim = React.render(<Scrim />, document.getElementById('scrim'));
 var controls;
-Parse.Cloud.run('gifs', { }, {
+Parse.Cloud.run('gif', { }, {
   success: function(data) { 
     scrim.setProps({ 'animUrl': data.filePath })
     setTimeout(function () {
@@ -154,7 +154,7 @@ setTimeout(function () {
 
 function toggleAnim() {
   scrim.toggleAnim();
-	Parse.Cloud.run('gifs', { }, {
+	Parse.Cloud.run('gif', { }, {
 		success: function(data) { 
 			sg.setProps({ 'backgroundUrl': data.filePath })
 			scrim.setProps({ 'nextAnimUrl':  data.filePath })

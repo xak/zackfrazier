@@ -26,6 +26,8 @@ var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/
 gulp.task('clean', function (done) {
 	if (environment !== 'production') {
 		del([distTarget], done);
+	} else {
+		done();
 	}
 });
 
