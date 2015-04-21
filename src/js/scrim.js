@@ -6,15 +6,15 @@ var classnames = require('classnames');
 
 var SatisfactionGuarantee = React.createClass({
   getDefaultProps:function(){
-      return {
-          backgroundUrl: ''
-      }
+    return {
+      animUrl: ''
+    }
   },
   getInitialState:function(){
-      return {
-          visible: false,
-          mask: true
-      }
+    return {
+      visible: false,
+      mask: true
+    }
   },
   handleClick:function(){
     toggleAnim();
@@ -31,7 +31,7 @@ var SatisfactionGuarantee = React.createClass({
     });
     var styles = {
       //backgroundColor: 'transparent',
-      backgroundImage: 'url(' + this.props.backgroundUrl + ')'
+      backgroundImage: 'url(' + this.props.animUrl + ')'
     };
     return (
 			<div id="sg" className={classes} style={styles} onClick={this.handleClick} onTouchEnd={this.handleClick}>
@@ -45,7 +45,7 @@ var SatisfactionGuarantee = React.createClass({
 var Scrim = React.createClass({
   getDefaultProps:function(){
     return {
-      animUrl: 'http://38.media.tumblr.com/7f6c38418dadcc2851d17c859bbbdab5/tumblr_inline_nbk7zkS5FX1raprkq.gif',
+      animUrl: '',
       nextAnimUrl: ''
     }
   },
@@ -100,49 +100,24 @@ var AnimPanel = React.createClass({
   }
 });
 
-var AnimControl = React.createClass({
-  getDefaultProps:function(){
-    return {
-      imageSrc: 'http://38.media.tumblr.com/7f6c38418dadcc2851d17c859bbbdab5/tumblr_inline_nbk7zkS5FX1raprkq.gif'
-    }
-  },
-  loadAnim: function() {
-  
-  },
-  handleClick:function () {
-    toggleAnim();
-  },
-  render: function() {
-    var styles = {
-      backgroundColor: 'transparent',
-      backgroundImage: 'url(' + this.props.imageSrc + ')'
-    };
-    var classes = classnames({
-      'item': true,
-      'visible': true
-    });    
-    return (
-      <div className={classes} style={styles} onClick={this.handleClick}>
-      </div>
-    )
-  }
-});
 
+
+
+function rand(total) {
+  return Math.floor((Math.random() * total));
+}
 var sg = React.render(<SatisfactionGuarantee/>, document.getElementById('badge'));
-setTimeout(function() {
-  //sg.setState({ 'visible' : true });
-},0);
-
 var scrim = React.render(<Scrim />, document.getElementById('scrim'));
-var controls;
-Parse.Cloud.run('gif', { }, {
+var gifs;
+Parse.Cloud.run('gifs', { }, {
   success: function(data) { 
-    scrim.setProps({ 'animUrl': data.filePath })
+    gifs = data;
+    var filePath = gifs[rand(gifs.length)].attributes.filePath;
+    scrim.setProps({ 'animUrl': filePath })
+    sg.setProps({ 'animUrl': filePath })
     setTimeout(function () {
-      sg.setProps({ 'backgroundUrl': data.filePath })
-      sg.setState({ 'visible' : true });
+       sg.setState({ 'visible' : true });
     },3000)
-  //  controls = React.render(<AnimControl imageSrc={data.filePath} />, document.getElementById('scrimcontrols'));
   },
   error: function(error) { 
   }
@@ -153,16 +128,10 @@ setTimeout(function () {
 },1000)
 
 function toggleAnim() {
+  var filePath = gifs[rand(gifs.length)].attributes.filePath;
+  scrim.setProps({ 'nextAnimUrl': filePath })
+  sg.setProps({ 'animUrl': filePath })
   scrim.toggleAnim();
-	Parse.Cloud.run('gif', { }, {
-		success: function(data) { 
-			sg.setProps({ 'backgroundUrl': data.filePath })
-			scrim.setProps({ 'nextAnimUrl':  data.filePath })
-		},
-		error: function(error) { 
-		}
-	});  
-  
 }
 
 
