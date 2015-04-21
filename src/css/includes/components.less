@@ -55,9 +55,6 @@
 }
 
 
-
-
-
 #lyric {
 	visibility: hidden;
 	&.show {
@@ -95,14 +92,6 @@
       display: block;
       margin-top: 5px;
       font-size: 11px;
-/* 
-      margin-left: -4px;
-      &:before {
-        content: '-';
-        position: relative;
-        left: -3px;
-      }
- */
     }
   }
   .verse {
@@ -125,25 +114,18 @@
 /* details */
 @url: url("/img/badge-satisfaction-guarantee.svg");
 #sg {
-
   width: 105px;
   height: 75px;  
   background-color: black;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-
 }
 .cssmask {
   #sg {
     mask: @url  top left / cover;
     &.nomask {
       background-image: none !important;
-//      animation-name: scrimfade;
-//      animation-duration: 60s;
-//      animation-iteration-count: infinite;
-//      animation-timing-function: linear;
-//      animation-fill-mode: both;
     }
   }
 }
@@ -163,7 +145,6 @@
       background: url(../img/badge-satisfaction-guarantee.svg) no-repeat;    
     }
   }
-
 }
 
 #sg {
@@ -175,40 +156,10 @@
     display: none;
   }
 }
-
 #sg.visible {
   opacity: 1;
-// 	animation-name: sgscale;
  	animation-name: fadeInRight;
   animation-duration: 0.2s;
   animation-timing-function: ease-in-out;
 	animation-fill-mode: both;
 }
-
-
-
-
-
-@keyframes fontsize {
-  0% { font-size: 10000px;  }
-  100% {  }
-}
-
-@keyframes sgscale {
-  0% { right: -2500px;  }
-  100% {   }
-}
-/*
-@keyframes sgscale {
-  0% { font-size: 20000px; transform: rotate(0deg); margin-top: -10000px; }
-  100% { font-size: 100px; transform: rotate(0deg); margin-top: 0;  }
-}
-@keyframes sgscale {
-  0% { font-size: 20000px; transform: rotate(0deg); margin-top: -10000px; }
-  25% { font-size: 100px; transform: rotate(15deg); margin-top: 0;  }
-  90% { font-size: 100px; transform: rotate(15deg); }
-  100% { font-size: 100px; transform: rotate(0deg); margin-top: 0;  }
-}
-*/
-
-

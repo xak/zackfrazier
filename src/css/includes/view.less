@@ -41,14 +41,11 @@ main {
 	section {
 		display: inline-block;
 		vertical-align: top;
-		width: 290px;
-    @media screen and (max-width: 768px) {
-      width: 45%;
-    }
+    width: 45%;
     @media screen and (max-width: 667px) {
-      display: block;
+     	display: block;
       margin-right: 0 !important; 
-      width: 100%;
+      width: 100%; 
     }  
 		&#experience-section {
 			margin-right: 50px; 
@@ -114,13 +111,14 @@ footer {
 		display: none; 
 	}
 }
-
+@height: 700px;
+@width: 667px;
 #badge { 
   text-align: right; 
   height: 85px;
   position: relative;
   margin: 0;
-	@media screen and (max-width: 640px), (max-height: 760px) {
+	@media screen and (max-width: @width), (max-height: @height) {
 		width: 110px;
 		position: absolute;
 		top: 15px;
@@ -133,16 +131,15 @@ footer {
     height: 70px;
     margin-right: 0;
     padding-right: 0;
-    @media screen and (max-width: 640px), (max-height: 760px) {
-      right: 50px;;
+    @media screen and (max-width: @width), (max-height: @height) {
+      right: 50px;
     }
   }
 }
 
-
-@media screen and (max-width: 640px), (max-height: 414px) {
+@media screen and (max-width: @width), (max-height: @height) {
 	header address {
-		min-height: 65px;
+		min-height: 55px;
 		text-align: left;
 	}
 	#banner {
