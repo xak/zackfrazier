@@ -5,6 +5,19 @@ Parse.Cloud.define("hello", function(request, response) {
   response.success("Hey there!");
 });
 
+Parse.Cloud.define("lyrics", function(request, response) {
+  var query = new Parse.Query("Lyrics");
+	query.exists('verse')
+  query.find({
+    success: function(results) {
+      response.success(results);
+    },
+    error: function() {
+      response.error("lookup failed");
+    }
+  });
+});
+
 Parse.Cloud.define("lyric", function(request, response) {
   var query = new Parse.Query("Lyrics");
 	//query.equalTo('featured', true)

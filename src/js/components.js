@@ -57,29 +57,41 @@ var Lyric = React.createClass({
 
 console.log('Oh, hey! Thanks for stopping by. Really appreciate it!');
 
-
-var lyric = React.render(<Lyric />, document.getElementById('banner'));
-var updateLyric = function () {
-	lyric.setState({ 'visible': false });
-	Parse.Cloud.run('lyric', { }, {
-		success: function(data) { 
-			lyric.update({
-				'link': data.spotifyURI,
-				'title': data.song,
-				'verse': data.verse,
-				'artist': data.artist
-			})
-		},
-		error: function(error) {
-			//console.log('nope');
-		}
-	});
+function rand(total) {
+  return Math.floor((Math.random() * total));
 }
+var lyric = React.render(<Lyric />, document.getElementById('banner'));
+var lyrics;
+Parse.Cloud.run('lyrics', { }, {
+  success: function(results) { 
+    lyrics = results;
+    var item = lyrics[rand(lyrics.length)].attributes;
+    var data = {
+      'link': item.spotifyURI,
+      'title': item.song,
+      'verse': item.verse,
+      'artist': item.artist
+    }
+    lyric.setProps(data)
+    setTimeout(function() {
+    	lyric.setState({ 'visible': true })
+    },2500);
+  },
+  error: function(error) {
 
-setTimeout(function() {
-	updateLyric();
-},2500);
+  }
+});
 
-
-
-
+/*
+setInterval(function () {
+  var item = lyrics[rand(lyrics.length)].attributes;
+  var data = {
+    'link': item.spotifyURI,
+    'title': item.song,
+    'verse': item.verse,
+    'artist': item.artist
+  }
+  lyric.setState({ 'visible': false })
+  lyric.update(data); 
+},15000)
+*/
