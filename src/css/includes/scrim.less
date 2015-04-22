@@ -59,48 +59,13 @@
   75% { background-color: @orange; }
   100% { background-color: @scrimBkgdColor; }
 }
-
-/*
-@keyframes scrimfade {
-  0% { background-color: @scrimBkgdColor; }
-  10% { background-color: @lightblue; }
-  20% { background-color: @yellow; }
-  30% { background-color: @green; }
-  40% { background-color: @olive; }
-  50% { background-color: @darkbrown; }
-  60% { background-color: @orange; }
-  70% { background-color: @pink; }
-  80% { background-color: @brown; }
-  90% { background-color: @blue; }
-  100% { background-color: @scrimBkgdColor; }
-}
-*/
-/*
-@keyframes textfade {
-  0% { filter: invert(0%) }
-  50% { filter: invert(100%) }
-  100% { filter: invert(0%) }
-}
-*/
 @keyframes textfade {
   0% { filter: invert(0%) }
   10% { filter: invert(0%) }
   20% {filter: invert(0%) }
   35% { filter: invert(100%) }
   40% { filter: invert(100%)}
-  
-//  50% { filter: invert(0%); }
-  // 60% { filter: invert(50%) }
   70% { filter: invert(100%) }
-  //80% { filter: invert(0%) }
   90% { filter: invert(0%) }
   100% { filter: invert(0%) }
-}
-
-#view.ready {
-//	animation-name: textfade;
-	animation-duration: 30s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-	animation-fill-mode: both;
 }
