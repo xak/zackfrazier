@@ -22,7 +22,7 @@ var config = require('./config/' + environment + '.json');
 var cachebust = new $.cachebust();
 
 var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/';
-var dropbox = '/Users/zackfrazier/Dropbox/Public/';
+var dropbox = '/Users/z/Dropbox/Public/';
 
 gulp.task('clean', function (done) {
 	if (environment !== 'production') {
