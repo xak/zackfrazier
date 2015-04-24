@@ -1,6 +1,6 @@
 .ready {
 	 nav li {
-		//visibility: hidden !important;
+	//visibility: hidden !important;
 	
 	}
 }
@@ -14,108 +14,30 @@
 .ready {
 	#headline, .lead, #experience-section, #skills-section, #nav ul, #nav li {
 		visibility: visible;
-		animation-duration: 1s;
+		animation-duration: 0.25s;
 		animation-timing-function: ease-out;
 		animation-fill-mode: both;
+		animation-name: fadeInLeft;		
 	}
 	#headline {
-		animation-name: fadeInRight;
+
 	}
 	.lead {
-		animation-name: fadeInLeft;
-		//animation-delay: 0.25s;		
+		animation-name: fadeInRight;		
 	}
 	section {
-
+//		animation-delay: 0.45s;
 	}
 	#experience-section {
 		animation-name: fadeInLeft;
-		//animation-delay: 0.5s;
 	}
 	#skills-section {
 		animation-name: fadeInRight;
-		//animation-delay: 0.5s;
-	//	animation-duration: 0.35s;
 	}
-	nav ul li {
-	
-		&:nth-child(1) {
-				animation-name: fadeInLeft;		
-		}
-		&:nth-child(2) {
-		animation-name: fadeInRight;		
-		}	
-		&:nth-child(3) {
-		animation-name: fadeInRight;		
-		}	
-
-		animation-name: fadeInRight;
-		//animation-delay: 1.25s;
-	}
-	nav ul:first-child li {
-		animation-name: fadeInLeft;
-
-	}
-
-
-
-
-
-
-}
-/*
-
-.ready {
-
-
-
-
-
-	.lead, #experience-section, #skills-section {
-		visibility: visible;
-		animation-name: fadeInLeft;
-		animation-duration: 0.2s;
-		animation-fill-mode: both;
-	}
-	.lead {
-		animation-delay: 0.15s;		
-	}
-	#skills-section {
-		animation-delay: 0.1s;		
-	}
-	#experience-section {
-		animation-delay: 0.2s;
-	}	
-}
-
-
-
-
-
-.ready {
-	#nav {
-		li {
-			visibility: visible;
-			animation-name: fadeInLeft;
-			animation-duration: 0.2s;
-			animation-fill-mode: both;
-		}
-		li:nth-child(3) {
-			animation-delay: 0.15s;		
-		}
-		li:nth-child(2) {
-			animation-delay: 0.2s;
-		}
-		li:nth-child(1) {
-			animation-delay: 0.25s;		
-		}
+	#nav ul {
+	//	animation-delay: 0.45s;
 	}
 }
-
-
-*/
-
-
 
 #lyric {
 	visibility: hidden;
@@ -182,6 +104,7 @@
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 .cssmask {
   #sg {

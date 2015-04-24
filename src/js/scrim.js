@@ -100,9 +100,6 @@ var AnimPanel = React.createClass({
   }
 });
 
-
-
-
 function rand(total) {
   return Math.floor((Math.random() * total));
 }
@@ -117,7 +114,7 @@ Parse.Cloud.run('gifs', { }, {
     sg.setProps({ 'animUrl': filePath })
     setTimeout(function () {
        sg.setState({ 'visible' : true });
-    },3000)
+    },3250)
   },
   error: function(error) { 
   }
