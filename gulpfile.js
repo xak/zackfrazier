@@ -22,6 +22,7 @@ var config = require('./config/' + environment + '.json');
 var cachebust = new $.cachebust();
 
 var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/';
+var dropbox = '/Users/zackfrazier/Dropbox/Public/';
 
 gulp.task('clean', function (done) {
 	if (environment !== 'production') {
@@ -32,9 +33,13 @@ gulp.task('clean', function (done) {
 });
 
 // process static files
-gulp.task('public', function() {
+gulp.task('public', ['resume'], function() {
 	return gulp.src('public/**/*')
 		.pipe(gulp.dest(distTarget));
+});
+gulp.task('resume', function() {
+	return gulp.src('public/*.pdf')
+		.pipe(environment === 'production' ? gulp.dest(dropbox) : $.util.noop());
 });
 
 // process images
