@@ -154,6 +154,7 @@ gulp.task('deploy', ['build'], function () {
 		remotePath: 'zackfrazier.com/'
 	}
 	return gulp.src(['dist/' + version +'/**/*'])
+		.pipe($.size())
 		.pipe(environment === 'production' ? $.sftp(opts) : $.util.noop());
 });
  
