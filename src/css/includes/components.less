@@ -8,25 +8,26 @@
 
 
 
-#headline, .lead, #experience-section, #skills-section, #nav ul, #nav ul li {
+#headline, .lead, #experience-section, #skills-section, #nav li {
 	visibility: hidden;
 }
 .ready {
-	#headline, .lead, #experience-section, #skills-section, #nav ul, #nav li {
+	#headline, .lead, #experience-section, #skills-section, #nav li {
 		visibility: visible;
-		animation-duration: 0.25s;
-		animation-timing-function: ease-out;
+		animation-duration: 0.3s;
+		animation-timing-function: ease-in;
 		animation-fill-mode: both;
 		animation-name: fadeInLeft;		
 	}
 	#headline {
-
-	}
-	.lead {
 		animation-name: fadeInRight;		
 	}
+	.lead {
+
+		animation-delay: 0s;
+	}
 	section {
-//		animation-delay: 0.45s;
+		animation-delay: 0.25s;
 	}
 	#experience-section {
 		animation-name: fadeInLeft;
@@ -34,8 +35,9 @@
 	#skills-section {
 		animation-name: fadeInRight;
 	}
-	#nav ul {
-	//	animation-delay: 0.45s;
+	#nav li {
+		animation-delay: 0.45s;
+
 	}
 }
 
@@ -44,7 +46,7 @@
 	&.show {
 		visibility: visible;
 		animation-name: fadeInUp;
-		animation-duration: 0.15s;
+		animation-duration: 0.3s;
 		animation-timing-function: ease-in-out;
 	}
 }

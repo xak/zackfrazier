@@ -34,7 +34,7 @@ var SatisfactionGuarantee = React.createClass({
       backgroundImage: 'url(' + this.props.animUrl + ')'
     };
     return (
-			<div id="sg" className={classes} style={styles} onClick={this.handleClick} onTouchEnd={this.handleClick}>
+			<div id="sg" className={classes} style={styles} onClick={this.handleClick}>
 			  <div role="presentation" aria-hidden="true" />
 				<strong>Satisfaction Guarantee</strong>
 			</div>

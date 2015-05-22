@@ -75,7 +75,7 @@ Parse.Cloud.run('lyrics', { }, {
     lyric.setProps(data)
     setTimeout(function() {
     	lyric.setState({ 'visible': true })
-    },2500);
+    },2000);
   },
   error: function(error) {
 
