@@ -1,0 +1,412 @@
+{ "results": [
+	{
+        "artist": "Rita Coolidge",
+        "createdAt": "2015-04-23T18:29:46.598Z",
+        "objectId": "0gX8QUQzw8",
+        "song": "(Your Love Has Lifted Me) Higher and Higher",
+        "spotifyLink": "https://open.spotify.com/track/0srsE6fsPj53UxuAK0LH6a",
+        "spotifyURI": "spotify:track:0srsE6fsPj53UxuAK0LH6a",
+        "updatedAt": "2015-04-23T18:30:46.855Z",
+        "verse": "So keep it it up, quench my desire, and i'll be at your side, forever more."
+    },
+	{
+        "artist": "Lorde",
+        "createdAt": "2015-04-17T02:29:49.493Z",
+        "objectId": "0sqJXLFJbo",
+        "song": "Tennis Court",
+        "spotifyLink": "https://open.spotify.com/track/74fpNVAJrKGQuqHETi4WSt",
+        "spotifyURI": "spotify:track:74fpNVAJrKGQuqHETi4WSt",
+        "updatedAt": "2015-04-17T18:06:57.833Z",
+        "verse": "I'll be the beauty queen in tears. It's a new art form showing people how little we care."
+    },
+	{
+        "artist": "Fleetwood Mac",
+        "createdAt": "2015-04-17T01:28:47.231Z",
+        "objectId": "3sKj9tClmG",
+        "song": "Hold Me",
+        "spotifyLink": "https://open.spotify.com/track/4kRMsLX7bJqjIfK44qJ9h6",
+        "spotifyURI": "spotify:track:4kRMsLX7bJqjIfK44qJ9h6",
+        "updatedAt": "2015-04-17T03:18:54.344Z",
+        "verse": "I'm just around the corner if you got a minute to spare."
+    },
+	{
+        "artist": "Jim Croce",
+        "createdAt": "2015-04-17T02:08:16.837Z",
+        "objectId": "6mNCryUhmr",
+        "song": "Rapid Roy (The Stock Car Boy)",
+        "spotifyLink": "https://open.spotify.com/track/2fiSEPcdV1uQ7rluWlnLo4",
+        "spotifyURI": "spotify:track:2fiSEPcdV1uQ7rluWlnLo4",
+        "updatedAt": "2015-04-17T03:55:27.208Z",
+        "verse": "He got a tattoo on his arm that say 'baby', he got another one that just say 'hey'."
+    },
+	{
+        "artist": "Stevie Wonder",
+        "createdAt": "2015-04-23T19:38:33.856Z",
+        "objectId": "CNpUd6Itbr",
+        "song": "Do I Do",
+        "spotifyLink": "https://open.spotify.com/track/4m89g41aVf7DrkpjLs0PiJ",
+        "spotifyURI": "spotify:track:4m89g41aVf7DrkpjLs0PiJ",
+        "updatedAt": "2015-04-23T19:38:54.858Z",
+        "verse": "Yes, I got some honey suckle chocolate dripping kisses full of love for you."
+    },
+	{
+        "artist": "Lene Lovich",
+        "createdAt": "2015-04-19T03:22:33.241Z",
+        "objectId": "CiaB5Qulzn",
+        "song": "New Toy",
+        "spotifyLink": "https://open.spotify.com/track/2DyfryAs7EZ2bjRF670GMV",
+        "spotifyURI": "spotify:track:2DyfryAs7EZ2bjRF670GMV",
+        "updatedAt": "2015-04-19T03:23:07.802Z",
+        "verse": "I'm sick of the TV. Well look at the news. I'm sick of the radio. But what can you do?"
+    },
+	{
+        "artist": "P!nk",
+        "createdAt": "2015-04-17T01:52:01.826Z",
+        "objectId": "EZQJ5ngWnb",
+        "song": "I Got Money Now",
+        "spotifyLink": "https://open.spotify.com/track/6qLHBLHl4JXBxrCX1fMivi",
+        "spotifyURI": "spotify:track:6qLHBLHl4JXBxrCX1fMivi",
+        "updatedAt": "2015-04-17T03:16:25.406Z",
+        "verse": "I worked so hard all of my life. Just to have things I could call mine."
+    },
+	{
+        "artist": "Brandy",
+        "createdAt": "2015-04-17T01:59:29.625Z",
+        "objectId": "F0O1CmHmCu",
+        "song": "Sittin' Up in My Room",
+        "spotifyLink": "https://open.spotify.com/track/4330XmgVWlx98Y3Naswycg",
+        "spotifyURI": "spotify:track:4330XmgVWlx98Y3Naswycg",
+        "updatedAt": "2015-04-17T03:12:53.809Z",
+        "verse": "Back here thinking 'bout you. I'm just a mess with a thang for you."
+    },
+	{
+        "artist": "Stevie Nicks \u0026 Don Henley",
+        "createdAt": "2015-04-16T19:46:22.044Z",
+        "objectId": "KJwcKtdYMH",
+        "song": "Leather and Lace",
+        "spotifyLink": "https://open.spotify.com/track/2npStoMbQxG1LcIeF4PZrj",
+        "spotifyURI": "spotify:track:2npStoMbQxG1LcIeF4PZrj",
+        "updatedAt": "2015-04-17T03:17:33.858Z",
+        "verse": "Sometimes I'm a strong man, sometimes cold and scared, and sometimes I cry."
+    },
+	{
+        "artist": "The Commodores",
+        "createdAt": "2015-06-13T00:22:16.720Z",
+        "objectId": "N6Pl89fONb",
+        "song": "Sail On",
+        "spotifyLink": "https://open.spotify.com/track/3vHJKkAW1UB6tKDb5GRSlC",
+        "spotifyURI": "spotify:track:3vHJKkAW1UB6tKDb5GRSlC",
+        "updatedAt": "2015-06-13T00:22:38.832Z",
+        "verse": "It was plain to see that a small town boy like me just wasn't your cup of tea."
+    },
+	{
+        "artist": "Paul Simon",
+        "createdAt": "2015-04-17T01:53:52.590Z",
+        "objectId": "Q9gCgpjFyG",
+        "song": "The Obvious Child",
+        "spotifyLink": "https://open.spotify.com/track/0UMcuaJ5G6CMz63F4H6qAe",
+        "spotifyURI": "spotify:track:0UMcuaJ5G6CMz63F4H6qAe",
+        "updatedAt": "2015-04-17T03:15:59.195Z",
+        "verse": "I'm accustomed to a smooth ride, or maybe I'm a dog who's lost it's bite."
+    },
+	{
+        "artist": "Marky Mark \u0026 the Funky Bunch",
+        "createdAt": "2015-04-17T01:44:31.292Z",
+        "objectId": "QBG1CSFcIz",
+        "song": "Good Vibrations",
+        "spotifyLink": "https://open.spotify.com/track/5hWdgGVcfTeLPAiHM6EZG9",
+        "spotifyURI": "spotify:track:5hWdgGVcfTeLPAiHM6EZG9",
+        "updatedAt": "2015-04-17T03:18:24.907Z",
+        "verse": "Come on, come on. Feel it, feel it. Feel the vibration."
+    },
+	{
+        "artist": "Electric Light Orchestra",
+        "createdAt": "2015-04-20T14:45:24.423Z",
+        "objectId": "RT27Ovvrc7",
+        "song": "Shine a Little Love",
+        "spotifyLink": "https://open.spotify.com/track/5CItBrmamL7qkVBxQLuOUX",
+        "spotifyURI": "spotify:track:5CItBrmamL7qkVBxQLuOUX",
+        "updatedAt": "2015-04-20T14:46:37.555Z",
+        "verse": "You see I gotta make you understand. I know it sounds a foolish thing to say, but it don't matter baby 'cuz today's another day."
+    },
+	{
+        "artist": "Dragonette",
+        "createdAt": "2015-05-22T02:05:02.050Z",
+        "objectId": "SwOPCiN80X",
+        "song": "Easy",
+        "spotifyLink": "https://open.spotify.com/track/2LsdQXjGCHRLhfAWkI88oE",
+        "spotifyURI": "spotify:track:2LsdQXjGCHRLhfAWkI88oE",
+        "updatedAt": "2015-05-22T02:05:25.648Z",
+        "verse": "It's easy, hard as it looks."
+    },
+	{
+        "artist": "Billy Joel",
+        "createdAt": "2015-04-21T15:05:21.465Z",
+        "objectId": "U3vNFXb1Jw",
+        "song": "Just the Way You Are",
+        "spotifyLink": "https://open.spotify.com/track/06RdYCp0UxsBtWsonHfSZz",
+        "spotifyURI": "spotify:track:06RdYCp0UxsBtWsonHfSZz",
+        "updatedAt": "2015-04-21T15:05:56.494Z",
+        "verse": "I don't want clever conversation, I never want to work that hard. I just want someone that I can talk to."
+    },
+	{
+        "artist": "Lederhosen Lucil",
+        "createdAt": "2015-05-22T01:40:35.196Z",
+        "objectId": "Ut91upe534",
+        "song": "Automatic Weapons of the World",
+        "spotifyLink": "https://open.spotify.com/track/3FJt43QVIAR3ekojzzqVKg",
+        "spotifyURI": "spotify:track:3FJt43QVIAR3ekojzzqVKg",
+        "updatedAt": "2015-05-22T01:41:12.965Z",
+        "verse": "But my weapon of choice did not make enough noise."
+    },
+	{
+        "artist": "Carly Simon",
+        "createdAt": "2015-04-23T20:25:33.044Z",
+        "objectId": "UusKRpbfBd",
+        "song": "Jesse",
+        "spotifyLink": "https://open.spotify.com/track/2ifpWVChV5iLsHozrX6IHQ",
+        "spotifyURI": "spotify:track:2ifpWVChV5iLsHozrX6IHQ",
+        "updatedAt": "2015-04-23T20:26:23.570Z",
+        "verse": "I won't put on cologne, I won't wait by the phone for you."
+    },
+	{
+        "artist": "Iris Dement",
+        "createdAt": "2015-04-23T19:17:16.283Z",
+        "objectId": "XGzvC40rAK",
+        "song": "I'll Take My Sorrow Straight",
+        "spotifyLink": "https://open.spotify.com/track/0rYsUWKrd6nzC6ZG0zXV4w",
+        "spotifyURI": "spotify:track:0rYsUWKrd6nzC6ZG0zXV4w",
+        "updatedAt": "2015-04-23T19:41:34.595Z",
+        "verse": "I ain't sayin' I'm any better than the rest."
+    },
+	{
+        "artist": "Spice Girls",
+        "createdAt": "2015-04-23T18:51:27.656Z",
+        "objectId": "ZXJKiUUVVu",
+        "song": "Say You'll Be There",
+        "spotifyLink": "https://open.spotify.com/track/1yTQ39my3MoNROlFw3RDNy",
+        "spotifyURI": "spotify:track:1yTQ39my3MoNROlFw3RDNy",
+        "updatedAt": "2015-04-23T19:40:44.061Z",
+        "verse": "This time, you gotta take it easy; throwing far too much emotions at me."
+    },
+	{
+        "artist": "Janelle Monáe",
+        "createdAt": "2015-04-17T02:32:58.240Z",
+        "objectId": "a1lfT9eOcm",
+        "song": "Q.U.E.E.N.",
+        "spotifyLink": "https://open.spotify.com/track/3HW030T8eqPs8wpsgZqCGM",
+        "spotifyURI": "spotify:track:3HW030T8eqPs8wpsgZqCGM",
+        "updatedAt": "2015-04-17T03:55:03.059Z",
+        "verse": "They be like, 'Ooh, let them eat cake,' but we eat wings and throw them bones on the ground."
+    },
+	{
+        "artist": "Eddie Money",
+        "createdAt": "2015-04-17T14:23:34.566Z",
+        "objectId": "aoNRNSp8Wb",
+        "song": "Think I'm in Love",
+        "spotifyLink": "https://open.spotify.com/track/2RvkPf7MIzhdh347w5sjTJ",
+        "spotifyURI": "spotify:track:2RvkPf7MIzhdh347w5sjTJ",
+        "updatedAt": "2015-04-17T14:24:22.482Z",
+        "verse": "Ooh, something's got a hold of me now. It's a feeling, burnin' up like I'm on fire."
+    },
+	{
+        "artist": "Janet Jackson",
+        "createdAt": "2015-06-29T21:11:18.713Z",
+        "objectId": "k0Ny6byHd5",
+        "song": "Rhythm Nation",
+        "spotifyLink": "https://open.spotify.com/track/4nTYxxF8iWBq54LO3dBUie",
+        "spotifyURI": "spotify:track:4nTYxxF8iWBq54LO3dBUie",
+        "updatedAt": "2015-06-29T21:19:22.139Z",
+        "verse": "People of the world unite, strength in numbers we can get it right ... one time."
+    },
+	{
+        "artist": "Boyz II Men",
+        "createdAt": "2015-04-17T02:12:16.200Z",
+        "objectId": "kBdOdBQeUx",
+        "song": "Motownphilly",
+        "spotifyLink": "https://open.spotify.com/track/4LxIGAVfcQIw0zAQRyFhU8",
+        "spotifyURI": "spotify:track:4LxIGAVfcQIw0zAQRyFhU8",
+        "updatedAt": "2015-04-17T02:38:56.485Z",
+        "verse": "Back in school we used to dream about this everyday. Could it really happen? Or do dreams fade away."
+    },
+	{
+        "artist": "Right Said Fred",
+        "createdAt": "2015-04-17T02:14:42.403Z",
+        "objectId": "knjfnbYjG8",
+        "song": "I'm Too Sexy",
+        "spotifyLink": "https://open.spotify.com/track/2WElktskrNJEwgpp5Vouxk",
+        "spotifyURI": "spotify:track:2WElktskrNJEwgpp5Vouxk",
+        "updatedAt": "2015-04-17T02:38:28.316Z",
+        "verse": "And I'm too sexy for my hat. Too sexy for my hat. What do you think about that?"
+    },
+	{
+        "artist": "Quiet Riot",
+        "createdAt": "2015-04-23T20:30:52.862Z",
+        "objectId": "lCD0CIAfxV",
+        "song": "Cum on Feel the Noize",
+        "spotifyLink": "https://open.spotify.com/track/6FBmHx1FuaSnTnnnaThgbF",
+        "spotifyURI": "spotify:track:6FBmHx1FuaSnTnnnaThgbF",
+        "updatedAt": "2015-04-24T13:50:09.285Z",
+        "verse": "And you say I got a dirty mind, well, I'm a mean go-getter."
+    },
+	{
+        "artist": "Rihanna",
+        "createdAt": "2015-04-19T01:58:58.932Z",
+        "objectId": "lhkJao6Iux",
+        "song": "Breakin' Dishes",
+        "spotifyLink": "https://open.spotify.com/track/46aZJc0z1HHHSFxaIRxYSP",
+        "spotifyURI": "spotify:track:46aZJc0z1HHHSFxaIRxYSP",
+        "updatedAt": "2015-04-19T01:59:27.290Z",
+        "verse": "I ain't gonna stop until I see police lights, uh huh."
+    },
+	{
+        "artist": "Rihanna",
+        "createdAt": "2015-11-25T21:07:41.683Z",
+        "objectId": "nEHmYmX7zb",
+        "song": "SOS",
+        "spotifyLink": "https://open.spotify.com/track/30cSNer6TV8x2utjULVeQ5",
+        "spotifyURI": "spotify:track:30cSNer6TV8x2utjULVeQ5",
+        "updatedAt": "2015-11-25T21:08:48.198Z",
+        "verse": "You got me tossin' and turnin', can't sleep at night."
+    },
+	{
+        "artist": "Electric Light Orchestra",
+        "createdAt": "2015-04-23T18:43:16.859Z",
+        "objectId": "nrivwaaDbQ",
+        "song": "Livin' Thing",
+        "spotifyLink": "https://open.spotify.com/track/40wPRNaQJiroHMqRjZFajq",
+        "spotifyURI": "spotify:track:40wPRNaQJiroHMqRjZFajq",
+        "updatedAt": "2015-04-23T18:44:07.387Z",
+        "verse": "Takin' a dive 'cause you can't halt the slide. Floating downstream, I'm takin a dive."
+    },
+	{
+        "artist": "Little River Band",
+        "createdAt": "2015-04-17T21:35:50.403Z",
+        "objectId": "oXEGOFveEa",
+        "song": "Man On Your Mind",
+        "spotifyLink": "https://open.spotify.com/track/2FuBAo5UbUP60rFx94snKA",
+        "spotifyURI": "spotify:track:2FuBAo5UbUP60rFx94snKA",
+        "updatedAt": "2015-04-17T21:36:33.747Z",
+        "verse": "It's not just a game. You can't change your life by changing your name."
+    },
+	{
+        "artist": "Heatwave",
+        "createdAt": "2015-04-22T15:12:18.655Z",
+        "objectId": "pxy9C33lRe",
+        "song": "The Groove Line",
+        "spotifyLink": "https://open.spotify.com/track/0QX4u1gl2VZ6HKShy7BWEn",
+        "spotifyURI": "spotify:track:0QX4u1gl2VZ6HKShy7BWEn",
+        "updatedAt": "2015-04-23T19:39:18.707Z",
+        "verse": "Check out the wheels a turnin', you know we won't stop. We got this boiler burnin', we're keepin it hot."
+    },
+	{
+        "artist": "Kylie Minogue",
+        "createdAt": "2015-11-25T21:25:50.525Z",
+        "objectId": "qhMaiTHPuE",
+        "song": "Slow",
+        "spotifyLink": "https://open.spotify.com/track/2DAxu8f0ZupOzkFEZz8kqE",
+        "spotifyURI": "spotify:track:2DAxu8f0ZupOzkFEZz8kqE",
+        "updatedAt": "2015-11-25T21:27:14.540Z",
+        "verse": "Skip a beat and move with my body."
+    },
+	{
+        "artist": "Taco",
+        "createdAt": "2015-11-25T21:45:11.635Z",
+        "objectId": "rVBD6vNHpA",
+        "song": "Puttin‘ on the Ritz",
+        "spotifyLink": "https://open.spotify.com/track/4RUkk4vAzPVYqBdHNW9T6i",
+        "spotifyURI": "spotify:track:4RUkk4vAzPVYqBdHNW9T6i",
+        "updatedAt": "2015-11-25T21:45:43.511Z",
+        "verse": "Come, let’s mix where Rockefellers walk with sticks or umbrellas in their mitts."
+    },
+	{
+        "artist": "Coolio",
+        "createdAt": "2015-04-17T01:45:06.327Z",
+        "objectId": "s9D4UMWlrz",
+        "song": "Fantastic Voyage",
+        "spotifyLink": "https://open.spotify.com/track/1VvsWao3Tx3QjkWgr6sTaO",
+        "spotifyURI": "spotify:track:1VvsWao3Tx3QjkWgr6sTaO",
+        "updatedAt": "2015-04-17T03:16:46.409Z",
+        "verse": "You don't understand about runnin' with a gang, cuz' you don't gang bang."
+    },
+	{
+        "artist": "Waylon Jennings",
+        "createdAt": "2015-04-17T15:44:06.386Z",
+        "objectId": "svEgIpvn7Q",
+        "song": "Are You Sure Hank Done It This Way",
+        "spotifyLink": "https://open.spotify.com/track/02TGXV8AG3TdfTiYEstWiQ",
+        "spotifyURI": "spotify:track:02TGXV8AG3TdfTiYEstWiQ",
+        "updatedAt": "2015-04-17T15:44:55.065Z",
+        "verse": "Lord, it's the same old tune, fiddle and guitar. Where do we take it from here?"
+    },
+	{
+        "artist": "Britney Spears",
+        "createdAt": "2015-04-19T01:51:27.995Z",
+        "objectId": "tewWqCAV50",
+        "song": "Work B**ch",
+        "spotifyLink": "https://open.spotify.com/track/2vTPWWm2Lgc6kI6a3Z3uXY",
+        "spotifyURI": "spotify:track:2vTPWWm2Lgc6kI6a3Z3uXY",
+        "updatedAt": "2015-04-19T01:52:10.176Z",
+        "verse": "You want a Lamborghini? Sippin' martinis? Look hot in a bikini?"
+    },
+	{
+        "artist": "Kenny Loggins \u0026 Stevie Nicks",
+        "createdAt": "2015-04-17T02:04:14.097Z",
+        "objectId": "uo9p5Qwwa1",
+        "song": "Whenever I Call You \"Friend\"",
+        "spotifyLink": "https://open.spotify.com/track/6hR3R7WPW5l639XAYCNpJe",
+        "spotifyURI": "spotify:track:6hR3R7WPW5l639XAYCNpJe",
+        "updatedAt": "2015-04-17T03:12:21.589Z",
+        "verse": "Now I know my life has given me more than memories. Day by day we can see, in every moment, there's a reason to carry on."
+    },
+	{
+        "artist": "Neil Diamond",
+        "createdAt": "2015-04-16T19:51:12.626Z",
+        "objectId": "vAPLfNg0w7",
+        "song": "Heartlight",
+        "spotifyLink": "https://open.spotify.com/track/05kyUVtulcJJRuLBonmsGw",
+        "spotifyURI": "spotify:track:05kyUVtulcJJRuLBonmsGw",
+        "updatedAt": "2015-04-23T20:33:26.134Z",
+        "verse": "Turn on your heartlight.\n\t\tLet it shine wherever you go.\n\t\tLet it make a happy glow for all the world to see."
+    },
+	{
+        "artist": "Danny Brown",
+        "createdAt": "2015-04-17T01:56:59.204Z",
+        "objectId": "vCgVPtgz0c",
+        "song": "Smokin \u0026 Drinkin",
+        "spotifyLink": "https://open.spotify.com/track/3xd80KxnM4MnDcaE8bcreg",
+        "spotifyURI": "spotify:track:3xd80KxnM4MnDcaE8bcreg",
+        "updatedAt": "2015-04-17T03:15:32.194Z",
+        "verse": "And we smoke blunt after blunt after blunt after blunt after blunt after blunt after blunt."
+    },
+	{
+        "artist": "Joe Cocker \u0026 Jennifer Warnes",
+        "createdAt": "2015-04-17T01:31:24.045Z",
+        "objectId": "wlAzIEEPA3",
+        "song": "Up Where We Belong",
+        "spotifyLink": "https://open.spotify.com/track/0Co8hKbjUy273NrGliGdWZ",
+        "spotifyURI": "spotify:track:0Co8hKbjUy273NrGliGdWZ",
+        "updatedAt": "2015-04-17T03:17:58.036Z",
+        "verse": "The road is long. There are mountains in our way but we climb steps every day."
+    },
+	{
+        "artist": "Velocity Girl",
+        "createdAt": "2015-04-23T19:29:39.571Z",
+        "objectId": "wyQEukllqa",
+        "song": "Drug Girls",
+        "spotifyLink": "https://open.spotify.com/track/7jueuqD6rVJA2pEfpbiwh1",
+        "spotifyURI": "spotify:track:7jueuqD6rVJA2pEfpbiwh1",
+        "updatedAt": "2015-04-23T19:30:19.042Z",
+        "verse": "Fun is never easy, it's an occupation."
+    },
+	{
+        "artist": "Missy Elliott",
+        "createdAt": "2015-04-19T03:18:53.720Z",
+        "objectId": "yNYiB9n4Ck",
+        "song": "Back in the Day",
+        "spotifyLink": "https://open.spotify.com/track/1XMRZHmaO9pNB6e4gE01bh",
+        "spotifyURI": "spotify:track:1XMRZHmaO9pNB6e4gE01bh",
+        "updatedAt": "2015-04-19T03:19:34.087Z",
+        "verse": "British Knights and gold chains, do the prep and cabbage patch, and wear your laces all fat."
+    }
+] }
