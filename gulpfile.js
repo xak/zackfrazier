@@ -1,164 +1,184 @@
-var version = '1.0.4';
+var version = '2.0.0';
 
-// load node modules/plugins
-var gulp = require('gulp');
-var del = require('del');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var path = require('path');
-var express = require('express');
-var mainBowerFiles = require('main-bower-files');
-var browserSync = require('browser-sync');
-var minimist = require('minimist');
-var runSequence = require('run-sequence');
-var reactify = require('reactify');
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
+const browserSync = require('browser-sync');
+const del = require('del');
+const nunjucks = require('gulp-nunjucks-html');
+const path = require('path');
+const yargs = require('yargs');
 
-var $ = require('gulp-load-plugins')();
+const PRODUCTION = !!(yargs.argv.production);
+
+const src = {
+  path: 'src/',
+  data: 'data/',
+  public: 'public/**/*',
+  scripts: 'src/js/**/*',
+  images: 'src/img/**/*',
+  styles: 'src/css/',
+  bower: 'bower_components/',
+  fonts: 'src/fonts',
+  html: 'src/html/**/*.html',
+  layouts: 'src/html/tmpls/',
+  includes: 'src/html/incl/',
+  macros: 'src/html/incl/'
+}
+
+const dist_versioned = 'dist/' + version;
+
+const dist = {
+  path: dist_versioned,
+  data: dist_versioned + '/api',
+  scripts: dist_versioned + '/js',
+  images: dist_versioned + '/img',
+  styles: dist_versioned + '/css',
+  fonts: dist_versioned + '/fonts',
+  html: dist_versioned + '/'
+}
+
+// environment setup
 var server;
-var options = minimist(process.argv);
+const date = new Date();
 
-var environment = options.environment || 'development';
-var config = require('./config/' + environment + '.json');
-var cachebust = new $.cachebust();
+//data
+const app = require('./' + src.data + 'app.json');
 
-var distTarget = 'dist/' + (environment === 'production' ? version : 'dev') + '/';
-var dropbox = '/Users/z/Dropbox/Public/';
+// helpers
 
+// get key from file name, e.g. index.html returns index
+function getPageKey(file) {
+  var filePath = path.basename(file.path);
+  return filePath.replace(/\.[^/.]+$/, "");
+}
+var getAppData = function(file) {
+  try {
+    //set menu states
+    var selectedId = getPageKey(file);
+    app.menu.forEach(function (obj) {
+      obj.selected = obj.id === selectedId || selectedId.indexOf(obj.id) !== -1;
+    });
+    return { app: app };
+  } catch(err) {
+    console.log(err.message);
+  }
+  return { app: {} };
+};
+var getPageData = function(file) {
+  try {
+    var key = getPageKey(file);
+    var page = require('./' + src.data + key + '.json');
+    page.id = key;
+    return { page: page };
+  } catch(err) {
+    console.log(err.message);
+  }
+  return { page: {} };
+};
+
+//TASK RUNNERS
+gulp.task('serve', ['build'], function () {
+  server = browserSync({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: [dist.path]
+    }
+  });
+  gulp.watch(src.html, ['html']);
+  gulp.watch(src.styles + '**/*', ['css']);
+  gulp.watch(src.scripts + '**/*', ['js']);
+});
+
+// build static HTML files
+gulp.task('html', function () {
+  return gulp.src([src.html, '!'+src.includes+'*', '!'+src.layouts+'*', '!'+src.macros+'*'])
+    .pipe($.data(getAppData))
+    .pipe($.data(getPageData))
+    .pipe(nunjucks({
+      searchPaths: [src.layouts, src.includes, src.macros],
+      locals: {
+        date: date
+      }
+    }))
+    .pipe(gulp.dest(dist.path))
+    .pipe(reload())
+});
+
+
+// process and transpile JS
+gulp.task('js', function() {
+  return gulp.src(src.scripts + 'app.js')
+    .pipe($.include())
+      .on('error', console.log)
+    .pipe($.sourcemaps.init())
+    .pipe($.babel())
+    .pipe($.if(PRODUCTION, $.uglify()))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+		.pipe(gulp.dest(dist.scripts))
+		.pipe(reload());
+});
+
+// process SASS
+gulp.task('css', function () {
+  return gulp.src([src.styles + '*.scss', '!'+ src.styles + 'debug.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      outputStyle: (PRODUCTION?'compressed':'expanded'),
+      precision: 10,
+      includePaths: [src.styles],
+      errLogToConsole: true
+    })
+    .on('error', $.sass.logError))
+    .pipe($.if(PRODUCTION, $.cssnano()))
+    .pipe($.postcss([
+      require('autoprefixer-core')({browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']})
+    ]))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(dist.styles))
+    .pipe(reload());
+});
+
+// process images
+gulp.task('images', function() {
+	gulp.src(src.images)
+		.pipe($.if(PRODUCTION, $.imagemin({
+  		progressive: true,
+  		svgoPlugins: [{cleanupIDs: true, removeTitle: true}]
+		})))
+		.pipe(gulp.dest(dist.images))
+});
+
+
+// copy JSON files
+gulp.task('data', function() {
+  return gulp.src(src.data+'**/*.json')
+	  .pipe(gulp.dest(dist.data));
+});
+
+//gulp.task('clean', del.bind(null, [dist.path]));
 gulp.task('clean', function (done) {
-	if (environment !== 'production') {
+	if (PRODUCTION) {
 		del([distTarget], done);
 	} else {
 		done();
 	}
 });
 
-// process static files
-gulp.task('public', ['resume'], function() {
-	return gulp.src('public/**/*')
-		.pipe(gulp.dest(distTarget));
-});
-gulp.task('resume', function() {
-	return gulp.src('public/*.pdf')
-		.pipe(environment === 'production' ? gulp.dest(dropbox) : $.util.noop());
+// process static files (for favicon.ico, touch icons, etc.)
+gulp.task('public', function() {
+  return gulp.src(src.public)
+	  .pipe(gulp.dest(dist.path));
 });
 
-// process images
-gulp.task('images', function() {
-	gulp.src('src/img/**/*')
-		.pipe($.imagemin())
-		.pipe(environment === 'production' ? cachebust.resources() : $.util.noop())
-		.pipe(gulp.dest(distTarget + 'img'))
-		.pipe(reload());
+//build
+gulp.task('build', $.sequence('clean','public','images','css','js','html'));
+
+
+gulp.task('default', function () {
+  gulp.start('serve');
 });
 
-// process html
-gulp.task('html', function() {
-	return gulp.src('src/**/*.html')
-		.pipe(environment === 'production' ? cachebust.references() : $.util.noop())	
-		.pipe(gulp.dest(distTarget))
-		.pipe(reload());
-});
-
-//process styles
-gulp.task('styles', ['vendorcss'], function() {
-	return gulp.src('src/css/app.less')
-		.pipe($.plumber())
-		.pipe(config.minify ? $.sourcemaps.init() : $.util.noop())
-		.pipe($.less({
-			paths: [ path.join(__dirname, 'src/css/includes') ]
-		})).on('error', handleError)
-		.pipe(config.minify ? $.sourcemaps.write() : $.util.noop())
-		.pipe($.concat('zackfrazier.css'))
-		.pipe(config.minify ? cachebust.references() : $.util.noop())
-		.pipe(config.minify ? cachebust.resources() : $.util.noop())
-		.pipe($.autoprefixer({
-				browsers: ['last 2 versions'],
-				cascade: false
-		}))
-		.pipe(config.minify ? $.minifyCss() : $.util.noop())
-		.pipe(gulp.dest(distTarget + 'css/'))
-		.pipe(reload());
-});
-
-//process vendor styles
-var bowerPaths = {
-	bowerDirectory: 'src/bower_components',
-	bowerrc: '.bowerrc',
-	bowerJson: 'bower.json'
-};
-gulp.task('vendorcss', function() {
-	return gulp.src(bowerPaths.bowerDirectory + '/animatecss/animate.min.css')
-		.pipe($.concat('vendor.css'))
-		.pipe(config.minify ? cachebust.resources() : $.util.noop())
-		.pipe($.minifyCss())
-		.pipe(gulp.dest(distTarget + 'css/'));
-});
-
-//process scripts
-gulp.task('scripts', ['vendorjs'], function(){
-  var b = browserify({
-  	debug: config.minify	
-  });
-  b.transform(reactify); // use the reactify transform
-  b.add('./src/js/app.js');
-  return b.bundle().on('error', handleError)
-    .pipe(source('zackfrazier.js'))
-		.pipe(config.minify ? $.buffer() : $.util.noop())
-		.pipe(config.minify ? $.uglify() : $.util.noop())
-		.pipe(config.minify ? cachebust.resources() : $.util.noop())
-    .pipe(gulp.dest(distTarget + 'js'))
-    .pipe(reload());
-});
-gulp.task('vendorjs', function() {
-	return gulp.src([ 
-		//bowerPaths.bowerDirectory + '/react/react-with-addons.min.js', 
-		bowerPaths.bowerDirectory + '/parse/parse.min.js'
-	])
-		.pipe($.concat('vendor.js'))
-		.pipe(config.minify ? cachebust.resources() : $.util.noop())
-		.pipe(gulp.dest(distTarget + 'js/'));
-});
-
-gulp.task('watch', function() {
-  gulp.watch('src/**/*.html', ['html']);
-  gulp.watch('src/img/**/*', ['images']);
-  gulp.watch('src/js/**/*.js', ['scripts']);
-  gulp.watch('src/css/**/*.less', ['styles']);
-});
-
-gulp.task('server', function() {
-  server = express();
-  server.use(express.static(distTarget));
-  server.listen(8000);
-  browserSync({ proxy: 'localhost:8000' });
-});
-
-gulp.task('build', function (done) {
-  runSequence('clean', 'public', 'images', 'styles', 'scripts', 'html', function () {
-  	done();
-  	console.log('zackfrazier ' + environment + ' v' + version + ' build is complete.')
-  });
-});
-
-gulp.task('default', function (done) {
-  runSequence('build', 'watch', 'server', function () {
-  	done();
-  	console.log('zackfrazier v' + version + ' is running.')
-  });
-});
-
-gulp.task('deploy', ['build'], function () {
-	var opts = {
-		host: 'zackfrazier.com',
-		auth: 'keyMain',
-		remotePath: 'zackfrazier.com/'
-	}
-	return gulp.src(['dist/' + version +'/**/*'])
-		.pipe($.size())
-		.pipe(environment === 'production' ? $.sftp(opts) : $.util.noop());
-});
- 
- 
 
 function reload() {
   if (server) {
@@ -166,8 +186,3 @@ function reload() {
   }
   return $.util.noop();
 }
-function handleError(err) {
-  console.log(err.toString());
-  this.emit('end');
-}
-

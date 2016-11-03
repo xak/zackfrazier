@@ -1,0 +1,15 @@
+{% macro item(name, label='', value='', type='text', modifier='', placeholder='', required=false) %}
+
+<p class="form__item {{ modifier }}{{ "--" if modifier }}">
+  <label for="{{ name }}">{{ label }}{{ "*" if required }}</label>
+  {% if type == 'textarea' %}
+  <textarea placeholder="{{ placeholder }}" id="{{ name }}">
+    {{ value | escape }}
+  </textarea>
+  {% else %}
+<input type="{{ type }}" placeholder="{{ placeholder }}" id="{{ name }}" value="{{ value | escape }}">
+  {% endif %}
+</p>
+         
+          
+{% endmacro %}

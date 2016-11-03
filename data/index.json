@@ -1,0 +1,36 @@
+{
+    "title": "Home",
+    "intro": "Sed pretium massa sed ipsum rhoncus venenatis. Suspendisse ultricies lectus at nisl rutrum vulputate.",
+    "hero": "images/home-hero.png",
+    "is_home": true,
+    "approach": [
+      {
+        "title": "Proven Capabilities",
+        "intro": "We are committed to building leading insurance companies. We provide a unique combination of distribution, financing, and asset management solutions to unlock new growth at established platforms. Our goal is to amplify a company’s existing strengths and activate new areas for expansion."
+      },
+      {
+        "title": "Patient Capital",
+        "intro": "We are backed by world-class investors with a history of building great businesses. We are in this for the long-haul and we invest our capital accordingly. We provide strategic support and substantial resources to help our companies pursue sustainable growth opportunities."
+      }
+    ],
+    "offerings": [
+      {
+        "title": "Annuities",
+        "intro": "We build innovative annuities platforms that offer flexible, attractive solutions to policyholders while serving as trusted stewards of their retirement savings.",
+        "link_text": "Learn more",
+        "url": "#" 
+      },
+      {
+        "title": "Life Insurance & Supplemental Products",
+        "intro": "We support distinctive life insurance and supplemental product platforms that focus on serving the needs of the middle-market consumer.",
+        "link_text": "Learn more",
+        "url": "#" 
+      },
+      {
+        "title": "Reinsurance ",
+        "intro": "We partner with insurers to provide differentiated reinsurance services and solutions to companies.",
+        "link_text": "Learn more",
+        "url": "#" 
+      }
+    ]
+}

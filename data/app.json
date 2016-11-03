@@ -1,0 +1,97 @@
+{
+  "name": "Zack Frazier",
+  "id": "zackfrazier",
+  "meta": {
+    "title": "",
+    "description": "",   
+    "typekit": ""  
+  },
+  "home": {
+    "title": "Zack Frazier",
+    "url": "index.html",
+    "id": "home"
+  },
+  "menu": [
+    {
+      "title": "Approach",
+      "url": "approach.html",
+      "id": "approach"
+    },
+    {
+      "title": "Team",
+      "url": "team.html",
+      "id": "team"
+    },
+    {
+      "title": "Companies",
+      "url": "companies.html",
+      "id": "companies"
+    },
+    {
+      "title": "News",
+      "url": "news.html",
+      "id": "news"
+    },
+    {
+      "title": "Contact",
+      "url": "contact.html",
+      "id": "contact"
+    }
+  ],
+  "social": [
+    {
+      "title": "LinkedIn",
+      "url": "http://www.linkedin.com",
+      "id": "linkedin"
+    },
+    {
+      "title": "Google+",
+      "url": "https://plus.google.com",
+      "id": "google"
+    },
+    {
+      "title": "Twitter",
+      "url": "http://twitter.com/kuvare",
+      "id": "twitter"
+    }
+  ],
+  "contact": [
+    {
+      "title": "LinkedIn",
+      "url": "http://www.linkedin.com",
+      "id": "linkedin"
+    },
+    {
+      "title": "E-mail",
+      "url": "#",
+      "id": "email"
+    }
+  ],
+  "share": [
+    {
+      "title": "LinkedIn",
+      "url": "#",
+      "id": "linkedin"
+    },
+    {
+      "title": "E-mail",
+      "url": "#",
+      "id": "email"
+    },
+    {
+      "title": "Google+",
+      "url": "#",
+      "id": "google"
+    },
+    {
+      "title": "Twitter",
+      "url": "#",
+      "id": "twitter"
+    },
+    {
+      "title": "Share",
+      "url": "#",
+      "id": "share"
+    }
+  ]
+}

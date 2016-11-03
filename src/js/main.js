@@ -1,7 +1,7 @@
 console.log('Follow the dev of this site at https://github.com/xak/zackfrazier');
 
 setTimeout(function () {
-	document.getElementById('view').className = 'ready';
+	document.getElementById('main').className = 'ready';
 },1500)
 
 

@@ -1,0 +1,11 @@
+{% macro social(items) %}
+
+<nav class="social-nav" role="navigation">
+  <ul class="navlist">
+    {% for item in items %}
+      <li class="navlist__item social-nav__item"><a class="social-nav__link {{ item.id }}--" href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+   </ul>
+</nav>
+
+{% endmacro %}
