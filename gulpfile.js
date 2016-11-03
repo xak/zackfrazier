@@ -54,10 +54,10 @@ function getPageKey(file) {
 var getAppData = function(file) {
   try {
     //set menu states
-    var selectedId = getPageKey(file);
-    app.menu.forEach(function (obj) {
-      obj.selected = obj.id === selectedId || selectedId.indexOf(obj.id) !== -1;
-    });
+//     var selectedId = getPageKey(file);
+//     app.menu.forEach(function (obj) {
+//       obj.selected = obj.id === selectedId || selectedId.indexOf(obj.id) !== -1;
+//     });
     return { app: app };
   } catch(err) {
     console.log(err.message);

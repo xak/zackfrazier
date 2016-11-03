@@ -1,97 +1,67 @@
 {
   "name": "Zack Frazier",
   "id": "zackfrazier",
+  "typekit": "pup5wjr",  
   "meta": {
-    "title": "",
-    "description": "",   
-    "typekit": ""  
+    "title": "Zack Frazier . UX, UI, Front-End, Mobile, Web",
+    "description": "Experienced front-end developer and UI architect. For hire. Based in Chicago.",
+    "author": "Zack Frazier",
+    "og": {
+      "title": "Zack Frazier . Skilled front-end developer, UX leader",
+      "image": "http://www.zackfrazier.com/eagle.jpg",
+      "url": "http://zackfrazier.com/",
+      "description": "Experienced front-end developer and UI architect. For hire. Based in Chicago."
+    }
   },
   "home": {
     "title": "Zack Frazier",
     "url": "index.html",
     "id": "home"
   },
-  "menu": [
-    {
-      "title": "Approach",
-      "url": "approach.html",
-      "id": "approach"
-    },
-    {
-      "title": "Team",
-      "url": "team.html",
-      "id": "team"
-    },
-    {
-      "title": "Companies",
-      "url": "companies.html",
-      "id": "companies"
-    },
-    {
-      "title": "News",
-      "url": "news.html",
-      "id": "news"
-    },
-    {
-      "title": "Contact",
-      "url": "contact.html",
-      "id": "contact"
-    }
-  ],
+  "network": {
+    "leadin": "Founder at",
+    "name": "The strong element",
+    "image": "img/logo.svg",
+    "url": "http://thestrongelement.com",
+    "id": "strong"
+  },
+  "contact": {
+    "title": "Let’s talk",
+    "url": "#contact",
+    "id": "contact"
+  },
   "social": [
     {
       "title": "LinkedIn",
-      "url": "http://www.linkedin.com",
+      "url": "http://www.linkedin.com/in/zackfrazier",
       "id": "linkedin"
     },
     {
-      "title": "Google+",
-      "url": "https://plus.google.com",
-      "id": "google"
+      "title": "Github",
+      "url": "https://github.com/xak",
+      "id": "github"
     },
     {
       "title": "Twitter",
-      "url": "http://twitter.com/kuvare",
-      "id": "twitter"
-    }
-  ],
-  "contact": [
-    {
-      "title": "LinkedIn",
-      "url": "http://www.linkedin.com",
-      "id": "linkedin"
-    },
-    {
-      "title": "E-mail",
-      "url": "#",
-      "id": "email"
-    }
-  ],
-  "share": [
-    {
-      "title": "LinkedIn",
-      "url": "#",
-      "id": "linkedin"
-    },
-    {
-      "title": "E-mail",
-      "url": "#",
-      "id": "email"
-    },
-    {
-      "title": "Google+",
-      "url": "#",
-      "id": "google"
-    },
-    {
-      "title": "Twitter",
-      "url": "#",
+      "url": "https://twitter.com/@xak",
       "id": "twitter"
     },
     {
-      "title": "Share",
-      "url": "#",
-      "id": "share"
+      "title": "Facebook",
+      "url": "https://facebook.com/zacklf",
+      "id": "facebook"
+    },
+    {
+      "title": "Instagram",
+      "url": "https://instagram.com/xakf",
+      "id": "instagram"
+    }
+  ],
+  "download": [
+    {
+      "title": "Resume",
+      "url": "http://zackfrazier.com/ZackFrazier.pdf",
+      "id": "resume"
     }
   ]
 }

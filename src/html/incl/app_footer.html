@@ -1,3 +1,12 @@
-    <footer class="app__footer">
-      <small class="copyright__">&copy;{{ date.getFullYear() }} {{ app.name }}</small>
-    </footer>
+{% import "_nav.html" as nav %}
+
+
+<footer class="app__footer">
+
+{% set contact = app.contact %}
+<a class="link__ {{ contact.id }}--" href="{{ contact.url }}">{{ contact.title }}</a>
+
+{{ nav.social(app.social) }}
+<!-- <small class="copyright__">&copy;{{ date.getFullYear() }} {{ app.name }}</small> -->
+  
+</footer>
