@@ -11,10 +11,12 @@
   {% include "app_header.html" %}  
 {% endblock %}  
 
-    <main id=main class="app__main page--{{ page.id }}" role="main">
-      <article>
+    <main class="app__main page--{{ page.id }}" role="main">
+    
+      <article class="page__article">
 {% block content %}{% endblock %}     
       </article>
+      
     </main>
 {% include "app_footer.html" %}
     <script src="js/app.js"></script>

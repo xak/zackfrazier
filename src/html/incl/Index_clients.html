@@ -1,0 +1,7 @@
+
+<h2>{{ page.clients.title }}</h2>
+
+{% for item in page.clients.logos %}
+  <img src="img/logo-{{ item }}.png" srcset="img/logo-{{ item }}@2x.png 2x, img/logo-{{ item }}@3x.png 3x">
+  
+{% endfor %}

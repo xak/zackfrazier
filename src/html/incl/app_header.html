@@ -1,9 +1,18 @@
 <header class="app__header">
 
+<div class="page__section">
+
+
 {% set index = app.home %}
 <a href="{{ index.url }}" class="app__logo {{ app.id }}--" aria-selected="{{ page.is_home }}">{{ index.title }}</a>
 
+<p class="network">
 {% set network = app.network %}
-{{ network.leadin }} <a href="{{ network.url }}" aria-label="{{ network.name }}" class="network__logo {{ network.id }}--"><img src="{{ network.image }}" alt="{{ network.name }}"></a>
+{{ network.leadin }} <a href="{{ network.url }}" aria-label="{{ network.name }}" class="network__logo {{ network.id }}--">{% include 'svg/logo-' + network.id + '.svg' %}</a>
+</p>
+
+</div>
+
+
 
 </header>

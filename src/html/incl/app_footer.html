@@ -3,10 +3,13 @@
 
 <footer class="app__footer">
 
-{% set contact = app.contact %}
-<a class="link__ {{ contact.id }}--" href="{{ contact.url }}">{{ contact.title }}</a>
 
-{{ nav.social(app.social) }}
-<!-- <small class="copyright__">&copy;{{ date.getFullYear() }} {{ app.name }}</small> -->
-  
+  {% set contact = app.contact %}
+  <a class="link__ {{ contact.id }}--" href="{{ contact.url }}">{{ contact.title }}
+      {% include 'svg/icon-chat.svg'  %}
+  </a>
+
+  {{ nav.social(app.social) }}
+  <!-- <small class="copyright__">&copy;{{ date.getFullYear() }} {{ app.name }}</small> -->
+
 </footer>

@@ -1,0 +1,10 @@
+
+{% for item in page.abilities %}
+  <h2>{{ item.title }}</h2>
+
+  <video width="854" height="480" autoplay loop preload=auto>
+    <source src="{{ item.video }}" type="video/mp4">
+  </video>
+  <p>{{ item.text }}</p>
+  
+{% endfor %}

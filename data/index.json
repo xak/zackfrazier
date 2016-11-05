@@ -1,32 +1,57 @@
 {
-    "title": "Home",
-    "intro": "Sed pretium massa sed ipsum rhoncus venenatis. Suspendisse ultricies lectus at nisl rutrum vulputate.",
-    "hero": "images/home-hero.png",
-    "is_home": true,
-    "lead": [
-      {
-        "title": "Title",
-        "intro": "Intro"
-      }
-    ],
-    "offerings": [
-      {
-        "title": "Annuities",
-        "intro": "We build innovative annuities platforms that offer flexible, attractive solutions to policyholders while serving as trusted stewards of their retirement savings.",
-        "link_text": "Learn more",
-        "url": "#" 
-      },
-      {
-        "title": "Life Insurance & Supplemental Products",
-        "intro": "We support distinctive life insurance and supplemental product platforms that focus on serving the needs of the middle-market consumer.",
-        "link_text": "Learn more",
-        "url": "#" 
-      },
-      {
-        "title": "Reinsurance ",
-        "intro": "We partner with insurers to provide differentiated reinsurance services and solutions to companies.",
-        "link_text": "Learn more",
-        "url": "#" 
-      }
+  "title": "Home",
+  "is_home": true,
+  "image": {
+    "url": "img/zack-sideview-trans.png",
+    "description": ""
+  },
+  "lead": {
+      "title": "Excellent UX.<br>Fantastic front-end.<br>Good guy.",
+      "intro": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. ",
+      "actions": [
+        {
+          "id": "contact",
+          "type": "button",
+          "label": "Contact Zack",
+          "url": "#contact"
+        },
+        {
+          "id": "resume",
+          "type": "button",
+          "label": "View Resume",
+          "url": "ZackFrazier.pdf"
+        }
+      ]
+    },
+  "abilities": [
+    {
+      "title": "User experience delivered",
+      "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
+      "video": "http://www.zackfrazier.com/video/zack-fed.mp4"
+    },
+    {
+      "title": "Modern front-end",
+      "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
+      "video": "http://www.zackfrazier.com/video/zack-ux.mp4"
+    },
+    {
+      "title": "Teamwork built-in ",
+      "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
+      "video": "http://www.zackfrazier.com/video/zack-ux.mp4"
+    }
+  ],
+  "clients": {
+    "title": "Lorem vulputate dapibus libero. Sed bibendum",
+    "logos": [
+      "ge", "pg", "hd", "sc", "orb", "ua", "cme", "gehc", "disc", "ibm", "spot", "coli", "pom"
     ]
+  },
+  "contact": {
+    "title": "Say hello, pretty please.",
+    "intro": "Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum",
+    "address": "2627 North Kimball Ave.<br>Chicago, Illinois 60647",
+    "email": "hello@zackfrazier.com",
+    "tagline": "The ♡ of Logan Square"
+  }
+
 }

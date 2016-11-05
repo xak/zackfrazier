@@ -2,7 +2,38 @@
 
 {% block content %}
 
-<h1></h1>
+<div class="page__image">
+  <img src="{{ page.image.url }}" alt="{{ page.image.description }}" style="max-height: 50vh">
+</div>
+
+<section class="page__section" id="lead">
+
+{% include 'index_lead.html' %}
+
+</section>
+
+
+<section class="page__section" id="abilities">
+
+{% include 'index_abilities.html' %}
+
+</section>
+
+
+<section class="page__section" id="clients">
+
+{% include 'index_clients.html' %}
+
+</section>
+
+
+<section class="page__section" id="contact">
+
+{% include 'index_contact.html' %}
+
+</section>
+
+
 
 
 

@@ -1,1 +1,65 @@
+@import "settings.scss";
 @import "bower_components/strong-css/css/strong.scss";
+@import "bower_components/strong-css/css/base/_sections.scss";
+@import "bower_components/strong-css/css/blocks/_nav.scss";
+
+//app
+.app__header {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 25px;
+  * {
+    position: relative;
+    z-index: 10;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: color(violet);
+    transform: rotate(1.5deg);
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    transform: rotate(1.5deg);
+  }
+  .page__section {
+
+  }
+}
+
+
+.app__logo {
+  @include type(l);
+  @include weight(bold);
+}
+
+.network {
+  float: right;
+  @include type(xxs);
+  svg {
+    display: block;
+  }
+}
+
+
+.app__footer {
+  height: 100px;
+  background: lightgray;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+
+//sections

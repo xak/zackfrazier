@@ -3,9 +3,13 @@
 <nav class="social-nav" role="navigation">
   <ul class="navlist">
     {% for item in items %}
-      <li class="navlist__item social-nav__item"><a class="social-nav__link {{ item.id }}--" href="{{ item.url }}">{{ item.title }}</a></li>
+      <li class="item__ social-nav__item"><a class="social-nav__link {{ item.id }}--" href="{{ item.url }}" aria-label="{{ item.title }}">
+    {% include 'svg/icon-' + item.id + '.svg'  %}
+      </a></li>
     {% endfor %}
    </ul>
 </nav>
 
+  
 {% endmacro %}
+
