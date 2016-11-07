@@ -1,0 +1,55 @@
+
+video {
+  max-width: 100%;
+}
+
+
+.ability {
+  @include clearfix;
+  margin-bottom: space(xl);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .title__ {
+    @include type(m, header);
+
+    @include screen(m) {
+      @include type(m, header);
+    }
+    @include screen(ml) {
+      @include type(l, header);
+    }
+    @include screen(l) {
+      @include type(xl, header);
+    }
+
+  }
+  .video__ {
+    position: relative;
+    min-width: 100vw;
+    margin-left: -20px;
+    margin-bottom: 20px;
+    @include screen(s) {
+      position: static;
+      float: right;
+      margin-left: 20px;
+
+      min-width: 0;
+      width: 56.73%;
+      box-shadow: 12px 12px 0 0 color(gray);
+    }
+
+
+  }
+
+  .text__ {
+    padding-right: 20px;
+    background: green;
+  }
+
+
+}
+
+

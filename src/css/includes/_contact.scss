@@ -1,0 +1,29 @@
+
+
+.contact {
+
+  .title__ {
+
+
+    @include type(m, header);
+
+
+  }
+
+  address {
+    font-style: normal;
+    @include weight(bold);
+    @include type(m);
+  }
+  .street {
+    margin-top: space(xs);
+    .tagline__ {
+      display: block;
+      margin-top: 5px;
+    }
+  }
+
+}
+
+
+

@@ -60,6 +60,7 @@ $breakpoints: (
   xs: 480px,
   s: 667px,
   m: 768px,
+  ml: 1024px,
   l: 1230px,
   xl: 1230px,
   xxl: 1440px
@@ -102,7 +103,7 @@ $margin-bottom: map-get($spacing, reg) !default;
 $border-radius: 0;
 
 //buttons
-$height--button: space(m);
+$height--button: space(l);
 $border-radius--button: $border-radius !default;
 $background-color--button: color(aqua);
 $background-color--button-hover: color(aquamarine);
@@ -129,11 +130,14 @@ $transition-timing-function: linear !default;
 @import "bower_components/strong-css/css/blocks/elements";
 
 
-
 @import "includes/app.scss";
 @import "includes/page.scss";
+@import "includes/buttons.scss";
 
-
+@import "includes/lead.scss";
+@import "includes/abilities.scss";
+@import "includes/clients.scss";
+@import "includes/contact.scss";
 
 
 

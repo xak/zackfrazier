@@ -1,0 +1,36 @@
+
+
+.clients {
+
+  .title__ {
+
+
+    @include type(m, header);
+
+
+  }
+  .logos__ {
+    list-style: none;
+    display: flex;
+    flex-wrap:  wrap;
+    align-items: center;
+    .item__ {
+      margin-bottom: 25px;
+    }
+  }
+
+  img {
+      margin-right: space(reg);
+    @include screen(m) {
+      margin-right: space(l);
+    }
+    @include screen(l) {
+      margin-right: space(xl);
+    }
+
+  }
+
+
+}
+
+

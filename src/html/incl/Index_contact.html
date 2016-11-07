@@ -1,7 +1,28 @@
+<div class="contact-section flow__box--12-8">
 
-<h2>{{ page.contact.title }}</h2>
-<p>{{ page.contact.intro }}</p>
+<div class="contact">
+  <h2 class="title__">{{ page.contact.title }}</h2>
+  
+  
+  <p>{{ page.contact.intro }}</p>
 
-<address><a href="mailto:{{ page.contact.email }}">{{ page.contact.email }}</a></address>
 
-<p>{{ page.contact.address }}<br>{{ page.contact.tagline }}</p>
+<div class="flow">
+
+<div class="flow__box--2-1">
+
+  <address><a href="mailto:{{ page.contact.email }}">{{ page.contact.email }}</a></address>
+</div>
+<div class="flow__box--2-1">
+  <p class="street">{{ page.contact.address }}<br><span class="tagline__">{{ page.contact.tagline }}</p>
+
+</div>
+
+</div>
+
+
+  
+  </div>
+  
+
+</div>
