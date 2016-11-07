@@ -23,8 +23,16 @@ $colors: (
     mediumgray: #AFAFAF,
     aqua: #1E7E98,
 
-) !default;
+) !global;
+$color__text: map-get($colors, darkgray);
 
 
-$background-color: map-get($colors, white) !default;
+
+//ui dimensions
+$width--ui-max: 1390px;
+$width--ui-max-content: 1280px;
+$width--ui-padding: 25px !global;
+
+$background-color: map-get($colors, white) !global;
+
 $color: map-get($colors, darkgray) !default;

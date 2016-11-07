@@ -1,18 +1,14 @@
 <header class="app__header">
-
-<div class="page__section">
-
-
-{% set index = app.home %}
-<a href="{{ index.url }}" class="app__logo {{ app.id }}--" aria-selected="{{ page.is_home }}">{{ index.title }}</a>
-
-<p class="network">
-{% set network = app.network %}
-{{ network.leadin }} <a href="{{ network.url }}" aria-label="{{ network.name }}" class="network__logo {{ network.id }}--">{% include 'svg/logo-' + network.id + '.svg' %}</a>
-</p>
-
-</div>
-
-
-
+  <div class="header-content flow">
+    <div class="logo-box flow__box--2-1">
+      {% set index = app.home %}
+      <a href="{{ index.url }}" class="logo {{ app.id }}--" aria-selected="{{ page.is_home }}">{{ index.title }}</a>   
+    </div>
+    <div class="network-box flow__box--2-1">
+      <p class="network">
+        {% set network = app.network %}
+        <span class="leadin__">{{ network.leadin }}</span> <a href="{{ network.url }}" aria-label="{{ network.name }}" class="network__logo {{ network.id }}--">{% include 'svg/logo-' + network.id + '.svg' %}</a>
+      </p>    
+    </div>
+  </div>
 </header>

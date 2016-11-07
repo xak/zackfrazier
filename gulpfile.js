@@ -149,7 +149,6 @@ gulp.task('images', function() {
 		.pipe(gulp.dest(dist.images))
 });
 
-
 // copy JSON files
 gulp.task('data', function() {
   return gulp.src(src.data+'**/*.json')
@@ -171,8 +170,10 @@ gulp.task('public', function() {
 	  .pipe(gulp.dest(dist.path));
 });
 
+
+
 //build
-gulp.task('build', $.sequence('clean','public','images','css','js','html'));
+gulp.task('build', $.sequence('clean','public', 'images','css','js','html'));
 
 
 gulp.task('default', function () {

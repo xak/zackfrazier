@@ -1,7 +1,6 @@
-
-  <h1>{{ page.lead.title }}</h1>
+<div class="lead-section">
   <p>{{ page.lead.intro }}</p>
-
   {% for item in page.lead.actions %}
     <a class="{{ item.type }} {{ item.id }}--" href="{{ item.url }}">{{ item.label }}</a></li>
   {% endfor %}
+</div>

@@ -2,40 +2,39 @@
 
 {% block content %}
 
-<div class="page__image">
+<h1 class="page__title smallscreen-only flow__box--12-8">{{ page.lead.title }}</h1>
+
+<div class="page__image flow__box--12-4">
   <img src="{{ page.image.url }}" alt="{{ page.image.description }}" style="max-height: 50vh">
 </div>
 
-<section class="page__section" id="lead">
+<section class="page__section flow__box--12-8" id="lead">
 
 {% include 'index_lead.html' %}
 
 </section>
 
 
-<section class="page__section" id="abilities">
+<section class="page__section flow__box--12-7" id="abilities">
 
 {% include 'index_abilities.html' %}
 
 </section>
 
 
-<section class="page__section" id="clients">
+<section class="page__section flow__box--12-7" id="clients">
 
 {% include 'index_clients.html' %}
 
 </section>
 
 
-<section class="page__section" id="contact">
+<section class="page__section flow__box--12-7" id="contact">
 
 {% include 'index_contact.html' %}
 
 </section>
 
-
-
-
-
+<small class="copyright__">&copy;{{ date.getFullYear() }} {{ app.name }}</small>
 
 {% endblock %}
