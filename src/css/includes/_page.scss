@@ -7,7 +7,6 @@
   position: relative;
   margin-top: space(xl);
   padding-bottom: space(l);
-//  outline: solid 1px blue;
 
   &::after {
     content: '';
@@ -46,9 +45,6 @@
     }
     padding-bottom: 0;
   }
-
-
-
 }
 
 
@@ -76,6 +72,7 @@
   position: static;
   transform: translateY(-10px);
   z-index: 1;
+  margin-right: 0 !important;
   //landscape mode
   @media screen and (max-height: 414px) {
     position: absolute;
@@ -109,7 +106,7 @@
     max-height: 1260px;
   }
   @include screen(xl) {
-    max-height: 1460px;
+    max-height: 1360px;
   }
   position: relative;
   z-index: 1;

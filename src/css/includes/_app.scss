@@ -122,6 +122,11 @@ $time--base: 0.2s;
     }
   }
   .social-nav {
+    svg {
+      path {
+        fill: color(darkgray);
+      }
+    }
     .navlist {
       & > .item__ {
         margin-left: 25px;
