@@ -6,7 +6,9 @@
   <h2 class="title__">{{ item.title }}</h2>
 
   <video autoplay loop preload=auto class="video__" poster="{{ item.poster }}">
-    <source src="{{ item.video }}" type="video/mp4">
+{% for video in item.videos %}
+    <source src="{{ video.url }}" type="video/{{ video.type }}">
+{% endfor %}
   </video>
 
   {{ item.text }}

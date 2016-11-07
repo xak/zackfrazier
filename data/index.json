@@ -27,20 +27,47 @@
     {
       "title": "User experience delivered",
       "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec.<br><br>Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
-      "video": "http://www.zackfrazier.com/video/zack-ux.mp4",
-      "poster": ""
+      "videos": [
+        { 
+          "type": "webm",
+          "url": "http://www.zackfrazier.com/video/zack-ux.webm"
+        },
+        { 
+          "type": "mp4",
+          "url": "http://www.zackfrazier.com/video/zack-ux.mp4"
+        }
+      ],
+      "poster": "img/poster-ux.png"
     },
     {
       "title": "Modern front-end",
       "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
-      "video": "http://www.zackfrazier.com/video/zack-fed.mp4",
-      "poster": ""
+      "videos": [
+        { 
+          "type": "webm",
+          "url": "http://www.zackfrazier.com/video/zack-fed.webm"
+        },
+        { 
+          "type": "mp4",
+          "url": "http://www.zackfrazier.com/video/zack-fed.mp4"
+        }
+      ],
+      "poster": "img/poster-fed.png"
     },
     {
       "title": "Teamwork built-in ",
       "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
-      "video": "http://www.zackfrazier.com/video/zack-ux.mp4",
-      "poster": ""
+      "videos": [
+        { 
+          "type": "webm",
+          "url": "http://www.zackfrazier.com/video/zack-leader.webm"
+        },
+        { 
+          "type": "mp4",
+          "url": "http://www.zackfrazier.com/video/zack-leader.mp4"
+        }
+      ],
+      "poster": "img/poster-leader.png"
     }
   ],
   "clients": {
