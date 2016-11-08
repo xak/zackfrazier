@@ -3,6 +3,7 @@
 .lead {
 
   .actions__ {
+  padding-top: space(reg);
     @include clearfix;
 
     .button {

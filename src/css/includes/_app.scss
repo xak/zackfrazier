@@ -115,6 +115,18 @@ $time--base: 0.2s;
     @include weight(bold);
     vertical-align: top;
     color: color(darkgray);
+svg {
+      path {
+        fill: color(darkgray);
+      }
+    }
+
+    &:hover {
+      color: color(blue);
+      svg path {
+        fill: color(blue);
+      }
+    }
     .title__ {
     display: inline-block;
       transform: translateY(-5px);
@@ -127,6 +139,14 @@ $time--base: 0.2s;
         fill: color(darkgray);
       }
     }
+    
+a:hover {
+    svg {
+      path {
+        fill: color(blue);
+      }
+    }
+}    
     .navlist {
       & > .item__ {
         margin-left: 25px;

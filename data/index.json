@@ -6,8 +6,8 @@
     "description": ""
   },
   "lead": {
-      "title": "Excellent UX. <br>Fantastic front-end. <br>Good guy.",
-      "intro": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. ",
+      "title": "Experienced UX problem solver. Good guy.",
+      "intro": "<p>I’m a passionate UX professional with deep front-end technology skills. I collaborate with product, marketing, and development teams to deliver regularly and with exceptional quality.</p><p>You have a great idea, now what? Let me help you get from A to B.</p>",
       "actions": [
         {
           "id": "contact",
@@ -23,10 +23,13 @@
         }
       ]
     },
-  "abilities": [
-    {
+  "abilities": {
+    "title": "Hard-earned know-how",
+    "intro": "<p>I view every project as a chance to learn something new. I began my career as a designer and developer when table layouts were all the rage and I’ve never stopped learning.</p>",
+    "items": [
+      {
       "title": "User experience delivered",
-      "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec.<br><br>Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
+      "text": "<p> A great user experience is borne from collaboration and compromise. Marketing plans and technology roadmaps should be in harmony with your UX strategy. </p><p> API requirements come from user flows, A/B testing models inform UI template development, and technology stacks support feature development. A thoughtful, pragmatic approach to UX works for your users and your team members. </p><p> I emphasize shared understanding through rapid prototyping and transparency. I use a Sketch to InVision workflow which allows all team members to contribute early and avoid downstream complications. </p>",
       "videos": [
         { 
           "type": "webm",
@@ -40,8 +43,8 @@
       "poster": "img/poster-ux.png"
     },
     {
-      "title": "Modern front-end",
-      "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
+      "title": "Front-end, block by block",
+      "text": "<p> It’s easy to make a mess of front-end code. Just add a little JavaScript here, a CSS !important here and your bug is fixed. Repeat 100 times and your front end is now a fragile black box no one dares touch. </p><p> Successfully balancing three technologies (at a minimum) takes experience. It’s about building a system one block at a time — a page being a big block built from other blocks. A modern UI architecture emphasizes small components with clear dependencies, meaning a small CSS change will not break your entire site. </p><p> I use a Node-based project framework that can be adapted for static sites and template development. I also work with backend templating engines and, of course, JavaScript UI libraries like React and Angular to construct beautiful code to support beautiful design. </p>",
       "videos": [
         { 
           "type": "webm",
@@ -55,8 +58,8 @@
       "poster": "img/poster-fed.png"
     },
     {
-      "title": "Teamwork built-in ",
-      "text": "Donec dapibus vehicula facilisis. In tincidunt mi nisi, nec faucibus tortor euismod nec. Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. Donec dapibus vehicula facilisis. In tincidunt mi nisi.",
+      "title": "Collaboration built-in ",
+      "text": "<p> It takes a team, of course, but what should be your greatest asset is often what holds you back. Teamwork is “work” and an undefined process, an unproductive meeting, or an unchallenged employee can hurt your reputation. </p><p> The best solutions come from collaboration but it takes more than an open floor plan. More than ever, leaders must encourage an environment of growth and support. Success depends on the happiness of your team members. </p><p> I promote a sharing environment and strive to give all team members a seat at the table. I foster their growth through work and training opportunities as well as direct mentoring. If a team needs focus, I’ll run a workshop to define problems and map solutions. </p>",
       "videos": [
         { 
           "type": "webm",
@@ -69,16 +72,16 @@
       ],
       "poster": "img/poster-leader.png"
     }
-  ],
+  ]},
   "clients": {
-    "title": "Lorem vulputate dapibus libero. Sed bibendum",
+    "title": "A track record of success with trusted brands",
     "logos": [
       "ge", "pg", "hd", "sc", "orb", "ua", "cme", "gehc", "disc", "ibm", "spot", "coli", "pom"
     ]
   },
   "contact": {
-    "title": "Say hello, pretty please.",
-    "intro": "Suspendisse ante ligula, aliquet vitae libero eu, vulputate dapibus libero. Sed bibendum",
+    "title": "Need a contractor?",
+    "intro": "<p> Do you have an critical project with a tight deadline? Do you need a professional you can count on to deliver? </p><p> Whether a clickable prototype, a mobile app product flow, a Squarespace customization, or a complete responsive front-end architecture, I’m interested in projects large and small. </p><p> If you think I can help, say 👋 … </p>",
     "address": "2627 North Kimball Ave.<br>Chicago, Illinois 60647",
     "email": "hello@zackfrazier.com",
     "tagline": "The ♡ of Logan Square"

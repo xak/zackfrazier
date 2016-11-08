@@ -1,9 +1,11 @@
 <div class="abilities-section flow__box--12-8">
 
+<h2 class="ability-header">{{ page.abilities.title }}</h2>
+<div class="ability-intro">{{ page.abilities.intro }}</div>
 
-{% for item in page.abilities %}
+{% for item in page.abilities.items %}
 <div class="ability">
-  <h2 class="title__">{{ item.title }}</h2>
+  <h3 class="title__">{{ item.title }}</h3>
 
   <video autoplay loop preload=auto class="video__" poster="{{ item.poster }}">
 {% for video in item.videos %}

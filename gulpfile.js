@@ -18,7 +18,7 @@ const src = {
   data: 'data/',
   public: 'public/**/*',
   scripts: 'src/js/**/*',
-  images: 'src/img/',
+  images: 'src/img/**/*',
   styles: 'src/css/',
   bower: 'bower_components/',
   fonts: 'src/fonts',
@@ -105,12 +105,18 @@ gulp.task('html', function () {
         env: PRODUCTION ? 'production' : 'development'
       }
     }))
-		.pipe($.if(PRODUCTION, cachebust.references()))
 		.pipe($.if(PRODUCTION, $.htmlmin({collapseWhitespace: true})))
+		.pipe($.if(PRODUCTION, cachebust.references()))
     .pipe(gulp.dest(dist.path))
     .pipe(reload())
 });
 
+
+// gulp.task('html-imgcache', function () {
+//   return gulp.src(dist.html + '**/*.html')
+// 		.pipe($.if(PRODUCTION, cachebust.references()))
+//     .pipe(gulp.dest(dist.path))
+// });
 
 // process and transpile JS
 gulp.task('js', function() {
@@ -137,32 +143,32 @@ gulp.task('css', function () {
       errLogToConsole: true
     })
     .on('error', $.sass.logError))
+		.pipe($.if(PRODUCTION, cachebust.references()))
+		.pipe($.if(PRODUCTION, cachebust.resources()))
     .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe($.postcss([
       require('autoprefixer-core')({browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']})
     ]))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-		.pipe($.if(PRODUCTION, cachebust.references()))
-		.pipe($.if(PRODUCTION, cachebust.resources()))
     .pipe(gulp.dest(dist.styles))
     .pipe(reload());
 });
 
 // process images
 gulp.task('images', function() {
-	gulp.src(src.images + '**/*')
-		.pipe($.if(PRODUCTION, cachebust.resources()))
+	gulp.src(src.images)
+//		.pipe($.if(PRODUCTION, cachebust.resources()))
 		.pipe(gulp.dest(dist.images))
 });
 
 gulp.task('imagemin', () =>
-	gulp.src(src.images + '**/*')
+	gulp.src(dist.images + '/**/*')
 		.pipe($.imagemin({
 			plugins: [$.imagemin.svgo({
-				'removeTitle': true
+				cleanupIDs: true, removeTitle: true
 			})]
 		}))
-		.pipe(gulp.dest(src.images))
+		.pipe(gulp.dest(dist.images))
 );
 
 
@@ -196,6 +202,22 @@ gulp.task('build', $.sequence('clean','public','images','css','js','html'));
 gulp.task('default', function () {
   gulp.start('serve');
 });
+
+
+
+//FIRST: run build --production
+//SECOND: run imagemin --production
+gulp.task('deploy', function () {
+	var opts = {
+		host: 'zackfrazier.com',
+		auth: 'keyMain',
+		remotePath: 'zackfrazier.com/'
+	}
+	return gulp.src([dist.path +'/**/*'])
+		.pipe($.size())
+    .pipe($.if(!PRODUCTION, $.sftp(opts)))
+});
+ 
 
 
 function reload() {
