@@ -54,6 +54,7 @@
     </main>
 {% include "app_footer.html" %}
     <script src="js/app.js"></script>
+{% if env == "production" %}
     <script>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-15837205-2']); _gaq.push(['_trackPageview']);
@@ -63,5 +64,6 @@ _gaq.push(['_setAccount', 'UA-15837205-2']); _gaq.push(['_trackPageview']);
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
     </script>
+{% endif %} 
   </body>
 </html>

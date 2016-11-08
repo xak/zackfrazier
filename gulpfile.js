@@ -98,7 +98,8 @@ gulp.task('html', function () {
     .pipe(nunjucks({
       searchPaths: [src.layouts, src.includes, src.macros],
       locals: {
-        date: date
+        date: date,
+        env: PRODUCTION ? 'production' : 'development'
       }
     }))
     .pipe(gulp.dest(dist.path))
