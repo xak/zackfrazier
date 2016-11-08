@@ -215,7 +215,7 @@ gulp.task('deploy', function () {
 	}
 	return gulp.src([dist.path +'/**/*'])
 		.pipe($.size())
-    .pipe($.if(!PRODUCTION, $.sftp(opts)))
+    .pipe($.if(PRODUCTION, $.sftp(opts)))
 });
  
 
