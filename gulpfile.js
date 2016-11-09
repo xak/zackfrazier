@@ -28,7 +28,7 @@ const src = {
   macros: 'src/html/incl/'
 }
 
-const dist_versioned = 'dist/' + version;
+const dist_versioned = 'dist/' + (PRODUCTION ? version : 'dev');
 
 const dist = {
   path: dist_versioned,
