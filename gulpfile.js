@@ -205,8 +205,8 @@ gulp.task('default', function () {
 
 
 
-//FIRST: run build --production
-//SECOND: run imagemin --production
+//FIRST: gulp build --production
+//SECOND: gulp imagemin
 gulp.task('deploy', function () {
 	var opts = {
 		host: 'zackfrazier.com',
