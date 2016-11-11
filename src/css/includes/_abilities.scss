@@ -69,7 +69,7 @@ video {
     padding-right: 20px;
     background: green;
   }
-  
+
   &::after {
   margin-top: space(xl);
   content: '';
@@ -84,7 +84,7 @@ video {
 
 &:nth-child(even) {
   &::after {
-    background-color: color(blue);
+    background-color: color(orange);
   transform: rotate(1.5deg);
   }
 }

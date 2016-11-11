@@ -7,10 +7,10 @@
     "description": "Experienced UI architect and front-end developer. For hire. Based in Chicago.",
     "author": "Zack Frazier",
     "og": {
-      "title": "Zack Frazier . Experienced UX problem solver. Good guy.",
-      "image": "http://www.zackfrazier.com/eagle.jpg",
+      "title": "Zack Frazier . UX problem solver, front-end developer. Good guy.",
+      "image": "http://www.zackfrazier.com/fb-share.jpg",
       "url": "http://zackfrazier.com/",
-      "description": "Experienced UI architect and front-end developer. For hire. Based in Chicago."
+      "description": "Passionate UX professional with deep front-end technology skills. I emphasize shared understanding and component architecture. For hire. Based in Chicago, available anywhere."
     }
   },
   "home": {
@@ -55,13 +55,6 @@
       "title": "Instagram",
       "url": "https://instagram.com/xakf",
       "id": "instagram"
-    }
-  ],
-  "download": [
-    {
-      "title": "Resume",
-      "url": "http://zackfrazier.com/ZackFrazier.pdf",
-      "id": "resume"
     }
   ]
 }
