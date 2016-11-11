@@ -1,9 +1,9 @@
 {
   "name": "zackfrazier",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/xak/zackfrazier",
   "authors": [
-    "zack Frazier <zack@zackfrazier.com>"
+    "Zack Frazier <zack@zackfrazier.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -20,6 +20,7 @@
     "animatecss": "https://github.com/daneden/animate.css.git"
   },
   "devDependencies": {
-    "parse": "~1.4.2"
+    "parse": "~1.4.2",
+    "strong-css": "^0.0.7"
   }
 }

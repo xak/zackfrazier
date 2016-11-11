@@ -1,0 +1,20 @@
+<div class="clients-section">
+
+<div class="clients">
+
+
+  <h2 class="title__">{{ page.clients.title }}</h2>
+
+
+  <ul class="logos__">
+  
+  {% for item in page.clients.logos %}
+    <li class="item__">
+      <img src="img/logo-{{ item }}.png" srcset="img/logo-{{ item }}@2x.png 2x, img/logo-{{ item }}@3x.png 3x">
+    </li>
+
+  {% endfor %}
+  </ul>
+</div>
+
+</div>

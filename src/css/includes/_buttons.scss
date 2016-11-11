@@ -1,0 +1,29 @@
+
+.button {
+    @include weight(bold);
+    line-height: $height--button - 2px;
+    border: solid 1px $background-color--button;
+    &:hover {
+      border: solid 1px $background-color--button;
+      color: $background-color--button;
+    }
+    &.contact-- {
+      padding-left: space(l);
+      padding-right: space(l);
+    }
+
+    &.resume-- {
+      background-color: color(white);
+      color: $background-color--button;
+      &:hover {
+        background-color: $background-color--button-hover;
+      }
+      svg {
+        transform: translateY(4px);
+        margin-left: 5px;
+        path {
+          fill: $background-color--button;
+        }
+      }
+    }
+}

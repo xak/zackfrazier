@@ -1,0 +1,38 @@
+$fonts: (
+  body: #{"'Helvetica Neue'", sans-serif},
+  header: #{"mono45-headline", sans-serif},
+) !global;
+
+$time--base: 0.3s;
+
+
+//colors
+$colors: (
+    white: #ffffff,
+    black: #000000,
+    pink: #EA508B,
+    skyblue: #30C3F9,
+    violet: #BD10E0,
+    green: #8CC876,
+    aquamarine: #D8FFF6,
+    gray: #979797,
+    darkgray: #484848,
+    lightgray: #DCDCDC,
+
+    //must keep these (fix this)
+    mediumgray: #AFAFAF,
+    aqua: #1E7E98,
+
+) !global;
+$color__text: map-get($colors, darkgray);
+
+
+
+//ui dimensions
+$width--ui-max: 1390px;
+$width--ui-max-content: 1280px;
+$width--ui-padding: 25px !global;
+
+$background-color: map-get($colors, white) !global;
+
+$color: map-get($colors, darkgray) !default;

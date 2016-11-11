@@ -1,0 +1,14 @@
+{% import "_nav.html" as nav %}
+<footer class="app__footer">
+  <div class="footer-content flow">
+    <div class="contact-box flow__box--3-1 shift-1--">
+        {% set contact = app.contact %}
+        <a class="contact-link {{ contact.id }}--" href="{{ contact.url }}"><span class="title__">{{ contact.title }}</span>
+            {% include 'svg/icon-chat.svg'  %}
+        </a>
+    </div>
+    <div class="nav-box flow__box--3-1">
+        {{ nav.social(app.social) }}
+     </div>
+  </div>
+</footer>

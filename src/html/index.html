@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="page__section flow" id="lead">
+
+  <h1 class="page__title flow__box--12-8">{{ page.lead.title }}</h1>
+
+  <div class="page__image flow__box--12-4">
+    <img src="{{ page.image.url }}" alt="{{ page.image.description }}" class="hero-image">
+  </div>
+
+  {% include 'index_lead.html' %}
+
+</section>
+
+
+<section class="page__section flow" id="abilities">
+
+{% include 'index_abilities.html' %}
+
+</section>
+
+
+<section class="page__section flow" id="clients">
+
+{% include 'index_clients.html' %}
+
+</section>
+
+
+<section class="page__section flow" id="contact">
+
+{% include 'index_contact.html' %}
+
+</section>
+
+
+{% endblock %}

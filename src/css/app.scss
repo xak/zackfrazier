@@ -1,0 +1,147 @@
+
+//colors
+$colors: (
+    white: #ffffff,
+    black: #000000,
+    pink: #EA508B,
+    blue: #50B0EA,
+    skyblue: #30C3F9,
+    violet: #BD10E0,
+    green: #8CC876,
+    aquamarine: #D8FFF6,
+    orange: #F5A248,
+    gray: #979797,
+    darkgray: #484848,
+    lightgray: #DCDCDC,
+    mediumgray: #9B9B9B,
+
+    //must keep these (fix this)
+    aqua: #1E7E98,
+
+) !global;
+$color__text: map-get($colors, darkgray);
+
+
+//spacing
+$spacing--base: 5px !global;
+
+$spacing: (
+  base: $spacing--base,   //5
+  xs: $spacing--base*2,   //10
+  s: $spacing--base*4,    //20
+  reg: $spacing--base*5,  //25
+  m: $spacing--base*8,    //40
+  l: $spacing--base*10,   //50
+  xl: $spacing--base*15,  //75
+  xxl: $spacing--base*20  //100
+) !global;
+
+$padding: (
+  compact: $spacing--base,  //6
+  tight: $spacing--base*2,  //12
+  reg: $spacing--base*4,    //24
+  loose: $spacing--base*8,  //48
+  roomy: $spacing--base*12, //72
+  extra: $spacing--base*20  //120
+) !default;
+
+//functions
+@import "bower_components/strong-css/css/functions/color.scss";
+@import "bower_components/strong-css/css/functions/space.scss";
+@import "bower_components/strong-css/css/functions/padding.scss";
+
+
+$fonts: (
+  body: #{"'Helvetica Neue'", sans-serif},
+  header: #{'TypewriterSerial', sans-serif},
+) !global;
+
+//breakpoints
+$breakpoints: (
+  xs: 480px,
+  s: 667px,
+  m: 768px,
+  ml: 1024px,
+  l: 1230px,
+  xl: 1230px,
+  xxl: 1440px
+) !default;
+
+$type: (
+  xxs: 10px 1.25,
+  xs: 15px 1.3333333,
+  s: 17.5px 1.428571428571429,
+  reg: 20px 1.25,
+  m: 25px 1.4,  //35
+  l: 35px 1.2857142, //45
+  xl: 50px 1.5,
+  xxl: 75px 1.3333333
+) !default;
+
+
+//mixins
+@import "bower_components/strong-css/css/mixins/type";
+@import "bower_components/strong-css/css/mixins/screen";
+@import "bower_components/strong-css/css/mixins/clearfix";
+@import "bower_components/strong-css/css/mixins/weight";
+@import "bower_components/strong-css/css/mixins/print";
+
+
+//DEFAULTS
+$vertical-grid: 10px !default;
+
+$background-color: color(white);
+$color: color(darkgray);
+$color--link: color(aqua);
+$color--link-hover: color(black);
+
+$font-family: map-get($fonts,body) !default;
+$font-family--header:  map-get($fonts,header) !default;
+$font-size: nth(map-get($type,s), 1) !default;
+$line-height: nth(map-get($type,s), 2) !default;
+
+$margin-bottom: map-get($spacing, reg) !default;
+$border-radius: 0;
+
+//buttons
+$height--button: space(l);
+$border-radius--button: $border-radius !default;
+$background-color--button: color(aqua);
+$background-color--button-hover: color(aquamarine);
+$color--button: color(white);
+$color--button-hover: color(white);
+
+
+//forms
+$height--form-text: map-get($spacing, m);
+$height--form-check: map-get($spacing, reg);
+
+$color--form: map-get($colors, aqua) !default;
+$color--form-focus: map-get($colors, plum) !default;
+$color--form-error:  map-get($colors, red) !default;
+$color--form-valid:  map-get($colors, green) !default;
+
+$opacity--disabled: 0.5 !default;
+
+
+//animation
+$transition-duration: 0.25s !default;
+$transition-timing-function: linear !default;
+
+@import "bower_components/strong-css/css/blocks/elements";
+
+
+@import "includes/app.scss";
+@import "includes/page.scss";
+@import "includes/buttons.scss";
+
+@import "includes/lead.scss";
+@import "includes/abilities.scss";
+@import "includes/clients.scss";
+@import "includes/contact.scss";
+
+
+
+
+
+

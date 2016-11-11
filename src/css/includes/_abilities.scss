@@ -1,0 +1,100 @@
+
+video {
+  max-width: 100%;
+}
+.ability-header {
+
+
+    @include type(l, header);
+
+
+  }
+
+.ability-intro {
+  margin-bottom: space(xl);
+  //padding-bottom: space(l);
+&::after {
+  margin-top: space(xl);
+  content: '';
+  display: block;
+  width: 50%;
+  height: 10px;
+  background-color: color(pink);
+  margin-left: auto;
+  transform: rotate(1.5deg);
+
+}
+}
+.ability {
+  @include clearfix;
+  margin-bottom: space(xl);
+
+  &:last-child {
+    margin-bottom: space(reg);
+  }
+
+  .title__ {
+    @include type(m, header);
+
+    @include screen(m) {
+      @include type(m, header);
+    }
+    @include screen(ml) {
+      @include type(l, header);
+    }
+    @include screen(l) {
+      @include type(xl, header);
+    }
+
+  }
+  .video__ {
+    position: relative;
+    min-width: 100vw;
+    margin-left: -20px;
+    margin-bottom: 20px;
+    @include screen(s) {
+      position: static;
+      float: right;
+      margin-left: 20px;
+
+      min-width: 0;
+      width: 56.73%;
+      box-shadow: 12px 12px 0 0 color(gray);
+    }
+
+
+  }
+
+  .text__ {
+    padding-right: 20px;
+    background: green;
+  }
+
+  &::after {
+  margin-top: space(xl);
+  content: '';
+  display: block;
+  width: 50%;
+  height: 10px;
+  background-color: color(green);
+  margin-left: auto;
+  transform: rotate(-1.5deg);
+
+}
+
+&:nth-child(even) {
+  &::after {
+    background-color: color(orange);
+  transform: rotate(1.5deg);
+  }
+}
+
+&:last-child {
+  &::after {
+    display: none;
+  }
+}
+
+}
+
+

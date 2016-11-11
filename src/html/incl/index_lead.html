@@ -1,0 +1,13 @@
+<div class="lead-section flow__box--12-8">
+
+  <div class="lead">
+    {{ page.lead.intro }}
+   <div class="actions__">
+    {% for item in page.lead.actions %}
+        <a class="{{ item.type }} {{ item.id }}--" href="{{ item.url }}">{{ item.label }} {% if item.id == 'resume' %}{% include 'svg/icon-pdf.svg' %}{% endif %}</a></li>
+
+    {% endfor %}
+    </div>
+  </div>  
+  
+</div>

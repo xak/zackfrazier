@@ -1,0 +1,60 @@
+{
+  "name": "Zack Frazier",
+  "id": "zackfrazier",
+  "typekit": "",  
+  "meta": {
+    "title": "Zack Frazier . UX, UI, Front-End, Mobile, Web",
+    "description": "Experienced UI architect and front-end developer. For hire. Based in Chicago.",
+    "author": "Zack Frazier",
+    "og": {
+      "title": "Zack Frazier . UX problem solver, front-end developer. Good guy.",
+      "image": "http://www.zackfrazier.com/fb-share.jpg",
+      "url": "http://zackfrazier.com/",
+      "description": "Passionate UX professional with deep front-end technology skills. I emphasize shared understanding and component architecture. For hire. Based in Chicago, available anywhere."
+    }
+  },
+  "home": {
+    "title": "Zack Frazier",
+    "url": "index.html",
+    "id": "home"
+  },
+  "network": {
+    "leadin": "Founder at",
+    "name": "The strong element",
+    "image": "img/logo.svg",
+    "url": "http://thestrongelement.com",
+    "id": "strong"
+  },
+  "contact": {
+    "title": "Let’s talk",
+    "url": "#contact",
+    "id": "contact"
+  },
+  "social": [
+    {
+      "title": "LinkedIn",
+      "url": "http://www.linkedin.com/in/zackfrazier",
+      "id": "linkedin"
+    },
+    {
+      "title": "Github",
+      "url": "https://github.com/xak",
+      "id": "github"
+    },
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/@xak",
+      "id": "twitter"
+    },
+    {
+      "title": "Facebook",
+      "url": "https://facebook.com/zacklf",
+      "id": "facebook"
+    },
+    {
+      "title": "Instagram",
+      "url": "https://instagram.com/xakf",
+      "id": "instagram"
+    }
+  ]
+}

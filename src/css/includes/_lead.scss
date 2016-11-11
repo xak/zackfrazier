@@ -1,0 +1,33 @@
+
+
+.lead {
+
+  .actions__ {
+  padding-top: space(reg);
+    @include clearfix;
+
+    .button {
+      display: block;
+      float: left;
+      margin-bottom: 20px;
+     min-width: 240px;
+     @include screen(s) {
+     min-width: 0;
+     }
+
+     &:first-child {
+      margin-right: 25px;
+     }
+
+     &:last-child {
+      margin-bottom: 0;
+     }
+
+
+
+    }
+  }
+
+}
+
+
