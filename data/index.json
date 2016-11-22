@@ -6,7 +6,7 @@
     "description": ""
   },
   "lead": {
-      "title": "Front-end and UX problem solver. Good guy.",
+      "title": "UX and front-end problem solver. Good guy.",
       "intro": "<p>I’m a passionate professional with deep front-end technology and UX skills. I collaborate with product, marketing, design, and technology teams to deliver quickly with exceptional quality.</p><p>A great idea is the first step. Let me help you get from A&nbsp;to&nbsp;Z.</p>",
       "actions": [
         {
@@ -28,21 +28,6 @@
     "intro": "<p>I view every project as a chance to learn something new. I began my career as a designer and developer when table layouts were all the rage and I’ve never stopped learning.</p>",
     "items": [
       {
-        "title": "Front-end, block by block",
-        "text": "<p> It’s easy to make a mess of front-end code. Just add a little JavaScript here, a CSS !important here and your bug is fixed. Repeat 100 times and your front end is now a fragile black box no one dares touch. </p><p> Successfully balancing three technologies (at a minimum) takes experience. It’s about building a system one block at a time — a page being a big block built from other blocks. A modern UI architecture emphasizes small components with clear dependencies, meaning a small CSS change will not break your entire site. </p><p> I use a Node-based project framework that can be adapted for static sites and template development. I'm comfortable with backend templating and CMS engines along with JavaScript UI libraries like React and Angular to construct beautiful code to support beautiful design. </p>",
-        "videos": [
-          { 
-            "type": "webm",
-            "url": "http://www.zackfrazier.com/video/zack-fed.webm"
-          },
-          { 
-            "type": "mp4",
-            "url": "http://www.zackfrazier.com/video/zack-fed.mp4"
-          }
-        ],
-        "poster": "img/poster-fed.png"
-      },
-      {
       "title": "User experience delivered",
       "text": "<p> A great user experience is borne from collaboration and compromise. Marketing plans and technology roadmaps should be in harmony with your UX strategy. </p><p> API requirements come from user flows, A/B testing models inform UI template development, and technology stacks support feature development. A thoughtful, pragmatic approach to UX works for your users and your team members. </p><p> I emphasize shared understanding through rapid prototyping and transparency. I prefer a Sketch to InVision workflow which allows all team members to contribute early and avoid downstream complications, i.e., deliverables for developers.</p>",
       "videos": [
@@ -57,6 +42,21 @@
       ],
       "poster": "img/poster-ux.png"
     },
+      {
+        "title": "Front-end, block by block",
+        "text": "<p> It’s easy to make a mess of front-end code. Just add a little JavaScript here, a CSS !important here and your bug is fixed. Repeat 100 times and your front end is now a fragile black box no one dares touch. </p><p> Successfully balancing three technologies (at a minimum) takes experience. It’s about building a system one block at a time — a page being a big block built from other blocks. A modern UI architecture emphasizes small components with clear dependencies, meaning a small CSS change will not break your entire site. </p><p> I use a Node-based project framework that can be adapted for static sites and template development. I'm comfortable with backend templating and CMS engines along with JavaScript UI libraries like React and Angular to construct beautiful code to support beautiful design. </p>",
+        "videos": [
+          { 
+            "type": "webm",
+            "url": "http://www.zackfrazier.com/video/zack-fed.webm"
+          },
+          { 
+            "type": "mp4",
+            "url": "http://www.zackfrazier.com/video/zack-fed.mp4"
+          }
+        ],
+        "poster": "img/poster-fed.png"
+      },
     {
       "title": "Collaboration built-in ",
       "text": "<p> It takes a team, of course, but what should be your greatest asset is often what holds you back. Teamwork is “work” and an undefined process, an unproductive meeting, or an unchallenged employee can hurt your reputation. </p><p> The best solutions come from collaboration but it takes more than an open floor plan. More than ever, leaders must encourage an environment of growth and support. Success depends on the happiness of your team members. </p><p> I promote a sharing environment and strive to give all team members a seat at the table. If a team needs focus, a workshop to define problems and map solutions can help. I'm cool under pressure, often managing multiple projects, and I welcome any challenge.</p>",
