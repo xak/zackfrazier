@@ -6,7 +6,7 @@
     "description": ""
   },
   "lead": {
-      "title": "UX and front-end problem solver. Good guy.",
+      "title": "Front-end and UX problem solver. Good guy.",
       "intro": "<p>I’m a passionate professional with deep front-end technology and UX skills. I collaborate with product, marketing, design, and technology teams to deliver quickly with exceptional quality.</p><p>A great idea is the first step. Let me help you get from A&nbsp;to&nbsp;Z.</p>",
       "actions": [
         {
@@ -19,7 +19,7 @@
           "id": "resume",
           "type": "button",
           "label": "View Resume",
-          "url": "ZackFrazier—Front-End and UX Leader.pdf"
+          "url": "Zack Frazier.pdf"
         }
       ]
     },

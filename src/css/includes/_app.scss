@@ -110,12 +110,15 @@ $time--base: 0.2s;
   .nav-box {
     float: right;
   }
+  .contact-box {
+      text-align: right;
+  }
   .contact-link {
     @include type(m);
     @include weight(bold);
     vertical-align: top;
     color: color(darkgray);
-svg {
+    svg {
       path {
         fill: color(darkgray);
       }
@@ -128,7 +131,7 @@ svg {
       }
     }
     .title__ {
-    display: inline-block;
+      display: inline-block;
       transform: translateY(-5px);
       margin-right: 5px;
     }
@@ -139,24 +142,26 @@ svg {
         fill: color(darkgray);
       }
     }
-    
+
 a:hover {
     svg {
       path {
         fill: color(blue);
       }
     }
-}    
+}
     .navlist {
       & > .item__ {
         margin-left: 25px;
       }
       @include screen(m) {
-        display: flex;
+       // display: flex;
+                 text-align: right;
         & > .item__ {
-          margin-left: auto;
+          //margin-left: auto;
           flex: 1;
           text-align: right;
+          float: none;
         }
       }
       .item__ {
