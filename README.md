@@ -27,33 +27,11 @@
 ```
 
 ## Run it
-Update modules
-> npm install
-
 Update packages
-> bower install
+> yarn install
 
 Then
-> gulp
+> yarn docs:dev
 
-To push production build
-> gulp deploy --environment production
-
-
-## Set up
-
-* Install Gulp
-  * `npm install --global gulp`
-* To use gulp-sftp
-  * Add `.ftppass` json file in root (see gulp-sftp)
-  * Add file to `.gitignore`
-
-```
-{
-  "keyMain": {
-    "user": "WebHostSshUsername",
-    "pass": "WebHostSshPassword"
-  },
-  "keyShort": "WebHostSshUsername:WebHostSshPassword"
-}
-```
+To deploy
+> yarn docs:deploy
